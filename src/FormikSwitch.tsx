@@ -1,9 +1,9 @@
-import React from "react";
+import * as React from "react";
 import Switch, { SwitchProps } from "@material-ui/core/Switch";
 import { FastField, FastFieldProps } from "formik";
 import { FormControlLabel, FormHelperText } from "@material-ui/core";
 
-export interface FormikSwitchProps {
+export interface IFormikSwitchProps {
   name: string;
   label?: string;
   helperText?: string;
@@ -13,7 +13,7 @@ export interface FormikSwitchProps {
   fastFieldProps?: any;
 }
 
-export function FormikSwitch(props: FormikSwitchProps) {
+export function FormikSwitch(props: IFormikSwitchProps) {
   const {
     name,
     label,

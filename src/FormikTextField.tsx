@@ -1,14 +1,14 @@
-import React from "react";
+import * as React from "react";
 import TextField, { TextFieldProps } from "@material-ui/core/TextField";
 import { FastField, FastFieldProps } from "formik";
 
-export interface BaseProps {
+export interface IBaseProps {
   name: string;
   type?: "text" | "number" | "password";
   fastFieldProps?: any;
 }
 
-export type FormikTextFieldProps = BaseProps & TextFieldProps;
+export type FormikTextFieldProps = IBaseProps & TextFieldProps;
 
 export function FormikTextField(props: FormikTextFieldProps) {
   const { name, error, helperText, fastFieldProps, ...others } = props;

@@ -1,9 +1,9 @@
-import React from "react";
+import * as React from "react";
 import Checkbox, { CheckboxProps } from "@material-ui/core/Checkbox";
 import { FastField, FastFieldProps } from "formik";
 import { FormControlLabel, FormHelperText } from "@material-ui/core";
 
-export interface FormikCheckboxProps {
+export interface IFormikCheckboxProps {
   name: string;
   label?: string;
   helperText?: string;
@@ -13,7 +13,7 @@ export interface FormikCheckboxProps {
   fastFieldProps?: any;
 }
 
-export function FormikCheckbox(props: FormikCheckboxProps) {
+export function FormikCheckbox(props: IFormikCheckboxProps) {
   const {
     name,
     label,

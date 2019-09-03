@@ -1,7 +1,7 @@
 {
   "name": "@dccs/react-formik-mui",
   "version": "0.1.0",
-  "description": "TODO",
+  "description": "Simple Formik <-> MaterialUI wrappers",
   "main": "lib/index.js",
   "scripts": {
     "watch": "tsc --watch",
@@ -27,24 +27,22 @@
     "javascrip",
     "typescript"
   ],
-  "author": "Stephan Meißner",
+  "author": "Manuel Vitzthum",
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/DCCS-IT-Business-Solutions/react-formik-mui/issues"
   },
   "homepage": "https://github.com/DCCS-IT-Business-Solutions/react-formik-mui#readme",
-  "dependencies": {
-    "formik": "^1.5.8"
-  },
+  "dependencies": {},
   "peerDependencies": {
     "react": "^16.8.6",
     "react-dom": "^16.8.6",
-    "@dccs/react-table-plain": "^0.4.4"
+    "@material-ui/core": "^4.3.1",
+    "@material-ui/icons": "^4.2.1",
+    "formik": "^1.5.8"
   },
   "devDependencies": {
     "@babel/core": "^7.5.5",
-    "@material-ui/core": "4.3.1",
-    "@material-ui/icons": "4.2.1",
     "@storybook/addon-actions": "^5.1.10",
     "@storybook/addon-links": "^5.1.10",
     "@storybook/addons": "^5.1.10",
@@ -54,6 +52,9 @@
     "@types/react-dom": "16.8.5",
     "@types/storybook__react": "^4.0.2",
     "@types/styled-components": "^4.1.18",
+    "@material-ui/core": "4.3.1",
+    "@material-ui/icons": "4.2.1",
+    "formik": "^1.5.8",
     "awesome-typescript-loader": "^5.2.1",
     "babel-loader": "^8.0.6",
     "enzyme": "^3.10.0",

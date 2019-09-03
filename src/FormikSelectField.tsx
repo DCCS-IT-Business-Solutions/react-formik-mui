@@ -1,4 +1,4 @@
-import React from "react";
+import * as React from "react";
 import Select, { SelectProps } from "@material-ui/core/Select";
 import MenuItem from "@material-ui/core/MenuItem";
 import FormControl from "@material-ui/core/FormControl";
@@ -6,7 +6,7 @@ import InputLabel from "@material-ui/core/InputLabel";
 import { FastField } from "formik";
 import { FormHelperText } from "@material-ui/core";
 
-interface Props extends SelectProps {
+interface IProps extends SelectProps {
   label: any;
   name: string;
   errorText?: string;
@@ -14,7 +14,7 @@ interface Props extends SelectProps {
   tabIndex?: number;
 }
 
-export function FormikSelectField(props: Props) {
+export function FormikSelectField(props: IProps) {
   const { label, name, errorText, options, tabIndex = 0, ...others } = props;
 
   const defaultStyle = {
