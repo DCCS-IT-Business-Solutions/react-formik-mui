@@ -6,7 +6,7 @@ import { FormikTextField } from "../src/FormikTextField";
 import { Formik, FormikProps, FastField, FastFieldProps } from "formik";
 import { Button, InputAdornment } from "@material-ui/core";
 import { FormikSwitch } from "../src/FormikSwitch";
-import { FormikSelectField } from "../src/FormikSelectField";
+import { FormikSelect } from "../src/FormikSelect";
 import { FormikCheckbox } from "../src/FormikCheckbox";
 import AccountCircle from "@material-ui/icons/AccountCircle";
 
@@ -177,7 +177,7 @@ storiesOf("Formik", module).add("Selects", () => (
       >
         Default:
         <br></br>
-        <FormikSelectField
+        <FormikSelect
           label="Select"
           name="select"
           options={[
@@ -185,18 +185,18 @@ storiesOf("Formik", module).add("Selects", () => (
             { key: 2, value: "Entry 2" },
             { key: 3, value: "Entry 3" }
           ]}
-        ></FormikSelectField>
+        ></FormikSelect>
         <br></br>
         Without Label:
         <br></br>
-        <FormikSelectField
+        <FormikSelect
           name="select2"
           options={[
             { key: 1, value: "Entry 1" },
             { key: 2, value: "Entry 2" },
             { key: 3, value: "Entry 3" }
           ]}
-        ></FormikSelectField>
+        ></FormikSelect>
         <br></br>
         <Button type="submit">Save</Button>
         <Button onClick={formikProps.resetForm}>Reset</Button>

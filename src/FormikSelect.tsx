@@ -17,7 +17,7 @@ export interface IBaseProps {
 
 export type FormikSelectProps = IBaseProps & SelectProps;
 
-export function FormikSelectField(props: FormikSelectProps) {
+export function FormikSelect(props: FormikSelectProps) {
   const {
     label,
     name,

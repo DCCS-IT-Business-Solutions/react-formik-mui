@@ -111,6 +111,41 @@ Switches:
 />
 ```
 
+Selects:
+
+```javascript
+<Formik
+  initialValues={{
+    switch: "",
+    switchBottom: ""
+  }}
+  onSubmit={(values, actions) => {
+    setTimeout(() => {
+      alert(JSON.stringify(values, null, 2));
+    });
+  }}
+  render={(formikProps: FormikProps<any>) => (
+    <form onSubmit={formikProps.handleSubmit} onReset={formikProps.handleReset}>
+      Default:
+      <br></br>
+      <FormikSwitch label="Switch" name="switch"></FormikSwitch>
+      <br></br>
+      <br></br>
+      Label Placement Bottom
+      <br></br>
+      <FormikSwitch
+        label="Switch Bottom"
+        name="switchBottom"
+        formControlLabelProps={{ labelPlacement: "bottom" }}
+      ></FormikSwitch>
+      <br></br>
+      <Button type="submit">Save</Button>
+      <Button onClick={formikProps.resetForm}>Reset</Button>
+    </form>
+  )}
+/>
+```
+
 Custom Components
 
 For more information: https://jaredpalmer.com/formik/docs/api/fastfield
