@@ -14,12 +14,29 @@ This command will download and install react-formik-mui
 
 ## How it works
 
-react-formik-mui uses:
-
-- [@dccs/react-table-plain](https://www.npmjs.com/package/@dccs/react-table-plain) to display the table data
+react-formik-mui combines Formik with MaterialUI-Components
 
 Here is an example:
 
 ```javascript
-TODO;
+<Formik
+  initialValues={{
+    firstName: ""
+  }}
+  onSubmit={(values, actions) => {
+    setTimeout(() => {
+      alert(JSON.stringify(values, null, 2));
+    });
+  }}
+  render={(formikProps: FormikProps<any>) => (
+    <form onSubmit={formikProps.handleSubmit} onReset={formikProps.handleReset}>
+      Default:
+      <br></br>
+      <FormikTextField label="Vorname" name="firstName"></FormikTextField>
+      <br></br>
+      <Button type="submit">Save</Button>
+      <Button onClick={formikProps.resetForm}>Reset</Button>
+    </form>
+  )}
+/>
 ```
