@@ -1,6 +1,6 @@
 # react-formik-mui &middot; ![travis build](https://img.shields.io/travis/DCCS-IT-Business-Solutions/react-formik-mui.svg) ![npm version](https://img.shields.io/npm/v/@dccs/react-formik-mui.svg)
 
-Simple Formik <-> MaterialUI wrappers.
+Simple Formik <-> MaterialUI wrappers. [https://dccs-it-business-solutions.github.io/react-formik-mui/](https://dccs-it-business-solutions.github.io/react-formik-mui/)
 
 ## Installation
 
