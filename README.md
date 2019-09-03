@@ -116,8 +116,8 @@ Selects:
 ```javascript
 <Formik
   initialValues={{
-    switch: "",
-    switchBottom: ""
+    select: "",
+    select2: ""
   }}
   onSubmit={(values, actions) => {
     setTimeout(() => {
@@ -128,16 +128,26 @@ Selects:
     <form onSubmit={formikProps.handleSubmit} onReset={formikProps.handleReset}>
       Default:
       <br></br>
-      <FormikSwitch label="Switch" name="switch"></FormikSwitch>
+      <FormikSelect
+        label="Select"
+        name="select"
+        options={[
+          { key: 1, value: "Entry 1" },
+          { key: 2, value: "Entry 2" },
+          { key: 3, value: "Entry 3" }
+        ]}
+      ></FormikSelect>
       <br></br>
+      Without Label:
       <br></br>
-      Label Placement Bottom
-      <br></br>
-      <FormikSwitch
-        label="Switch Bottom"
-        name="switchBottom"
-        formControlLabelProps={{ labelPlacement: "bottom" }}
-      ></FormikSwitch>
+      <FormikSelect
+        name="select2"
+        options={[
+          { key: 1, value: "Entry 1" },
+          { key: 2, value: "Entry 2" },
+          { key: 3, value: "Entry 3" }
+        ]}
+      ></FormikSelect>
       <br></br>
       <Button type="submit">Save</Button>
       <Button onClick={formikProps.resetForm}>Reset</Button>
