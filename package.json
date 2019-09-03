@@ -1,0 +1,89 @@
+{
+  "name": "@dccs/react-formik-mui",
+  "version": "0.1.0",
+  "description": "TODO",
+  "main": "lib/index.js",
+  "scripts": {
+    "watch": "tsc --watch",
+    "build": "npm-run-all -s lint transpile",
+    "transpile": "tsc",
+    "lint": "tslint ./src/**/*.ts*",
+    "test": "jest --runInBand --coverage",
+    "storybook": "start-storybook -p 6006 -c .storybook",
+    "build-storybook": "build-storybook"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/DCCS-IT-Business-Solutions/react-formik-mui.git"
+  },
+  "keywords": [
+    "npm",
+    "node",
+    "react",
+    "table",
+    "sorting",
+    "filter",
+    "paging",
+    "javascrip",
+    "typescript"
+  ],
+  "author": "Stephan Meißner",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/DCCS-IT-Business-Solutions/react-formik-mui/issues"
+  },
+  "homepage": "https://github.com/DCCS-IT-Business-Solutions/react-formik-mui#readme",
+  "dependencies": {
+    "formik": "^1.5.8"
+  },
+  "peerDependencies": {
+    "react": "^16.8.6",
+    "react-dom": "^16.8.6",
+    "@dccs/react-table-plain": "^0.4.4"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.5.5",
+    "@material-ui/core": "4.3.1",
+    "@material-ui/icons": "4.2.1",
+    "@storybook/addon-actions": "^5.1.10",
+    "@storybook/addon-links": "^5.1.10",
+    "@storybook/addons": "^5.1.10",
+    "@storybook/react": "^5.1.10",
+    "@types/jest": "^24.0.17",
+    "@types/react": "16.8.25",
+    "@types/react-dom": "16.8.5",
+    "@types/storybook__react": "^4.0.2",
+    "@types/styled-components": "^4.1.18",
+    "awesome-typescript-loader": "^5.2.1",
+    "babel-loader": "^8.0.6",
+    "enzyme": "^3.10.0",
+    "enzyme-adapter-react-16": "^1.14.0",
+    "jest": "^24.8.0",
+    "npm-run-all": "^4.1.5",
+    "react": "^16.8.6",
+    "react-docgen-typescript-loader": "^3.1.0",
+    "react-docgen-typescript-webpack-plugin": "^1.1.0",
+    "react-dom": "^16.8.6",
+    "tslint": "^5.18.0",
+    "tslint-config-prettier": "^1.18.0",
+    "tslint-react": "^4.0.0",
+    "typescript": "^3.5.3"
+  },
+  "jest": {
+    "moduleFileExtensions": [
+      "ts",
+      "tsx",
+      "js"
+    ],
+    "transform": {
+      "^.+\\.(ts|tsx)$": "<rootDir>/preprocessor.js"
+    },
+    "testMatch": [
+      "**/__tests__/**/*.ts?(x)",
+      "c**/?(*.)(spec|test).ts?(x)"
+    ],
+    "setupFilesAfterEnv": [
+      "<rootDir>/setupTests.js"
+    ]
+  }
+}

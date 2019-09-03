@@ -1,0 +1,14 @@
+language: node_js
+node_js:
+  - node
+before_deploy:
+  - npm run build
+deploy:
+  skip_cleanup: true
+  provider: npm
+  email: stephan.meissner@dccs.at
+  api_key:
+    secure: $NPM_API_KEY
+  on:
+    tags: true
+    repo: DCCS-IT-Business-Solutions/react-formik-mui

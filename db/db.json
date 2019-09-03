@@ -1,0 +1,122 @@
+{
+  "dummies": [
+    {
+      "name": "Richardson Vang",
+      "gender": "male",
+      "address": "926 Nassau Street, Fostoria, Louisiana, 2302",
+      "age": 39,
+      "id": "5d4a6d1079247d23708bb6a4"
+    },
+    {
+      "id": "5d4a6d10b426670a33245114",
+      "index": 1,
+      "guid": "33003183-834e-45e5-82a4-52ba1377f34f",
+      "isActive": true,
+      "balance": "$1,148.79",
+      "picture": "http://placehold.it/32x32",
+      "age": 25,
+      "eyeColor": "brown",
+      "name": "Lorena Burton",
+      "gender": "female",
+      "company": "INTERGEEK",
+      "email": "lorenaburton@intergeek.com",
+      "phone": "+1 (894) 545-3077",
+      "address": "129 Oxford Walk, Crisman, Vermont, 8144",
+      "about": "Adipisicing deserunt et amet sit dolore ex. Amet nulla eu commodo deserunt nulla sit laborum culpa in sunt ipsum esse. Voluptate veniam duis cillum dolor aliqua cupidatat est non sit culpa non ut nisi. Non nisi nostrud eiusmod non quis in cupidatat. Laboris laboris labore quis pariatur sunt et incididunt sint ea. Dolor fugiat sunt aute do adipisicing incididunt veniam duis anim sit sunt consectetur. Velit ad aliquip dolore nisi.\r\n",
+      "registered": "2017-08-24T02:22:27 -02:00",
+      "latitude": 24.274994,
+      "longitude": 4.041446,
+      "tags": [
+        "est",
+        "culpa",
+        "ut",
+        "dolore",
+        "proident",
+        "voluptate",
+        "veniam"
+      ],
+      "friends": [
+        {
+          "id": 0,
+          "name": "Meyers Mueller"
+        },
+        {
+          "id": 1,
+          "name": "Dean Sheppard"
+        },
+        {
+          "id": 2,
+          "name": "Alvarado Pate"
+        }
+      ],
+      "greeting": "Hello, Lorena Burton! You have 8 unread messages.",
+      "favoriteFruit": "banana"
+    },
+    {
+      "name": "Test Tester",
+      "gender": "female",
+      "address": "145 Quentin Street, Derwood, North Carolina, 2647",
+      "age": 25,
+      "id": "5d4a6d10b273c56bd5def887"
+    },
+    {
+      "name": "Manuel Vitzthum",
+      "gender": "male",
+      "address": "593 Gerritsen Avenue, Irwin, American Samoa, 677",
+      "age": 25,
+      "id": "5d4a6d100e72eb07e44b0505"
+    },
+    {
+      "id": "5d4a6d10b6e70bc4b2ea66c1",
+      "index": 4,
+      "guid": "658e006b-4f3d-443c-ade9-3d8d8443da14",
+      "isActive": false,
+      "balance": "$1,058.25",
+      "picture": "http://placehold.it/32x32",
+      "age": 32,
+      "eyeColor": "blue",
+      "name": "Jo Nixon",
+      "gender": "female",
+      "company": "BOVIS",
+      "email": "jonixon@bovis.com",
+      "phone": "+1 (827) 524-2496",
+      "address": "860 Quay Street, Sisquoc, South Carolina, 7925",
+      "about": "Aliqua fugiat proident cupidatat nisi esse ea aliqua velit ut occaecat magna incididunt id aute. Ut elit deserunt exercitation est est do in excepteur. Laborum cupidatat exercitation aliquip reprehenderit esse culpa.\r\n",
+      "registered": "2015-05-02T02:05:45 -02:00",
+      "latitude": -55.846356,
+      "longitude": 151.669732,
+      "tags": [
+        "aliqua",
+        "laboris",
+        "ullamco",
+        "consectetur",
+        "minim",
+        "et",
+        "et"
+      ],
+      "friends": [
+        {
+          "id": 0,
+          "name": "Sadie Raymond"
+        },
+        {
+          "id": 1,
+          "name": "Lois Fuller"
+        },
+        {
+          "id": 2,
+          "name": "Maude Bond"
+        }
+      ],
+      "greeting": "Hello, Jo Nixon! You have 1 unread messages.",
+      "favoriteFruit": "banana"
+    },
+    {
+      "name": "Stephan Meißner",
+      "gender": "male",
+      "address": "Am Weinberg 5, 4615 Holzhausen",
+      "age": 40,
+      "id": "INXCGJP"
+    }
+  ]
+}
