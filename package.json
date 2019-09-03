@@ -10,7 +10,7 @@
     "lint": "tslint ./src/**/*.ts*",
     "test": "jest --runInBand --coverage --passWithNoTests",
     "storybook": "start-storybook -p 6006 -c .storybook",
-    "build-storybook": "build-storybook"
+    "build-storybook": "build-storybook -o docs"
   },
   "repository": {
     "type": "git",
@@ -24,7 +24,7 @@
     "sorting",
     "filter",
     "paging",
-    "javascrip",
+    "javascript",
     "typescript"
   ],
   "author": "Manuel Vitzthum",
