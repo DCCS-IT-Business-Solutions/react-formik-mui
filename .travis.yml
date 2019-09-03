@@ -10,5 +10,4 @@ deploy:
   api_key:
     secure: $NPM_API_KEY
   on:
-    tags: true
     repo: DCCS-IT-Business-Solutions/react-formik-mui
