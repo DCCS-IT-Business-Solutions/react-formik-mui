@@ -8,7 +8,7 @@
     "build": "npm-run-all -s lint transpile",
     "transpile": "tsc",
     "lint": "tslint ./src/**/*.ts*",
-    "test": "jest --runInBand --coverage",
+    "test": "jest --runInBand --coverage --passWithNoTests",
     "storybook": "start-storybook -p 6006 -c .storybook",
     "build-storybook": "build-storybook"
   },
