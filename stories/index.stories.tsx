@@ -34,13 +34,13 @@ storiesOf("Formik", module).add("TextFields", () => (
       >
         Default:
         <br></br>
-        <FormikTextField label="Vorname" name="firstName"></FormikTextField>
+        <FormikTextField label="First Name" name="firstName"></FormikTextField>
         <br></br>
         <br></br>
         Type="number":
         <br></br>
         <FormikTextField
-          label="Gehalt"
+          label="Salary"
           name="salary"
           type="number"
         ></FormikTextField>
