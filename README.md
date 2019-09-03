@@ -113,6 +113,8 @@ Switches:
 
 Custom Components
 
+For more information: https://jaredpalmer.com/formik/docs/api/fastfield
+
 ```javascript
 <Formik
   initialValues={{
@@ -173,10 +175,6 @@ Custom Components
       <br></br>
       <Button type="submit">Save</Button>
       <Button onClick={formikProps.resetForm}>Reset</Button>
-      <br></br>
-      For more Information:
-      <br></br>
-      <a href="https://jaredpalmer.com/formik/docs/api/fastfield">Formik</a>
     </form>
   )}
 />

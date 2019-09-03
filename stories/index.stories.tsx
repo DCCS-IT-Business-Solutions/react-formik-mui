@@ -6,6 +6,7 @@ import { FormikTextField } from "../src/FormikTextField";
 import { Formik, FormikProps, FastField, FastFieldProps } from "formik";
 import { Button, InputAdornment } from "@material-ui/core";
 import { FormikSwitch } from "../src/FormikSwitch";
+import { FormikSelectField } from "../src/FormikSelectField";
 import { FormikCheckbox } from "../src/FormikCheckbox";
 import AccountCircle from "@material-ui/icons/AccountCircle";
 
@@ -150,6 +151,52 @@ storiesOf("Formik", module).add("Switches", () => (
           name="switchBottom"
           formControlLabelProps={{ labelPlacement: "bottom" }}
         ></FormikSwitch>
+        <br></br>
+        <Button type="submit">Save</Button>
+        <Button onClick={formikProps.resetForm}>Reset</Button>
+      </form>
+    )}
+  />
+));
+
+storiesOf("Formik", module).add("Selects", () => (
+  <Formik
+    initialValues={{
+      select: "",
+      select2: ""
+    }}
+    onSubmit={(values, actions) => {
+      setTimeout(() => {
+        alert(JSON.stringify(values, null, 2));
+      });
+    }}
+    render={(formikProps: FormikProps<any>) => (
+      <form
+        onSubmit={formikProps.handleSubmit}
+        onReset={formikProps.handleReset}
+      >
+        Default:
+        <br></br>
+        <FormikSelectField
+          label="Select"
+          name="select"
+          options={[
+            { key: 1, value: "Entry 1" },
+            { key: 2, value: "Entry 2" },
+            { key: 3, value: "Entry 3" }
+          ]}
+        ></FormikSelectField>
+        <br></br>
+        Without Label:
+        <br></br>
+        <FormikSelectField
+          name="select2"
+          options={[
+            { key: 1, value: "Entry 1" },
+            { key: 2, value: "Entry 2" },
+            { key: 3, value: "Entry 3" }
+          ]}
+        ></FormikSelectField>
         <br></br>
         <Button type="submit">Save</Button>
         <Button onClick={formikProps.resetForm}>Reset</Button>
