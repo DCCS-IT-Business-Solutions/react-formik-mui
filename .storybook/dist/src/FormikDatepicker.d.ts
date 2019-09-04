@@ -2,27 +2,17 @@
 import { TextFieldProps } from "@material-ui/core/TextField";
 export interface IBaseProps {
     name: string;
-    type?: "text" | "number" | "password";
     fastFieldProps?: any;
 }
-export declare type FormikTextFieldProps = IBaseProps & TextFieldProps;
-export declare function FormikTextField(props: FormikTextFieldProps): JSX.Element;
-export declare namespace FormikTextField {
+export declare type FormikDatepickerProps = IBaseProps & TextFieldProps;
+export declare function FormikDatepicker(props: FormikDatepickerProps): JSX.Element;
+export declare namespace FormikDatepicker {
     var displayName: string;
     var __docgenInfo: {
         "description": string;
         "displayName": string;
         "props": {
             "name": {
-                "defaultValue": null;
-                "description": string;
-                "name": string;
-                "required": boolean;
-                "type": {
-                    "name": string;
-                };
-            };
-            "type": {
                 "defaultValue": null;
                 "description": string;
                 "name": string;
@@ -248,6 +238,15 @@ export declare namespace FormikTextField {
                 };
             };
             "SelectProps": {
+                "defaultValue": null;
+                "description": string;
+                "name": string;
+                "required": boolean;
+                "type": {
+                    "name": string;
+                };
+            };
+            "type": {
                 "defaultValue": null;
                 "description": string;
                 "name": string;

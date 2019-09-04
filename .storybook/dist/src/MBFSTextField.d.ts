@@ -1,13 +1,26 @@
-/// <reference types="react" />
+import * as React from "react";
 import { TextFieldProps } from "@material-ui/core/TextField";
-export interface IBaseProps {
+interface IBaseProps {
     name: string;
-    type?: "text" | "number" | "password";
+    config: IConfigurationProps;
+    textOnly?: boolean;
     fastFieldProps?: any;
 }
+interface IConfigurationProps {
+    notifyOnValueChanged: boolean;
+    symbol: React.ReactNode;
+    prependSymbol: boolean;
+    readOnly: boolean;
+    label: string;
+    clientId: string;
+    visible: boolean;
+    showHintText: boolean;
+    hintText: string;
+    isValid: boolean;
+}
 export declare type FormikTextFieldProps = IBaseProps & TextFieldProps;
-export declare function FormikTextField(props: FormikTextFieldProps): JSX.Element;
-export declare namespace FormikTextField {
+export declare function MBFSTextField(props: FormikTextFieldProps): JSX.Element | null;
+export declare namespace MBFSTextField {
     var displayName: string;
     var __docgenInfo: {
         "description": string;
@@ -22,7 +35,16 @@ export declare namespace FormikTextField {
                     "name": string;
                 };
             };
-            "type": {
+            "config": {
+                "defaultValue": null;
+                "description": string;
+                "name": string;
+                "required": boolean;
+                "type": {
+                    "name": string;
+                };
+            };
+            "textOnly": {
                 "defaultValue": null;
                 "description": string;
                 "name": string;
@@ -248,6 +270,15 @@ export declare namespace FormikTextField {
                 };
             };
             "SelectProps": {
+                "defaultValue": null;
+                "description": string;
+                "name": string;
+                "required": boolean;
+                "type": {
+                    "name": string;
+                };
+            };
+            "type": {
                 "defaultValue": null;
                 "description": string;
                 "name": string;
@@ -2545,3 +2576,4 @@ export declare namespace FormikTextField {
         };
     };
 }
+export {};
