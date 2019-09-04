@@ -265,7 +265,7 @@ export declare namespace FormikTextField {
                     "name": string;
                 };
             };
-            "style": {
+            "onKeyUp": {
                 "defaultValue": null;
                 "description": string;
                 "name": string;
@@ -274,43 +274,7 @@ export declare namespace FormikTextField {
                     "name": string;
                 };
             };
-            "title": {
-                "defaultValue": null;
-                "description": string;
-                "name": string;
-                "required": boolean;
-                "type": {
-                    "name": string;
-                };
-            };
-            "ref": {
-                "defaultValue": null;
-                "description": string;
-                "name": string;
-                "required": boolean;
-                "type": {
-                    "name": string;
-                };
-            };
-            "className": {
-                "defaultValue": null;
-                "description": string;
-                "name": string;
-                "required": boolean;
-                "type": {
-                    "name": string;
-                };
-            };
-            "innerRef": {
-                "defaultValue": null;
-                "description": string;
-                "name": string;
-                "required": boolean;
-                "type": {
-                    "name": string;
-                };
-            };
-            "key": {
+            "onKeyDown": {
                 "defaultValue": null;
                 "description": string;
                 "name": string;
@@ -347,6 +311,15 @@ export declare namespace FormikTextField {
                 };
             };
             "accessKey": {
+                "defaultValue": null;
+                "description": string;
+                "name": string;
+                "required": boolean;
+                "type": {
+                    "name": string;
+                };
+            };
+            "className": {
                 "defaultValue": null;
                 "description": string;
                 "name": string;
@@ -427,7 +400,25 @@ export declare namespace FormikTextField {
                     "name": string;
                 };
             };
+            "style": {
+                "defaultValue": null;
+                "description": string;
+                "name": string;
+                "required": boolean;
+                "type": {
+                    "name": string;
+                };
+            };
             "tabIndex": {
+                "defaultValue": null;
+                "description": string;
+                "name": string;
+                "required": boolean;
+                "type": {
+                    "name": string;
+                };
+            };
+            "title": {
                 "defaultValue": null;
                 "description": string;
                 "name": string;
@@ -1372,15 +1363,6 @@ export declare namespace FormikTextField {
                     "name": string;
                 };
             };
-            "onKeyDown": {
-                "defaultValue": null;
-                "description": string;
-                "name": string;
-                "required": boolean;
-                "type": {
-                    "name": string;
-                };
-            };
             "onKeyDownCapture": {
                 "defaultValue": null;
                 "description": string;
@@ -1400,15 +1382,6 @@ export declare namespace FormikTextField {
                 };
             };
             "onKeyPressCapture": {
-                "defaultValue": null;
-                "description": string;
-                "name": string;
-                "required": boolean;
-                "type": {
-                    "name": string;
-                };
-            };
-            "onKeyUp": {
                 "defaultValue": null;
                 "description": string;
                 "name": string;
@@ -2516,6 +2489,33 @@ export declare namespace FormikTextField {
                 };
             };
             "onTransitionEndCapture": {
+                "defaultValue": null;
+                "description": string;
+                "name": string;
+                "required": boolean;
+                "type": {
+                    "name": string;
+                };
+            };
+            "innerRef": {
+                "defaultValue": null;
+                "description": string;
+                "name": string;
+                "required": boolean;
+                "type": {
+                    "name": string;
+                };
+            };
+            "ref": {
+                "defaultValue": null;
+                "description": string;
+                "name": string;
+                "required": boolean;
+                "type": {
+                    "name": string;
+                };
+            };
+            "key": {
                 "defaultValue": null;
                 "description": string;
                 "name": string;

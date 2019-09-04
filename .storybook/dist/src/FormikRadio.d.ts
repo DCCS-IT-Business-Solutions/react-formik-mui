@@ -106,7 +106,7 @@ export declare namespace FormikRadio {
                     "name": string;
                 };
             };
-            "form": {
+            "disabled": {
                 "defaultValue": null;
                 "description": string;
                 "name": string;
@@ -115,7 +115,7 @@ export declare namespace FormikRadio {
                     "name": string;
                 };
             };
-            "style": {
+            "onChange": {
                 "defaultValue": null;
                 "description": string;
                 "name": string;
@@ -124,7 +124,7 @@ export declare namespace FormikRadio {
                     "name": string;
                 };
             };
-            "title": {
+            "onKeyUp": {
                 "defaultValue": null;
                 "description": string;
                 "name": string;
@@ -133,43 +133,7 @@ export declare namespace FormikRadio {
                     "name": string;
                 };
             };
-            "ref": {
-                "defaultValue": null;
-                "description": string;
-                "name": string;
-                "required": boolean;
-                "type": {
-                    "name": string;
-                };
-            };
-            "className": {
-                "defaultValue": null;
-                "description": string;
-                "name": string;
-                "required": boolean;
-                "type": {
-                    "name": string;
-                };
-            };
-            "innerRef": {
-                "defaultValue": null;
-                "description": string;
-                "name": string;
-                "required": boolean;
-                "type": {
-                    "name": string;
-                };
-            };
-            "key": {
-                "defaultValue": null;
-                "description": string;
-                "name": string;
-                "required": boolean;
-                "type": {
-                    "name": string;
-                };
-            };
-            "defaultChecked": {
+            "onKeyDown": {
                 "defaultValue": null;
                 "description": string;
                 "name": string;
@@ -179,6 +143,15 @@ export declare namespace FormikRadio {
                 };
             };
             "defaultValue": {
+                "defaultValue": null;
+                "description": string;
+                "name": string;
+                "required": boolean;
+                "type": {
+                    "name": string;
+                };
+            };
+            "defaultChecked": {
                 "defaultValue": null;
                 "description": string;
                 "name": string;
@@ -206,6 +179,15 @@ export declare namespace FormikRadio {
                 };
             };
             "accessKey": {
+                "defaultValue": null;
+                "description": string;
+                "name": string;
+                "required": boolean;
+                "type": {
+                    "name": string;
+                };
+            };
+            "className": {
                 "defaultValue": null;
                 "description": string;
                 "name": string;
@@ -304,7 +286,25 @@ export declare namespace FormikRadio {
                     "name": string;
                 };
             };
+            "style": {
+                "defaultValue": null;
+                "description": string;
+                "name": string;
+                "required": boolean;
+                "type": {
+                    "name": string;
+                };
+            };
             "tabIndex": {
+                "defaultValue": null;
+                "description": string;
+                "name": string;
+                "required": boolean;
+                "type": {
+                    "name": string;
+                };
+            };
+            "title": {
                 "defaultValue": null;
                 "description": string;
                 "name": string;
@@ -1105,15 +1105,6 @@ export declare namespace FormikRadio {
                     "name": string;
                 };
             };
-            "onChange": {
-                "defaultValue": null;
-                "description": string;
-                "name": string;
-                "required": boolean;
-                "type": {
-                    "name": string;
-                };
-            };
             "onChangeCapture": {
                 "defaultValue": null;
                 "description": string;
@@ -1249,15 +1240,6 @@ export declare namespace FormikRadio {
                     "name": string;
                 };
             };
-            "onKeyDown": {
-                "defaultValue": null;
-                "description": string;
-                "name": string;
-                "required": boolean;
-                "type": {
-                    "name": string;
-                };
-            };
             "onKeyDownCapture": {
                 "defaultValue": null;
                 "description": string;
@@ -1277,15 +1259,6 @@ export declare namespace FormikRadio {
                 };
             };
             "onKeyPressCapture": {
-                "defaultValue": null;
-                "description": string;
-                "name": string;
-                "required": boolean;
-                "type": {
-                    "name": string;
-                };
-            };
-            "onKeyUp": {
                 "defaultValue": null;
                 "description": string;
                 "name": string;
@@ -2401,16 +2374,7 @@ export declare namespace FormikRadio {
                     "name": string;
                 };
             };
-            "disabled": {
-                "defaultValue": null;
-                "description": string;
-                "name": string;
-                "required": boolean;
-                "type": {
-                    "name": string;
-                };
-            };
-            "required": {
+            "autoFocus": {
                 "defaultValue": null;
                 "description": string;
                 "name": string;
@@ -2420,15 +2384,6 @@ export declare namespace FormikRadio {
                 };
             };
             "inputProps": {
-                "defaultValue": null;
-                "description": string;
-                "name": string;
-                "required": boolean;
-                "type": {
-                    "name": string;
-                };
-            };
-            "autoFocus": {
                 "defaultValue": null;
                 "description": string;
                 "name": string;
@@ -2455,7 +2410,52 @@ export declare namespace FormikRadio {
                     "name": string;
                 };
             };
+            "required": {
+                "defaultValue": null;
+                "description": string;
+                "name": string;
+                "required": boolean;
+                "type": {
+                    "name": string;
+                };
+            };
             "type": {
+                "defaultValue": null;
+                "description": string;
+                "name": string;
+                "required": boolean;
+                "type": {
+                    "name": string;
+                };
+            };
+            "innerRef": {
+                "defaultValue": null;
+                "description": string;
+                "name": string;
+                "required": boolean;
+                "type": {
+                    "name": string;
+                };
+            };
+            "ref": {
+                "defaultValue": null;
+                "description": string;
+                "name": string;
+                "required": boolean;
+                "type": {
+                    "name": string;
+                };
+            };
+            "form": {
+                "defaultValue": null;
+                "description": string;
+                "name": string;
+                "required": boolean;
+                "type": {
+                    "name": string;
+                };
+            };
+            "key": {
                 "defaultValue": null;
                 "description": string;
                 "name": string;

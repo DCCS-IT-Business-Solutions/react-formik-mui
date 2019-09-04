@@ -3,7 +3,7 @@ import * as React from "react";
 import { storiesOf } from "@storybook/react";
 import deLocale from "date-fns/locale/de";
 import { FormikTextField } from "../src/FormikTextField";
-import { FormikDatepicker } from "../src/FormikDatepicker";
+//import { FormikDatepicker } from "../src/FormikDatepicker";
 import { MBFSTextField } from "../src/MBFSTextField";
 import { Formik, FormikProps, FastField, FastFieldProps } from "formik";
 import {
@@ -485,33 +485,33 @@ storiesOf("Formik", module).add("MBFS TextFields", () => (
   />
 ));
 
-storiesOf("Formik", module).add("Datepicker", () => (
-  <Formik
-    initialValues={{
-      date: ""
-    }}
-    onSubmit={(values, actions) => {
-      setTimeout(() => {
-        alert(JSON.stringify(values, null, 2));
-      });
-    }}
-    render={(formikProps: FormikProps<any>) => (
-      <form
-        onSubmit={formikProps.handleSubmit}
-        onReset={formikProps.handleReset}
-      >
-        Default:
-        <br></br>
-        <MuiPickersUtilsProvider utils={DateFnsUtils} locale={deLocale}>
-          <FormikDatepicker name="date" label="Date"></FormikDatepicker>
-        </MuiPickersUtilsProvider>
-        <br></br>
-        <Button type="submit">Save</Button>
-        <Button onClick={formikProps.handleReset}>Reset</Button>
-      </form>
-    )}
-  />
-));
+// storiesOf("Formik", module).add("Datepicker", () => (
+//   <Formik
+//     initialValues={{
+//       date: ""
+//     }}
+//     onSubmit={(values, actions) => {
+//       setTimeout(() => {
+//         alert(JSON.stringify(values, null, 2));
+//       });
+//     }}
+//     render={(formikProps: FormikProps<any>) => (
+//       <form
+//         onSubmit={formikProps.handleSubmit}
+//         onReset={formikProps.handleReset}
+//       >
+//         Default:
+//         <br></br>
+//         <MuiPickersUtilsProvider utils={DateFnsUtils} locale={deLocale}>
+//           <FormikDatepicker name="date" label="Date"></FormikDatepicker>
+//         </MuiPickersUtilsProvider>
+//         <br></br>
+//         <Button type="submit">Save</Button>
+//         <Button onClick={formikProps.handleReset}>Reset</Button>
+//       </form>
+//     )}
+//   />
+// ));
 
 storiesOf("Formik", module).add("Switches", () => (
   <Formik

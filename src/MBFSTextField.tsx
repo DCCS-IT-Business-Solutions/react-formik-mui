@@ -53,18 +53,20 @@ export function MBFSTextField(props: FormikTextFieldProps) {
     style: { minWidth: "240px" }
   };
 
-  if (!visible) return null;
+  if (!visible) {
+    return null;
+  }
 
   const customInputProps = {
-    readOnly: readOnly
+    readOnly
   } as any;
 
   if (symbol && prependSymbol) {
-    customInputProps["endAdornment"] = (
+    customInputProps.endAdornment = (
       <InputAdornment position="end">{symbol}</InputAdornment>
     );
   } else {
-    customInputProps["startAdornment"] = (
+    customInputProps.startAdornment = (
       <InputAdornment position="start">{symbol}</InputAdornment>
     );
   }
