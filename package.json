@@ -86,5 +86,10 @@
     "setupFilesAfterEnv": [
       "<rootDir>/setupTests.js"
     ]
+  },
+  "dependencies": {
+    "@date-io/date-fns": "^1.3.9",
+    "@material-ui/pickers": "^3.2.5",
+    "date-fns": "^2.0.0-beta.5"
   }
 }

@@ -1,8 +1,9 @@
 import * as React from "react";
 
 import { storiesOf } from "@storybook/react";
-
+import deLocale from "date-fns/locale/de";
 import { FormikTextField } from "../src/FormikTextField";
+import { FormikDatepicker } from "../src/FormikDatepicker";
 import { MBFSTextField } from "../src/MBFSTextField";
 import { Formik, FormikProps, FastField, FastFieldProps } from "formik";
 import {
@@ -10,14 +11,15 @@ import {
   InputAdornment,
   FormControl,
   FormLabel,
-  RadioGroup,
-  FormControlLabel
+  RadioGroup
 } from "@material-ui/core";
 import { FormikSwitch } from "../src/FormikSwitch";
 import { FormikSelect } from "../src/FormikSelect";
 import { FormikCheckbox } from "../src/FormikCheckbox";
 import { FormikRadio } from "../src/FormikRadio";
 import AccountCircle from "@material-ui/icons/AccountCircle";
+import { MuiPickersUtilsProvider } from "@material-ui/pickers";
+import DateFnsUtils from "@date-io/date-fns";
 
 storiesOf("Formik", module).add("TextFields", () => (
   <Formik
@@ -475,6 +477,34 @@ storiesOf("Formik", module).add("MBFS TextFields", () => (
           textOnly={true}
           config={model2.configuration}
         ></MBFSTextField>
+        <br></br>
+        <Button type="submit">Save</Button>
+        <Button onClick={formikProps.handleReset}>Reset</Button>
+      </form>
+    )}
+  />
+));
+
+storiesOf("Formik", module).add("Datepicker", () => (
+  <Formik
+    initialValues={{
+      date: ""
+    }}
+    onSubmit={(values, actions) => {
+      setTimeout(() => {
+        alert(JSON.stringify(values, null, 2));
+      });
+    }}
+    render={(formikProps: FormikProps<any>) => (
+      <form
+        onSubmit={formikProps.handleSubmit}
+        onReset={formikProps.handleReset}
+      >
+        Default:
+        <br></br>
+        <MuiPickersUtilsProvider utils={DateFnsUtils} locale={deLocale}>
+          <FormikDatepicker name="date" label="Date"></FormikDatepicker>
+        </MuiPickersUtilsProvider>
         <br></br>
         <Button type="submit">Save</Button>
         <Button onClick={formikProps.handleReset}>Reset</Button>
