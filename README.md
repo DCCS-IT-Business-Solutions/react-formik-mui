@@ -279,4 +279,4 @@ For more information: https://jaredpalmer.com/formik/docs/api/fastfield
 
 ### License
 
-@dccs/react-autocomplete-mui is [MIT licensed](https://github.com/facebook/react/blob/master/LICENSE)
+@dccs/react-formik-mui is [MIT licensed](https://github.com/facebook/react/blob/master/LICENSE)
