@@ -179,7 +179,7 @@ Selects:
 
 Datepicker:
 
-The datepicker is a bit more than only using "FormikDatepicker"
+The datepicker needs a bit more than "FormikDatepicker"
 
 The Material UI Datepicker only works if there is a MuiPickersUtilsProvider atleast one level higher
 
