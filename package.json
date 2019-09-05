@@ -103,6 +103,7 @@
     ]
   },
   "dependencies": {
+    "@dccs/react-autocomplete-mui": "^0.2.0",
     "rimraf": "^3.0.0"
   }
 }
