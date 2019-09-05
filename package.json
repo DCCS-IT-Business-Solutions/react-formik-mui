@@ -34,7 +34,9 @@
     "wrapper",
     "formik",
     "easy to use",
-    "form"
+    "form",
+    "mui",
+    "formik-mui"
   ],
   "author": "Manuel Vitzthum",
   "license": "MIT",
