@@ -30,11 +30,10 @@ Here is a simple example:
   }}
   render={(formikProps: FormikProps<any>) => (
     <form onSubmit={formikProps.handleSubmit} onReset={formikProps.handleReset}>
-      Default:
-      <br></br>
       <FormikTextField label="First Name" name="firstName"></FormikTextField>
-      <br></br>
+
       <Button type="submit">Save</Button>
+
       <Button onClick={formikProps.resetForm}>Reset</Button>
     </form>
   )}
@@ -57,18 +56,13 @@ Checkboxes:
   render={(formikProps: FormikProps<any>) => (
     <form onSubmit={formikProps.handleSubmit} onReset={formikProps.handleReset}>
       Default:
-      <br></br>
       <FormikCheckbox label="Checkbox" name="checkbox"></FormikCheckbox>
-      <br></br>
-      <br></br>
       With Label Placement Bottom
-      <br></br>
       <FormikCheckbox
         label="Checkbox Bottom"
         name="checkboxBottom"
         formControlLabelProps={{ labelPlacement: "bottom" }}
       ></FormikCheckbox>
-      <br></br>
       <Button type="submit">Save</Button>
       <Button onClick={formikProps.resetForm}>Reset</Button>
     </form>
@@ -92,18 +86,13 @@ Switches:
   render={(formikProps: FormikProps<any>) => (
     <form onSubmit={formikProps.handleSubmit} onReset={formikProps.handleReset}>
       Default:
-      <br></br>
       <FormikSwitch label="Switch" name="switch"></FormikSwitch>
-      <br></br>
-      <br></br>
       Label Placement Bottom
-      <br></br>
       <FormikSwitch
         label="Switch Bottom"
         name="switchBottom"
         formControlLabelProps={{ labelPlacement: "bottom" }}
       ></FormikSwitch>
-      <br></br>
       <Button type="submit">Save</Button>
       <Button onClick={formikProps.resetForm}>Reset</Button>
     </form>
@@ -127,7 +116,6 @@ Selects:
   render={(formikProps: FormikProps<any>) => (
     <form onSubmit={formikProps.handleSubmit} onReset={formikProps.handleReset}>
       Default:
-      <br></br>
       <FormikSelect
         label="Select"
         name="select"
@@ -137,9 +125,7 @@ Selects:
           { key: 3, value: "Entry 3" }
         ]}
       ></FormikSelect>
-      <br></br>
       Without Label:
-      <br></br>
       <FormikSelect
         name="select2"
         options={[
@@ -148,7 +134,6 @@ Selects:
           { key: 3, value: "Entry 3" }
         ]}
       ></FormikSelect>
-      <br></br>
       <Button type="submit">Save</Button>
       <Button onClick={formikProps.resetForm}>Reset</Button>
     </form>
@@ -174,7 +159,6 @@ For more information: https://jaredpalmer.com/formik/docs/api/fastfield
   render={(formikProps: FormikProps<any>) => (
     <form onSubmit={formikProps.handleSubmit} onReset={formikProps.handleReset}>
       Custom Component:
-      <br></br>
       <FastField
         name="custom"
         render={(fastFieldProps: FastFieldProps<any>) => (
@@ -190,9 +174,7 @@ For more information: https://jaredpalmer.com/formik/docs/api/fastfield
           </React.Fragment>
         )}
       />
-      <br></br>
       Custom Component with handleChange:
-      <br></br>
       <FastField
         name="custom2"
         render={(fastFieldProps: FastFieldProps<any>) => (
@@ -217,7 +199,6 @@ For more information: https://jaredpalmer.com/formik/docs/api/fastfield
           </React.Fragment>
         )}
       />
-      <br></br>
       <Button type="submit">Save</Button>
       <Button onClick={formikProps.resetForm}>Reset</Button>
     </form>
