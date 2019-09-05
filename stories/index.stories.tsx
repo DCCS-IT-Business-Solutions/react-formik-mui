@@ -440,50 +440,50 @@ const model2 = {
   value: "TextOnly"
 };
 
-storiesOf("Formik", module).add("MBFS TextFields", () => (
-  <Formik
-    initialValues={{
-      name: model.value
-    }}
-    onSubmit={(values, actions) => {
-      setTimeout(() => {
-        const keys = Object.keys(values);
+// storiesOf("Formik", module).add("MBFS TextFields", () => (
+//   <Formik
+//     initialValues={{
+//       name: model.value
+//     }}
+//     onSubmit={(values, actions) => {
+//       setTimeout(() => {
+//         const keys = Object.keys(values);
 
-        keys.forEach((key, idx) => {
-          exampleJson[key].value = values[key];
-        });
+//         keys.forEach((key, idx) => {
+//           exampleJson[key].value = values[key];
+//         });
 
-        alert(JSON.stringify(exampleJson, null, 2));
-      });
-    }}
-    render={(formikProps: FormikProps<any>) => (
-      <form
-        onSubmit={formikProps.handleSubmit}
-        onReset={formikProps.handleReset}
-      >
-        Default:
-        <br></br>
-        <MBFSTextField
-          name="name"
-          config={model.configuration}
-          onChange={(e: any) => {
-            console.log("davor");
-            formikProps.handleChange(e);
-            console.log("danach");
-          }}
-        ></MBFSTextField>
-        <MBFSTextField
-          name="name2"
-          textOnly={true}
-          config={model2.configuration}
-        ></MBFSTextField>
-        <br></br>
-        <Button type="submit">Save</Button>
-        <Button onClick={formikProps.handleReset}>Reset</Button>
-      </form>
-    )}
-  />
-));
+//         alert(JSON.stringify(exampleJson, null, 2));
+//       });
+//     }}
+//     render={(formikProps: FormikProps<any>) => (
+//       <form
+//         onSubmit={formikProps.handleSubmit}
+//         onReset={formikProps.handleReset}
+//       >
+//         Default:
+//         <br></br>
+//         <MBFSTextField
+//           name="name"
+//           config={model.configuration}
+//           onChange={(e: any) => {
+//             console.log("davor");
+//             formikProps.handleChange(e);
+//             console.log("danach");
+//           }}
+//         ></MBFSTextField>
+//         <MBFSTextField
+//           name="name2"
+//           textOnly={true}
+//           config={model2.configuration}
+//         ></MBFSTextField>
+//         <br></br>
+//         <Button type="submit">Save</Button>
+//         <Button onClick={formikProps.handleReset}>Reset</Button>
+//       </form>
+//     )}
+//   />
+// ));
 
 // storiesOf("Formik", module).add("Datepicker", () => (
 //   <Formik
