@@ -141,6 +141,75 @@ Selects:
 />
 ```
 
+Selects:
+
+```javascript
+<Formik
+  initialValues={{
+    radioGroup: ""
+  }}
+  onSubmit={(values, actions) => {
+    setTimeout(() => {
+      alert(JSON.stringify(values, null, 2));
+    });
+  }}
+  render={(formikProps: FormikProps<any>) => (
+    <form onSubmit={formikProps.handleSubmit}>
+      <FormControl>
+        <FormLabel>Gender</FormLabel>
+        <RadioGroup name="radioGroup">
+          <FormikRadio label="Female" name="radioGroup" value="female" />
+          <FormikRadio label="Male" name="radioGroup" value="male" />
+          <FormikRadio label="Other" name="radioGroup" value="other" />
+          <FormikRadio
+            label="(Disabled option)"
+            name="radioGroup"
+            value="disabled"
+            disabled
+          />
+        </RadioGroup>
+      </FormControl>
+
+      <Button type="submit">Save</Button>
+      <Button onClick={formikProps.handleReset}>Reset</Button>
+    </form>
+  )}
+/>
+```
+
+Datepicker:
+
+The datepicker is a bit more than only using "FormikDatepicker"
+
+The Material UI Datepicker only works if there is a MuiPickersUtilsProvider atleast one level higher
+
+We are using @date-io/date-fns date-fns@next for utils an localization.
+
+For more information: [material-ui-pickers](https://material-ui-pickers.dev/getting-started/installation)
+
+```javascript
+<MuiPickersUtilsProvider utils={DateFnsUtils}>
+  <Formik
+    initialValues={{
+      date: ""
+    }}
+    onSubmit={(values, actions) => {
+      setTimeout(() => {
+        alert(JSON.stringify(values, null, 2));
+      });
+    }}
+    render={(formikProps: FormikProps<any>) => (
+      <form onSubmit={formikProps.handleSubmit}>
+        Default:
+        <FormikDatepicker name="date" label="Date"></FormikDatepicker>
+        <Button type="submit">Save</Button>
+        <Button onClick={formikProps.handleReset}>Reset</Button>
+      </form>
+    )}
+  />
+</MuiPickersUtilsProvider>
+```
+
 Custom Components
 
 For more information: https://jaredpalmer.com/formik/docs/api/fastfield
