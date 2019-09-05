@@ -4,7 +4,7 @@ import { storiesOf } from "@storybook/react";
 import deLocale from "date-fns/locale/de";
 import { FormikTextField } from "../src/FormikTextField";
 //import { FormikDatepicker } from "../src/FormikDatepicker";
-import { MBFSTextField } from "../src/MBFSTextField";
+//import { MBFSTextField } from "../src/MBFSTextField";
 import { Formik, FormikProps, FastField, FastFieldProps } from "formik";
 import {
   Button,
