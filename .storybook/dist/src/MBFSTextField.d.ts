@@ -296,7 +296,7 @@ export declare namespace MBFSTextField {
                     "name": string;
                 };
             };
-            "onKeyUp": {
+            "style": {
                 "defaultValue": null;
                 "description": string;
                 "name": string;
@@ -305,7 +305,43 @@ export declare namespace MBFSTextField {
                     "name": string;
                 };
             };
-            "onKeyDown": {
+            "title": {
+                "defaultValue": null;
+                "description": string;
+                "name": string;
+                "required": boolean;
+                "type": {
+                    "name": string;
+                };
+            };
+            "ref": {
+                "defaultValue": null;
+                "description": string;
+                "name": string;
+                "required": boolean;
+                "type": {
+                    "name": string;
+                };
+            };
+            "className": {
+                "defaultValue": null;
+                "description": string;
+                "name": string;
+                "required": boolean;
+                "type": {
+                    "name": string;
+                };
+            };
+            "innerRef": {
+                "defaultValue": null;
+                "description": string;
+                "name": string;
+                "required": boolean;
+                "type": {
+                    "name": string;
+                };
+            };
+            "key": {
                 "defaultValue": null;
                 "description": string;
                 "name": string;
@@ -342,15 +378,6 @@ export declare namespace MBFSTextField {
                 };
             };
             "accessKey": {
-                "defaultValue": null;
-                "description": string;
-                "name": string;
-                "required": boolean;
-                "type": {
-                    "name": string;
-                };
-            };
-            "className": {
                 "defaultValue": null;
                 "description": string;
                 "name": string;
@@ -431,25 +458,7 @@ export declare namespace MBFSTextField {
                     "name": string;
                 };
             };
-            "style": {
-                "defaultValue": null;
-                "description": string;
-                "name": string;
-                "required": boolean;
-                "type": {
-                    "name": string;
-                };
-            };
             "tabIndex": {
-                "defaultValue": null;
-                "description": string;
-                "name": string;
-                "required": boolean;
-                "type": {
-                    "name": string;
-                };
-            };
-            "title": {
                 "defaultValue": null;
                 "description": string;
                 "name": string;
@@ -1394,6 +1403,15 @@ export declare namespace MBFSTextField {
                     "name": string;
                 };
             };
+            "onKeyDown": {
+                "defaultValue": null;
+                "description": string;
+                "name": string;
+                "required": boolean;
+                "type": {
+                    "name": string;
+                };
+            };
             "onKeyDownCapture": {
                 "defaultValue": null;
                 "description": string;
@@ -1413,6 +1431,15 @@ export declare namespace MBFSTextField {
                 };
             };
             "onKeyPressCapture": {
+                "defaultValue": null;
+                "description": string;
+                "name": string;
+                "required": boolean;
+                "type": {
+                    "name": string;
+                };
+            };
+            "onKeyUp": {
                 "defaultValue": null;
                 "description": string;
                 "name": string;
@@ -2520,33 +2547,6 @@ export declare namespace MBFSTextField {
                 };
             };
             "onTransitionEndCapture": {
-                "defaultValue": null;
-                "description": string;
-                "name": string;
-                "required": boolean;
-                "type": {
-                    "name": string;
-                };
-            };
-            "innerRef": {
-                "defaultValue": null;
-                "description": string;
-                "name": string;
-                "required": boolean;
-                "type": {
-                    "name": string;
-                };
-            };
-            "ref": {
-                "defaultValue": null;
-                "description": string;
-                "name": string;
-                "required": boolean;
-                "type": {
-                    "name": string;
-                };
-            };
-            "key": {
                 "defaultValue": null;
                 "description": string;
                 "name": string;
