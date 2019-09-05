@@ -2,7 +2,7 @@ import * as React from "react";
 import TextField, { TextFieldProps } from "@material-ui/core/TextField";
 import { FastField, FastFieldProps } from "formik";
 
-export interface IBaseProps {
+interface IBaseProps {
   name: string;
   type?: "text" | "number" | "password";
   fastFieldProps?: any;

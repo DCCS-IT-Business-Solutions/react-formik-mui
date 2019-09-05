@@ -6,7 +6,7 @@ import InputLabel from "@material-ui/core/InputLabel";
 import { FastField, FastFieldProps } from "formik";
 import { FormHelperText } from "@material-ui/core";
 
-export interface IBaseProps {
+interface IBaseProps {
   name: string;
   options: any[];
   label?: string;
