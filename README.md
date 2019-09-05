@@ -274,3 +274,9 @@ For more information: https://jaredpalmer.com/formik/docs/api/fastfield
   )}
 />
 ```
+
+## Contributing
+
+### License
+
+@dccs/react-autocomplete-mui is [MIT licensed](https://github.com/facebook/react/blob/master/LICENSE)
