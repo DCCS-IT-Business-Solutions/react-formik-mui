@@ -101,5 +101,8 @@
     "setupFilesAfterEnv": [
       "<rootDir>/setupTests.js"
     ]
+  },
+  "dependencies": {
+    "rimraf": "^3.0.0"
   }
 }
