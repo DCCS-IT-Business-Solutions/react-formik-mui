@@ -29,12 +29,12 @@ Here is a simple example:
     });
   }}
   render={(formikProps: FormikProps<any>) => (
-    <form onSubmit={formikProps.handleSubmit} onReset={formikProps.handleReset}>
+    <form onSubmit={formikProps.handleSubmit}>
       <FormikTextField label="First Name" name="firstName"></FormikTextField>
 
       <Button type="submit">Save</Button>
 
-      <Button onClick={formikProps.resetForm}>Reset</Button>
+      <Button onClick={formikProps.handleReset}>Reset</Button>
     </form>
   )}
 />
@@ -54,7 +54,7 @@ Checkboxes:
     });
   }}
   render={(formikProps: FormikProps<any>) => (
-    <form onSubmit={formikProps.handleSubmit} onReset={formikProps.handleReset}>
+    <form onSubmit={formikProps.handleSubmit}>
       Default:
       <FormikCheckbox label="Checkbox" name="checkbox"></FormikCheckbox>
       With Label Placement Bottom
@@ -64,7 +64,7 @@ Checkboxes:
         formControlLabelProps={{ labelPlacement: "bottom" }}
       ></FormikCheckbox>
       <Button type="submit">Save</Button>
-      <Button onClick={formikProps.resetForm}>Reset</Button>
+      <Button onClick={formikProps.handleReset}>Reset</Button>
     </form>
   )}
 />
@@ -84,7 +84,7 @@ Switches:
     });
   }}
   render={(formikProps: FormikProps<any>) => (
-    <form onSubmit={formikProps.handleSubmit} onReset={formikProps.handleReset}>
+    <form onSubmit={formikProps.handleSubmit}>
       Default:
       <FormikSwitch label="Switch" name="switch"></FormikSwitch>
       Label Placement Bottom
@@ -94,7 +94,7 @@ Switches:
         formControlLabelProps={{ labelPlacement: "bottom" }}
       ></FormikSwitch>
       <Button type="submit">Save</Button>
-      <Button onClick={formikProps.resetForm}>Reset</Button>
+      <Button onClick={formikProps.handleReset}>Reset</Button>
     </form>
   )}
 />
@@ -114,7 +114,7 @@ Selects:
     });
   }}
   render={(formikProps: FormikProps<any>) => (
-    <form onSubmit={formikProps.handleSubmit} onReset={formikProps.handleReset}>
+    <form onSubmit={formikProps.handleSubmit}>
       Default:
       <FormikSelect
         label="Select"
@@ -135,7 +135,7 @@ Selects:
         ]}
       ></FormikSelect>
       <Button type="submit">Save</Button>
-      <Button onClick={formikProps.resetForm}>Reset</Button>
+      <Button onClick={formikProps.handleReset}>Reset</Button>
     </form>
   )}
 />
@@ -157,7 +157,7 @@ For more information: https://jaredpalmer.com/formik/docs/api/fastfield
     });
   }}
   render={(formikProps: FormikProps<any>) => (
-    <form onSubmit={formikProps.handleSubmit} onReset={formikProps.handleReset}>
+    <form onSubmit={formikProps.handleSubmit}>
       Custom Component:
       <FastField
         name="custom"
@@ -200,7 +200,7 @@ For more information: https://jaredpalmer.com/formik/docs/api/fastfield
         )}
       />
       <Button type="submit">Save</Button>
-      <Button onClick={formikProps.resetForm}>Reset</Button>
+      <Button onClick={formikProps.handleReset}>Reset</Button>
     </form>
   )}
 />

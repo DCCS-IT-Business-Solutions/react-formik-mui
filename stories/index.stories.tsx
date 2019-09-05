@@ -39,10 +39,7 @@ storiesOf("Formik", module).add("TextFields", () => (
       });
     }}
     render={(formikProps: FormikProps<any>) => (
-      <form
-        onSubmit={formikProps.handleSubmit}
-        onReset={formikProps.handleReset}
-      >
+      <form onSubmit={formikProps.handleSubmit}>
         Default:
         <br></br>
         <FormikTextField label="First Name" name="firstName"></FormikTextField>
@@ -458,7 +455,7 @@ const model2 = {
 //     render={(formikProps: FormikProps<any>) => (
 //       <form
 //         onSubmit={formikProps.handleSubmit}
-//         onReset={formikProps.handleReset}
+//
 //       >
 //         Default:
 //         <br></br>
@@ -495,10 +492,7 @@ storiesOf("Formik", module).add("Datepicker", () => (
       });
     }}
     render={(formikProps: FormikProps<any>) => (
-      <form
-        onSubmit={formikProps.handleSubmit}
-        onReset={formikProps.handleReset}
-      >
+      <form onSubmit={formikProps.handleSubmit}>
         Default:
         <br></br>
         <MuiPickersUtilsProvider utils={DateFnsUtils}>
@@ -524,10 +518,7 @@ storiesOf("Formik", module).add("Switches", () => (
       });
     }}
     render={(formikProps: FormikProps<any>) => (
-      <form
-        onSubmit={formikProps.handleSubmit}
-        onReset={formikProps.handleReset}
-      >
+      <form onSubmit={formikProps.handleSubmit}>
         Default:
         <br></br>
         <FormikSwitch label="Switch" name="switch"></FormikSwitch>
@@ -560,10 +551,7 @@ storiesOf("Formik", module).add("Selects", () => (
       });
     }}
     render={(formikProps: FormikProps<any>) => (
-      <form
-        onSubmit={formikProps.handleSubmit}
-        onReset={formikProps.handleReset}
-      >
+      <form onSubmit={formikProps.handleSubmit}>
         Default:
         <br></br>
         <FormikSelect
@@ -606,10 +594,7 @@ storiesOf("Formik", module).add("Checkboxes", () => (
       });
     }}
     render={(formikProps: FormikProps<any>) => (
-      <form
-        onSubmit={formikProps.handleSubmit}
-        onReset={formikProps.handleReset}
-      >
+      <form onSubmit={formikProps.handleSubmit}>
         Default:
         <br></br>
         <FormikCheckbox label="Checkbox" name="checkbox"></FormikCheckbox>
@@ -641,10 +626,7 @@ storiesOf("Formik", module).add("Radio Buttons", () => (
       });
     }}
     render={(formikProps: FormikProps<any>) => (
-      <form
-        onSubmit={formikProps.handleSubmit}
-        onReset={formikProps.handleReset}
-      >
+      <form onSubmit={formikProps.handleSubmit}>
         <FormControl>
           <FormLabel>Gender</FormLabel>
           <RadioGroup name="radioGroup">
@@ -679,10 +661,7 @@ storiesOf("Formik", module).add("Custom Components", () => (
       });
     }}
     render={(formikProps: FormikProps<any>) => (
-      <form
-        onSubmit={formikProps.handleSubmit}
-        onReset={formikProps.handleReset}
-      >
+      <form onSubmit={formikProps.handleSubmit}>
         Custom Component:
         <br></br>
         <FastField
@@ -758,10 +737,7 @@ storiesOf("Formik", module).add("Huge Form", () => (
           });
         }}
         render={(formikProps: FormikProps<any>) => (
-          <form
-            onSubmit={formikProps.handleSubmit}
-            onReset={formikProps.handleReset}
-          >
+          <form onSubmit={formikProps.handleSubmit}>
             {Object.keys(formikProps.initialValues).map((property, index) => {
               return (
                 <FormikTextField
