@@ -25,7 +25,13 @@
     "filter",
     "paging",
     "javascript",
-    "typescript"
+    "typescript",
+    "materialUI",
+    "material UI",
+    "materialUI",
+    "ui",
+    "wrapper",
+    "formik"
   ],
   "author": "Manuel Vitzthum",
   "license": "MIT",
