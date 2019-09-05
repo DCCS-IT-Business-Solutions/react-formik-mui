@@ -27,11 +27,14 @@
     "javascript",
     "typescript",
     "materialUI",
+    "material-UI",
     "material UI",
     "materialUI",
     "ui",
     "wrapper",
-    "formik"
+    "formik",
+    "easy to use",
+    "form"
   ],
   "author": "Manuel Vitzthum",
   "license": "MIT",
