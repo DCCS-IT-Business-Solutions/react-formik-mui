@@ -18,7 +18,7 @@ This command will download and install react-formik-mui
 react-formik-mui combines Formik with MaterialUI-Components
 
 For example:
-A <FormikTextField> renders a <FastField> with a Material-UI <TextField>
+A FormikTextField renders a FastField with a Material-UI <TextField>
 
 FormikTextfield accepts every prop a Material-UI Textfield would accept and passes it down directly to the Textfield.
 
