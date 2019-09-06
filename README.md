@@ -32,6 +32,7 @@ A FormikTextField renders a FastField with a Material-UI <TextField>
 FormikTextfield accepts every prop a Material-UI Textfield would accept and passes it down directly to the Textfield.
 
 Since this project is still very young, be aware that this could change in the future.
+
 If you want to see how it works for the others components, feel free to look at the source code
 
 ```javascript
