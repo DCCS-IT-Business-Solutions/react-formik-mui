@@ -16,7 +16,155 @@ This command will download and install react-formik-mui
 
 react-formik-mui combines Formik with MaterialUI-Components
 
-Here is a simple example:
+For example:
+A <FormikTextField> renders a <FastField> with a Material-UI <TextField>
+
+FormikTextfield accepts every prop a Material-UI Textfield would accept and passes it down directly to the Textfield.
+
+Since this project is still very young, be aware that this could change in the future.
+If you want to see how it works for the others components, feel free to look at the source code
+
+```javascript
+//TextField Sourcecode-Sample
+
+<FastField
+  name={name}
+  render={({ field, form }: FastFieldProps<any>) => (
+    <TextField
+      {...defaultProps}
+      {...field}
+      // Material UI:
+      // => || ""  is needed for the label to work properly when Formik "handleReset" is used
+      value={field.value || ""}
+      error={(form.errors && form.errors[name] != null) || error}
+      helperText={(form.errors && form.errors[name]) || helperText}
+      {...others}
+    />
+  )}
+  {...fastFieldProps}
+/>
+```
+
+Checkbox is already a bit different.
+If you want to pass props to die Material UI Checkbox you have to write do it like this:
+
+```javascript
+<FormikCheckbox
+  label="Checkbox"
+  name="checkbox"
+  checkBoxProps={{ disabled: true }}
+></FormikCheckbox>
+```
+
+And here is why:
+
+```javascript
+//Checkbox Sourcecode-Sample
+
+<FastField
+  name={name}
+  render={({ field, form }: FastFieldProps<any>) => (
+    <React.Fragment>
+      <FormControlLabel
+        control={<Checkbox {...field} {...checkBoxProps} />}
+        label={label}
+        {...formControlLabelProps}
+      />
+      <FormHelperText
+        error={(form.errors && form.errors[name] != null) || error}
+      >
+        {(form.errors && form.errors[name]) || helperText}
+      </FormHelperText>
+    </React.Fragment>
+  )}
+  {...fastFieldProps}
+/>
+```
+
+Things you can do:
+Please note, that your fields must be in side of the <Formik> component.
+For simplicity reasons, the following examples only show the fields itself.
+Further down you can see everything combined. :)
+
+```javascript
+
+//Standard Textfield
+<FormikTextField label="First Name" name="firstName"></FormikTextField>
+
+//Number Textfield
+<FormikTextField
+  label="Salary"
+  name="salary"
+  type="number"
+></FormikTextField>
+
+//Multiline Textfield
+<FormikTextField
+  label="Multiline"
+  name="multiline"
+  multiline
+></FormikTextField>
+
+//With Helpertext
+<FormikTextField
+  label="Helpertext"
+  name="helpertext"
+  helperText="Info"
+></FormikTextField>
+
+//Error
+<FormikTextField
+          label="Error"
+          name="error"
+          error={true}
+          helperText="Error"
+        ></FormikTextField>
+
+        //Different Variant s
+        <FormikTextField
+          label="Variant Outline"
+          name="outline"
+          variant="outlined"
+        ></FormikTextField>
+
+        <FormikTextField
+          label="Variant filled"
+          name="filled"
+          variant="filled"
+        ></FormikTextField>
+
+        //Password
+        <FormikTextField
+          label="Password"
+          name="password"
+          type="password"
+        ></FormikTextField>
+
+        //InputAdornments
+        <FormikTextField
+          label="Input Adornments"
+          name="adornments"
+          InputProps={{
+            startAdornment: (
+              <InputAdornment position="start">
+                <AccountCircle></AccountCircle>
+              </InputAdornment>
+            )
+          }}
+        ></FormikTextField>
+```
+
+You can also pass props to the FastField via the optional prop fastFieldProps if needed
+
+```javascript
+<FormikTextField
+  label="First Name"
+  name="firstName"
+  fastFieldProps={{ style: { marginBottom: "5px" } }}
+></FormikTextField>
+```
+
+Here is are some examples with Formik:
 
 ```javascript
 <Formik
