@@ -2,6 +2,7 @@ import * as React from "react";
 
 import { storiesOf } from "@storybook/react";
 import { FormikTextField } from "../src/FormikTextField";
+import { FormikAutocomplete } from "../src/FormikAutocomplete";
 import { FormikDatepicker } from "../src/FormikDatepicker";
 //import { MBFSTextField } from "../src/MBFSTextField";
 import { Formik, FormikProps, FastField, FastFieldProps } from "formik";
@@ -291,6 +292,36 @@ storiesOf("Formik", module).add("Radio Buttons", () => (
           </RadioGroup>
         </FormControl>
         <br></br>
+        <Button type="submit">Save</Button>
+        <Button onClick={formikProps.handleReset}>Reset</Button>
+      </form>
+    )}
+  />
+));
+
+storiesOf("Autocomplete", module).add("Autocomplete", () => (
+  <Formik
+    initialValues={{
+      country: ""
+    }}
+    onSubmit={(values, actions) => {
+      setTimeout(() => {
+        alert(JSON.stringify(values, null, 2));
+      });
+    }}
+    render={(formikProps: FormikProps<any>) => (
+      <form onSubmit={formikProps.handleSubmit} autoComplete="off">
+        <FormikAutocomplete
+          name="country"
+          label="Länder"
+          onLoadOptions={(q: string) => [
+            { id: 1, value: "test 1" },
+            { id: 2, value: "test 2" },
+            { id: 3, value: "test 3" }
+          ]}
+          textProp={(value: any) => value.name}
+          valueProp={(value: any) => value.name}
+        />
         <Button type="submit">Save</Button>
         <Button onClick={formikProps.handleReset}>Reset</Button>
       </form>
