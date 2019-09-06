@@ -56,7 +56,7 @@ If you want to pass props to die Material UI Checkbox you have to write do it li
 ></FormikCheckbox>
 ```
 
-And here is why:
+And here is why
 
 ```javascript
 //Checkbox Sourcecode-Sample
