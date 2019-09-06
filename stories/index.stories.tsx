@@ -319,8 +319,8 @@ storiesOf("Autocomplete", module).add("Autocomplete", () => (
             { id: 2, value: "test 2" },
             { id: 3, value: "test 3" }
           ]}
-          textProp={(value: any) => value.name}
-          valueProp={(value: any) => value.name}
+          textProp={(value: any) => value.value}
+          valueProp={(value: any) => value.id}
         />
         <Button type="submit">Save</Button>
         <Button onClick={formikProps.handleReset}>Reset</Button>
