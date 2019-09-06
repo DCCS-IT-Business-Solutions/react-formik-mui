@@ -13,6 +13,15 @@ You should install [react-formik-mui with npm or yarn](https://www.npmjs.com/pac
 
 This command will download and install react-formik-mui
 
+## Available Components
+
+FormikTextField (Material UI TextField)
+FormikSelect (Material UI Select)
+FormikCheckbox (Material UI Checkbox)
+FormikRadio (Material UI Radiobutton)
+FormikSwitch (Material UI Switch)
+FormikDatepicker (Material UI Pickers KeyboardDatepicker )
+
 ## How it works
 
 react-formik-mui combines Formik with MaterialUI-Components
