@@ -114,44 +114,45 @@ Further down you can see everything combined. :)
 
 //Error
 <FormikTextField
-          label="Error"
-          name="error"
-          error={true}
-          helperText="Error"
-        ></FormikTextField>
+  label="Error"
+  name="error"
+  error={true}
+  helperText="Error"
+></FormikTextField>
 
-        //Different Variant s
-        <FormikTextField
-          label="Variant Outline"
-          name="outline"
-          variant="outlined"
-        ></FormikTextField>
+//Different Variant s
+<FormikTextField
+  label="Variant Outline"
+  name="outline"
+  variant="outlined"
+></FormikTextField>
 
-        <FormikTextField
-          label="Variant filled"
-          name="filled"
-          variant="filled"
-        ></FormikTextField>
+<FormikTextField
+  label="Variant filled"
+  name="filled"
+  variant="filled"
+></FormikTextField>
 
-        //Password
-        <FormikTextField
-          label="Password"
-          name="password"
-          type="password"
-        ></FormikTextField>
+//Password
+<FormikTextField
+  label="Password"
+  name="password"
+  type="password"
+></FormikTextField>
 
-        //InputAdornments
-        <FormikTextField
-          label="Input Adornments"
-          name="adornments"
-          InputProps={{
-            startAdornment: (
-              <InputAdornment position="start">
-                <AccountCircle></AccountCircle>
-              </InputAdornment>
-            )
-          }}
-        ></FormikTextField>
+//InputAdornments
+<FormikTextField
+  label="Input Adornments"
+  name="adornments"
+  InputProps={{
+    startAdornment: (
+      <InputAdornment position="start">
+        <AccountCircle></AccountCircle>
+      </InputAdornment>
+    )
+  }}
+></FormikTextField>
+
 ```
 
 You can also pass props to the FastField via the optional prop fastFieldProps if needed
