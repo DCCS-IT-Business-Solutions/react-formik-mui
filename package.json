@@ -45,7 +45,7 @@
     "url": "https://github.com/DCCS-IT-Business-Solutions/react-formik-mui/issues"
   },
   "homepage": "https://github.com/DCCS-IT-Business-Solutions/react-formik-mui#readme",
-  "peerDependencies": {
+  "dependencies": {
     "@material-ui/pickers": "^3.1.2",
     "@dccs/react-autocomplete-mui": "^0.4.1",
     "react": "^16.8.6",
