@@ -19,12 +19,9 @@
   },
   "keywords": [
     "npm",
+    "yarn",
     "node",
     "react",
-    "table",
-    "sorting",
-    "filter",
-    "paging",
     "javascript",
     "typescript",
     "materialUI",
@@ -34,7 +31,6 @@
     "ui",
     "wrapper",
     "formik",
-    "easy to use",
     "form",
     "mui",
     "formik-mui"
@@ -45,13 +41,6 @@
     "url": "https://github.com/DCCS-IT-Business-Solutions/react-formik-mui/issues"
   },
   "homepage": "https://github.com/DCCS-IT-Business-Solutions/react-formik-mui#readme",
-  "dependencies": {
-    // "@material-ui/pickers": "^3.1.2",
-    // "@dccs/react-autocomplete-mui": "^0.4.1",
-    // "@material-ui/core": "^4.3.1",
-    // "@material-ui/icons": "^4.2.1",
-    "formik": "^1.5.8"
-  },
   "devDependencies": {
     "@date-io/date-fns": "^1.3.9",
     "@dccs/react-autocomplete-mui": "^0.4.1",
