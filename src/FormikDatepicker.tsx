@@ -1,38 +1,31 @@
 import * as React from "react";
 import { FastField, FastFieldProps } from "formik";
 import { KeyboardDatePicker } from "@material-ui/pickers";
-import { TextFieldProps } from "@material-ui/core/TextField";
+import { KeyboardDatePickerProps } from "@material-ui/pickers/DatePicker/DatePicker";
 
-export interface IBaseProps {
+interface IBaseProps {
   name: string;
-  fastFieldProps?: any;
+  label?: string;
+  helperText?: string;
+  error?: boolean;
+  value?: any;
+  onChange?: (date: any, value?: string | null) => void;
 }
 
-export type FormikDatepickerProps = IBaseProps & TextFieldProps;
+export type FormikDatepickerProps = IBaseProps &
+  Omit<KeyboardDatePickerProps, "onChange" | "value">;
 
 export function FormikDatepicker(props: FormikDatepickerProps) {
-  const {
-    name,
-    error,
-    variant,
-    onChange,
-    helperText,
-    fastFieldProps,
-    ...others
-  } = props;
+  const { name, error, helperText, ...others } = props;
 
   const defaultProps = {
     margin: "normal" as "normal",
     style: { minWidth: "240px" },
     format: "dd.MM.yyyy",
     placeholder: "tt.mm.jjjj",
-    // cancelLabel: "Schließen",
-    // clearLabel: "Löschen",
-    // todayLabel: "Heute",
-    // okLabel: "OK",
     clearable: true,
     autoOk: true,
-    variant: "inline" as "inline" // TODO: Why do i have to write it like this? >:(
+    variant: "inline" as any
   };
 
   return (
@@ -53,7 +46,6 @@ export function FormikDatepicker(props: FormikDatepickerProps) {
           {...others}
         />
       )}
-      {...fastFieldProps}
     />
   );
 }

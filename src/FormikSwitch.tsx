@@ -2,26 +2,29 @@ import * as React from "react";
 import Switch, { SwitchProps } from "@material-ui/core/Switch";
 import { FastField, FastFieldProps } from "formik";
 import { FormControlLabel, FormHelperText } from "@material-ui/core";
+import { FormControlLabelProps } from "@material-ui/core/FormControlLabel";
+import { FormHelperTextProps } from "@material-ui/core/FormHelperText";
 
-export interface IFormikSwitchProps {
+interface IBaseProps {
   name: string;
   label?: string;
   helperText?: string;
   error?: boolean;
-  formControlLabelProps?: any; // any because the interface FormControlLabelProps has required properties
-  switchProps?: SwitchProps;
-  fastFieldProps?: any;
+  formControlLabelProps?: Omit<FormControlLabelProps, "control" | "label">;
+  formHelperTextProps?: FormHelperTextProps;
 }
 
-export function FormikSwitch(props: IFormikSwitchProps) {
+export type FormikSwitchProps = IBaseProps & SwitchProps;
+
+export function FormikSwitch(props: FormikSwitchProps) {
   const {
     name,
     label,
     helperText,
     error,
     formControlLabelProps,
-    switchProps,
-    fastFieldProps
+    formHelperTextProps,
+    ...others
   } = props;
 
   return (
@@ -30,18 +33,18 @@ export function FormikSwitch(props: IFormikSwitchProps) {
       render={({ field, form }: FastFieldProps<any>) => (
         <React.Fragment>
           <FormControlLabel
-            control={<Switch {...field} {...switchProps} />}
+            control={<Switch {...field} {...others} />}
             label={label}
             {...formControlLabelProps}
           />
           <FormHelperText
             error={(form.errors && form.errors[name] != null) || error}
+            {...formHelperTextProps}
           >
             {(form.errors && form.errors[name]) || helperText}
           </FormHelperText>
         </React.Fragment>
       )}
-      {...fastFieldProps}
     />
   );
 }

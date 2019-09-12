@@ -43,7 +43,7 @@ storiesOf("Formik", module).add("TextFields", () => (
       <form onSubmit={formikProps.handleSubmit}>
         Default:
         <br></br>
-        <FormikTextField label="First Name" name="firstName"></FormikTextField>
+        <FormikTextField label="First Name" name="firstName" />
         <br></br>
         <br></br>
         Type="number":
@@ -124,7 +124,9 @@ storiesOf("Formik", module).add("TextFields", () => (
           }}
         ></FormikTextField>
         <br></br>
-        <Button type="submit">Save</Button>
+        <Button type="submit" disabled={formikProps.isSubmitting}>
+          Save
+        </Button>
         <Button onClick={formikProps.handleReset}>Reset</Button>
       </form>
     )}
@@ -146,7 +148,7 @@ storiesOf("Formik", module).add("Datepicker", () => (
         <form onSubmit={formikProps.handleSubmit}>
           Default:
           <br></br>
-          <FormikDatepicker name="date" label="Date"></FormikDatepicker>
+          <FormikDatepicker name="date" label="Date" />
           <br></br>
           <Button type="submit">Save</Button>
           <Button onClick={formikProps.handleReset}>Reset</Button>
@@ -212,7 +214,7 @@ storiesOf("Formik", module).add("Selects", () => (
             { key: 2, value: "Entry 2" },
             { key: 3, value: "Entry 3" }
           ]}
-        ></FormikSelect>
+        />
         <br></br>
         Without Label:
         <br></br>
@@ -299,7 +301,7 @@ storiesOf("Formik", module).add("Radio Buttons", () => (
   />
 ));
 
-storiesOf("Autocomplete", module).add("Autocomplete", () => (
+storiesOf("Formik", module).add("Autocomplete", () => (
   <Formik
     initialValues={{
       country: ""

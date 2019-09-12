@@ -1,9 +1,7 @@
 /// <reference types="react" />
-import { FastFieldProps } from "formik";
 import { IAutocompleteProps } from "@dccs/react-autocomplete-mui";
 interface IBaseProps {
     name: string;
-    fastFieldProps?: FastFieldProps;
 }
 export declare type FormikAutocompleteProps = IBaseProps & IAutocompleteProps;
 export declare function FormikAutocomplete(props: FormikAutocompleteProps): JSX.Element;
@@ -14,15 +12,6 @@ export declare namespace FormikAutocomplete {
         "displayName": string;
         "props": {
             "name": {
-                "defaultValue": null;
-                "description": string;
-                "name": string;
-                "required": boolean;
-                "type": {
-                    "name": string;
-                };
-            };
-            "fastFieldProps": {
                 "defaultValue": null;
                 "description": string;
                 "name": string;

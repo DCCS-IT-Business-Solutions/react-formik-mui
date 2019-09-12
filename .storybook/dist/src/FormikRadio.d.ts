@@ -1,15 +1,18 @@
 /// <reference types="react" />
 import { RadioProps } from "@material-ui/core/Radio";
-export interface IFormikRadioProps extends RadioProps {
+import { FormHelperTextProps } from "@material-ui/core/FormHelperText";
+import { FormControlLabelProps } from "@material-ui/core/FormControlLabel";
+interface IBaseProps {
     name: string;
     value: any;
     label?: string;
     helperText?: string;
     error?: boolean;
-    formControlLabelProps?: any;
-    fastFieldProps?: any;
+    formControlLabelProps?: Omit<FormControlLabelProps, "control" | "label">;
+    formHelperTextProps?: FormHelperTextProps;
 }
-export declare function FormikRadio(props: IFormikRadioProps): JSX.Element;
+export declare type FormikRadioProps = IBaseProps & RadioProps;
+export declare function FormikRadio(props: FormikRadioProps): JSX.Element;
 export declare namespace FormikRadio {
     var displayName: string;
     var __docgenInfo: {
@@ -70,7 +73,7 @@ export declare namespace FormikRadio {
                     "name": string;
                 };
             };
-            "fastFieldProps": {
+            "formHelperTextProps": {
                 "defaultValue": null;
                 "description": string;
                 "name": string;
@@ -98,6 +101,15 @@ export declare namespace FormikRadio {
                 };
             };
             "icon": {
+                "defaultValue": null;
+                "description": string;
+                "name": string;
+                "required": boolean;
+                "type": {
+                    "name": string;
+                };
+            };
+            "type": {
                 "defaultValue": null;
                 "description": string;
                 "name": string;
@@ -2455,15 +2467,6 @@ export declare namespace FormikRadio {
                     "name": string;
                 };
             };
-            "type": {
-                "defaultValue": null;
-                "description": string;
-                "name": string;
-                "required": boolean;
-                "type": {
-                    "name": string;
-                };
-            };
             "checked": {
                 "defaultValue": null;
                 "description": string;
@@ -2638,3 +2641,4 @@ export declare namespace FormikRadio {
         };
     };
 }
+export {};

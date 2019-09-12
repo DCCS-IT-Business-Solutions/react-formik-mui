@@ -4,16 +4,15 @@ import { IAutocompleteProps, Autocomplete } from "@dccs/react-autocomplete-mui";
 
 interface IBaseProps {
   name: string;
-  fastFieldProps?: FastFieldProps;
 }
 
 export type FormikAutocompleteProps = IBaseProps & IAutocompleteProps;
 
 export function FormikAutocomplete(props: FormikAutocompleteProps) {
-  const { name, error, helperText, fastFieldProps, ...others } = props;
+  const { name, error, helperText, ...others } = props;
 
   const defaultProps = {
-    margin: "normal" as "normal",
+    margin: "normal" as any,
     style: { minWidth: "240px" }
   };
 
@@ -33,7 +32,6 @@ export function FormikAutocomplete(props: FormikAutocompleteProps) {
           {...others}
         />
       )}
-      {...fastFieldProps}
     />
   );
 }

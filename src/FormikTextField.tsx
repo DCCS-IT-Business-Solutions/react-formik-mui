@@ -5,24 +5,26 @@ import { FastField, FastFieldProps } from "formik";
 interface IBaseProps {
   name: string;
   type?: "text" | "number" | "password";
-  fastFieldProps?: any;
 }
 
-export type FormikTextFieldProps = IBaseProps & TextFieldProps;
+export type FormikTextFieldProps = IBaseProps &
+  Omit<TextFieldProps, "name" | "type">;
+
+const defaultProps = {
+  margin: "normal" as "normal",
+  style: { minWidth: "240px" }
+};
 
 export function FormikTextField(props: FormikTextFieldProps) {
-  const { name, error, helperText, fastFieldProps, ...others } = props;
-
-  const defaultProps = {
-    margin: "normal" as "normal",
-    style: { minWidth: "240px" }
-  };
+  const { name, variant, error, helperText, ...others } = props;
 
   return (
     <FastField
       name={name}
       render={({ field, form }: FastFieldProps<any>) => (
         <TextField
+          // Quick fix for variant when using typescript
+          variant={variant as any}
           {...defaultProps}
           {...field}
           // Material UI Bug:
@@ -33,7 +35,6 @@ export function FormikTextField(props: FormikTextFieldProps) {
           {...others}
         />
       )}
-      {...fastFieldProps}
     />
   );
 }

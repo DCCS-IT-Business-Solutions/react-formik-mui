@@ -1,6 +1,7 @@
 # react-formik-mui &middot; ![travis build](https://img.shields.io/travis/DCCS-IT-Business-Solutions/react-formik-mui.svg) ![npm version](https://img.shields.io/npm/v/@dccs/react-formik-mui.svg)
 
 Simple Formik <-> MaterialUI wrappers.
+
 Here is a Demo:[https://dccs-it-business-solutions.github.io/react-formik-mui/](https://dccs-it-business-solutions.github.io/react-formik-mui/)
 
 ## Installation
@@ -8,432 +9,199 @@ Here is a Demo:[https://dccs-it-business-solutions.github.io/react-formik-mui/](
 You should install [react-formik-mui with npm or yarn](https://www.npmjs.com/package/@dccs/react-formik-mui):
 
     npm install @dccs/react-formik-mui
-    or
+
+or
+
     yarn add @dccs/react-formik-mui
 
 This command will download and install react-formik-mui
 
+Dependencies required by FormikTextField,-Select,-Switch,-Checkbox,-Radio
+
+    npm install formik
+    npm install @material-ui/core
+
+Dependencies required by FormikDatepicker
+[You can also look at the documentation of the MUI-Datepicker](https://material-ui-pickers.dev/getting-started/installation)
+npm install @material-ui/pickers
+npm install @date-io/date-fns@latest
+npm install date-fns@latest
+Dependencies required by FormikAutocomplete
+npm install @dccs/react-autocomplete-mui
+
 ## Available Components
 
-FormikTextField (Material UI TextField)
-FormikSelect (Material UI Select)
-FormikCheckbox (Material UI Checkbox)
-FormikRadio (Material UI Radiobutton)
-FormikSwitch (Material UI Switch)
-FormikDatepicker (Material UI Pickers KeyboardDatepicker )
+All MUI-Components are used inside of the renderfunction of a Formik-FastField.
+
+- FormikTextField (Material UI TextField) - Renders a MUI-TextField
+- FormikSelect (Material UI Select) - Renders a MUI-FormControl with a MUI-Select and a MUI-FormHelperText
+- FormikCheckbox (Material UI Checkbox) - Renders a MUI-FormControlLabel with a MUI-Checkbox and a MUI-FormHelperText
+- FormikRadio (Material UI Radiobutton) - Renders a MUI-FormControlLabel with a MUI-Radio and a MUI-FormHelperText
+- FormikSwitch (Material UI Switch) - Renders a MUI-FormControlLabel with a MUI-Radio and a MUI-FormHelperText
+- FormikDatepicker (Material UI Pickers KeyboardDatepicker) - Renders a MUI-KeyboardDatepicker
+- FormikAutoComplete ([@DCCS Autocomplete](https://www.npmjs.com/package/@dccs/react-autocomplete-mui)) - Renders a Autocomplete-Component
 
 ## How it works
 
-react-formik-mui combines Formik with MaterialUI-Components
+[Codesandbox with all components](https://codesandbox.io/s/trusting-star-d5rup)
 
-For example:
-A FormikTextField renders a FastField with a Material-UI <TextField>
+More Examples:
 
-FormikTextfield accepts every prop a Material-UI Textfield would accept and passes it down directly to the Textfield.
+**_FormikTextField_**
 
-Since this project is still very young, be aware that this could change in the future.
+FormikTextField-Props are almost identical to [Material-UI TextField Props](https://material-ui.com/de/api/text-field/)
+The only difference is, that "name" is required.
 
-If you want to see how it works for the others components, feel free to look at the source code
+    <FormikTextField  label="First Name"  name="firstName" />
 
-```javascript
-//TextField Sourcecode-Sample
+    <FormikTextField label="Salary" name="salary" type="number" />
 
-<FastField
-  name={name}
-  render={({ field, form }: FastFieldProps<any>) => (
-    <TextField
-      {...defaultProps}
-      {...field}
-      // Material UI:
-      // => || ""  is needed for the label to work properly when Formik "handleReset" is used
-      value={field.value || ""}
-      error={(form.errors && form.errors[name] != null) || error}
-      helperText={(form.errors && form.errors[name]) || helperText}
-      {...others}
+    <FormikTextField label="Multiline" name="multiline" multiline />
+
+    <FormikTextField label="Helpertext" name="helpertext" helperText="Info" />
+
+    <FormikTextField label="Error" name="error" error={true} helperText="Error" />
+
+    <FormikTextField label="Variant Outline" name="outline" variant="outlined" />
+
+    <FormikTextField label="Variant filled" name="filled" variant="filled" />
+
+    <FormikTextField label="Password" name="password" type="password" />
+
+    <FormikTextField
+    	label="Input Adornments"
+    	name="adornments"
+    	InputProps={{
+    		startAdornment: (
+    			<InputAdornment  position="start">
+    			<AccountCircle></AccountCircle>
+    			</InputAdornment>
+    		)
+    	}}
     />
-  )}
-  {...fastFieldProps}
-/>
-```
 
-Checkbox is already a bit different.
-If you want to pass props to die Material UI Checkbox you have to write do it like this:
+**_FormikCheckbox_**
 
-```javascript
+FormikCheckbox-Props are almost identical to [https://material-ui.com/api/checkbox/](https://material-ui.com/api/checkbox/)
+
+It also accepts formControlLabelProps and formHelperTextProps.
+
+    <FormikCheckbox  label="Checkbox"  name="checkbox"></FormikCheckbox>
+
+Label Placement
 <FormikCheckbox
-  label="Checkbox"
-  name="checkbox"
-  checkBoxProps={{ disabled: true }}
-></FormikCheckbox>
-```
-
-And here is why
-
-```javascript
-//Checkbox Sourcecode-Sample
-
-<FastField
-  name={name}
-  render={({ field, form }: FastFieldProps<any>) => (
-    <React.Fragment>
-      <FormControlLabel
-        control={<Checkbox {...field} {...checkBoxProps} />}
-        label={label}
-        {...formControlLabelProps}
-      />
-      <FormHelperText
-        error={(form.errors && form.errors[name] != null) || error}
-      >
-        {(form.errors && form.errors[name]) || helperText}
-      </FormHelperText>
-    </React.Fragment>
-  )}
-  {...fastFieldProps}
+label="Checkbox Bottom"
+name="checkboxBottom"
+formControlLabelProps={{ labelPlacement:  "bottom" }}
 />
-```
 
-Things you can do:
-Please note, that your fields must be in side of the <Formik> component.
-For simplicity reasons, the following examples only show the fields itself.
-Further down you can see everything combined. :)
+**_FormikSwitch_**
 
-```javascript
+FormikSwitch-Props are almost identical to [https://material-ui.com/api/switch/](https://material-ui.com/api/switch/)
 
-//Standard Textfield
-<FormikTextField label="First Name" name="firstName"></FormikTextField>
+It also accepts formControlLabelProps and formHelperTextProps.
+<FormikSwitch  label="Switch"  name="switch"></FormikSwitch>
 
-//Number Textfield
-<FormikTextField
-  label="Salary"
-  name="salary"
-  type="number"
-></FormikTextField>
+Label Placement
 
-//Multiline Textfield
-<FormikTextField
-  label="Multiline"
-  name="multiline"
-  multiline
-></FormikTextField>
+    <FormikSwitch
+    	label="Switch Bottom"
+    	name="switchBottom"
+    	formControlLabelProps={{ labelPlacement:  "bottom" }}
+    />
 
-//With Helpertext
-<FormikTextField
-  label="Helpertext"
-  name="helpertext"
-  helperText="Info"
-></FormikTextField>
+**_FormikSelect_**
+FormikSelect-Props are almost identical to [https://material-ui.com/api/select/](https://material-ui.com/api/select/)
 
-//Error
-<FormikTextField
-  label="Error"
-  name="error"
-  error={true}
-  helperText="Error"
-></FormikTextField>
+It also accepts formControlProps and formHelperTextProps.
 
-//Different Variant s
-<FormikTextField
-  label="Variant Outline"
-  name="outline"
-  variant="outlined"
-></FormikTextField>
+    <FormikSelect
+    	label="Select"
+    	name="select"
+    	options={[
+    		{ key:  1, value:  "Entry 1" },
+    		{ key:  2, value:  "Entry 2" },
+    		{ key:  3, value:  "Entry 3" }
+    	]}
+    />
 
-<FormikTextField
-  label="Variant filled"
-  name="filled"
-  variant="filled"
-></FormikTextField>
+Without Label
 
-//Password
-<FormikTextField
-  label="Password"
-  name="password"
-  type="password"
-></FormikTextField>
+    <FormikSelect
+    	name="select2"
+    	options={[
+    		{ key:  1, value:  "Entry 1" },
+    		{ key:  2, value:  "Entry 2" },
+    		{ key:  3, value:  "Entry 3" }
+    	]}
+    />
 
-//InputAdornments
-<FormikTextField
-  label="Input Adornments"
-  name="adornments"
-  InputProps={{
-    startAdornment: (
-      <InputAdornment position="start">
-        <AccountCircle></AccountCircle>
-      </InputAdornment>
-    )
-  }}
-></FormikTextField>
+**_FormikRadio_**
 
-```
+FormikRadio-Props are almost identical to [https://material-ui.com/api/radio/](https://material-ui.com/api/radio/)
 
-You can also pass props to the FastField via the optional prop fastFieldProps if needed
+It also accepts formControlLabelProps and formHelperTextProps.
 
-```javascript
-<FormikTextField
-  label="First Name"
-  name="firstName"
-  fastFieldProps={{ style: { marginBottom: "5px" } }}
-></FormikTextField>
-```
+    <FormControl>
+    	<FormLabel>Gender</FormLabel>
+    	<RadioGroup  name="radioGroup">
+    		<FormikRadio  label="Female"  name="radioGroup"  value="female"  />
+    		<FormikRadio  label="Male"  name="radioGroup"  value="male"  />
+    		<FormikRadio  label="Other"  name="radioGroup"  value="other"  />
+    		<FormikRadio
+    		label="(Disabled option)"
+    		name="radioGroup"
+    		value="disabled"
+    		disabled
+    		/>
+    	</RadioGroup>
+    </FormControl>
 
-Here is are some examples with Formik:
+**_FormikDatepicker_**
 
-```javascript
-<Formik
-  initialValues={{
-    firstName: ""
-  }}
-  onSubmit={(values, actions) => {
-    setTimeout(() => {
-      alert(JSON.stringify(values, null, 2));
-    });
-  }}
-  render={(formikProps: FormikProps<any>) => (
-    <form onSubmit={formikProps.handleSubmit}>
-      <FormikTextField label="First Name" name="firstName"></FormikTextField>
+FormikDatepicker-Props are almost identical to [https://material-ui-pickers.dev/api/KeyboardDatePicker](https://material-ui-pickers.dev/api/KeyboardDatePicker)
 
-      <Button type="submit">Save</Button>
+    <MuiPickersUtilsProvider  utils={DateFnsUtils}>
+    	<FormikDatepicker  name="date"  label="Date"></FormikDatepicker>
+    </MuiPickersUtilsProvider>
 
-      <Button onClick={formikProps.handleReset}>Reset</Button>
-    </form>
-  )}
-/>
-```
-
-Checkboxes:
-
-```javascript
-<Formik
-  initialValues={{
-    checkbox: "",
-    checkboxBottom: ""
-  }}
-  onSubmit={(values, actions) => {
-    setTimeout(() => {
-      alert(JSON.stringify(values, null, 2));
-    });
-  }}
-  render={(formikProps: FormikProps<any>) => (
-    <form onSubmit={formikProps.handleSubmit}>
-      Default:
-      <FormikCheckbox label="Checkbox" name="checkbox"></FormikCheckbox>
-      With Label Placement Bottom
-      <FormikCheckbox
-        label="Checkbox Bottom"
-        name="checkboxBottom"
-        formControlLabelProps={{ labelPlacement: "bottom" }}
-      ></FormikCheckbox>
-      <Button type="submit">Save</Button>
-      <Button onClick={formikProps.handleReset}>Reset</Button>
-    </form>
-  )}
-/>
-```
-
-Switches:
-
-```javascript
-<Formik
-  initialValues={{
-    switch: "",
-    switchBottom: ""
-  }}
-  onSubmit={(values, actions) => {
-    setTimeout(() => {
-      alert(JSON.stringify(values, null, 2));
-    });
-  }}
-  render={(formikProps: FormikProps<any>) => (
-    <form onSubmit={formikProps.handleSubmit}>
-      Default:
-      <FormikSwitch label="Switch" name="switch"></FormikSwitch>
-      Label Placement Bottom
-      <FormikSwitch
-        label="Switch Bottom"
-        name="switchBottom"
-        formControlLabelProps={{ labelPlacement: "bottom" }}
-      ></FormikSwitch>
-      <Button type="submit">Save</Button>
-      <Button onClick={formikProps.handleReset}>Reset</Button>
-    </form>
-  )}
-/>
-```
-
-Selects:
-
-```javascript
-<Formik
-  initialValues={{
-    select: "",
-    select2: ""
-  }}
-  onSubmit={(values, actions) => {
-    setTimeout(() => {
-      alert(JSON.stringify(values, null, 2));
-    });
-  }}
-  render={(formikProps: FormikProps<any>) => (
-    <form onSubmit={formikProps.handleSubmit}>
-      Default:
-      <FormikSelect
-        label="Select"
-        name="select"
-        options={[
-          { key: 1, value: "Entry 1" },
-          { key: 2, value: "Entry 2" },
-          { key: 3, value: "Entry 3" }
-        ]}
-      ></FormikSelect>
-      Without Label:
-      <FormikSelect
-        name="select2"
-        options={[
-          { key: 1, value: "Entry 1" },
-          { key: 2, value: "Entry 2" },
-          { key: 3, value: "Entry 3" }
-        ]}
-      ></FormikSelect>
-      <Button type="submit">Save</Button>
-      <Button onClick={formikProps.handleReset}>Reset</Button>
-    </form>
-  )}
-/>
-```
-
-Selects:
-
-```javascript
-<Formik
-  initialValues={{
-    radioGroup: ""
-  }}
-  onSubmit={(values, actions) => {
-    setTimeout(() => {
-      alert(JSON.stringify(values, null, 2));
-    });
-  }}
-  render={(formikProps: FormikProps<any>) => (
-    <form onSubmit={formikProps.handleSubmit}>
-      <FormControl>
-        <FormLabel>Gender</FormLabel>
-        <RadioGroup name="radioGroup">
-          <FormikRadio label="Female" name="radioGroup" value="female" />
-          <FormikRadio label="Male" name="radioGroup" value="male" />
-          <FormikRadio label="Other" name="radioGroup" value="other" />
-          <FormikRadio
-            label="(Disabled option)"
-            name="radioGroup"
-            value="disabled"
-            disabled
-          />
-        </RadioGroup>
-      </FormControl>
-
-      <Button type="submit">Save</Button>
-      <Button onClick={formikProps.handleReset}>Reset</Button>
-    </form>
-  )}
-/>
-```
-
-Datepicker:
-
-The datepicker needs a bit more than "FormikDatepicker"
-
-The Material UI Datepicker only works if there is a MuiPickersUtilsProvider atleast one level higher
-
-We are using @date-io/date-fns date-fns@next for utils an localization.
-
-For more information: [material-ui-pickers](https://material-ui-pickers.dev/getting-started/installation)
-
-```javascript
-<MuiPickersUtilsProvider utils={DateFnsUtils}>
-  <Formik
-    initialValues={{
-      date: ""
-    }}
-    onSubmit={(values, actions) => {
-      setTimeout(() => {
-        alert(JSON.stringify(values, null, 2));
-      });
-    }}
-    render={(formikProps: FormikProps<any>) => (
-      <form onSubmit={formikProps.handleSubmit}>
-        Default:
-        <FormikDatepicker name="date" label="Date"></FormikDatepicker>
-        <Button type="submit">Save</Button>
-        <Button onClick={formikProps.handleReset}>Reset</Button>
-      </form>
-    )}
-  />
-</MuiPickersUtilsProvider>
-```
-
-Custom Components
+**_Custom Components_**
 
 For more information: https://jaredpalmer.com/formik/docs/api/fastfield
 
-```javascript
-<Formik
-  initialValues={{
-    custom: "",
-    custom2: ""
-  }}
-  onSubmit={(values, actions) => {
-    setTimeout(() => {
-      alert(JSON.stringify(values, null, 2));
-    });
-  }}
-  render={(formikProps: FormikProps<any>) => (
-    <form onSubmit={formikProps.handleSubmit}>
-      Custom Component:
-      <FastField
-        name="custom"
-        render={(fastFieldProps: FastFieldProps<any>) => (
-          <React.Fragment>
-            {/* Merge FastField-Props into Input */}
-            <input {...fastFieldProps.field} />
+    <FastField
+    	name="custom"
+    	render={(fastFieldProps: FastFieldProps<any>) => (
+    		<React.Fragment>
+    			{/* Merge FastField-Props into Input */}
+    			<input  {...fastFieldProps.field}  />
 
-            {/* Show Errormessage after Touch */}
-            {formikProps.touched.custom ? formikProps.errors.custom : null}
+    			{/* Show Errormessage after Touch */}
+    			{formikProps.touched.custom ? formikProps.errors.custom : null
+    		</React.Fragment>
+    	)}
+    />
 
-            {/* The next line will set a field error to "custom" and is only to demonstrate the error message*/}
-            {formikProps.setFieldError("custom", "Evil Error Message")}
-          </React.Fragment>
-        )}
-      />
-      Custom Component with handleChange:
-      <FastField
-        name="custom2"
-        render={(fastFieldProps: FastFieldProps<any>) => (
-          <React.Fragment>
-            {/* Merge FastField-Props into Input */}
-            <input
-              {...fastFieldProps.field}
-              onChange={(e: React.ChangeEvent<any>) => {
-                //Do stuff before HandleChange
+With HandleChange
 
-                formikProps.handleChange(e);
-
-                //Do stuff after HandleChange
-              }}
-            />
-
-            {/* Show Errormessage after Touch */}
-            {formikProps.touched.custom2 ? formikProps.errors.custom2 : null}
-
-            {/* The next line will set a field error to "custom" and is only to demonstrate the error message*/}
-            {formikProps.setFieldError("custom2", "Evil Error Message")}
-          </React.Fragment>
-        )}
-      />
-      <Button type="submit">Save</Button>
-      <Button onClick={formikProps.handleReset}>Reset</Button>
-    </form>
-  )}
-/>
-```
+    <FastField
+    	name="custom2"
+    	render={(fastFieldProps: FastFieldProps<any>) => (
+    		<React.Fragment>
+    			{/* Merge FastField-Props into Input */}
+    			<input
+    				{...fastFieldProps.field}
+    				onChange={(e: React.ChangeEvent<any>) => {
+    					//Do stuff before HandleChange
+    					formikProps.handleChange(e);
+    					//Do stuff after HandleChange
+    				}}
+    			/>
+    			{/* Show Errormessage after Touch */}
+    			{formikProps.touched.custom2 ? formikProps.errors.custom2 : null}
+    		</React.Fragment>
+    	)}
+    />
 
 ## Contributing
 

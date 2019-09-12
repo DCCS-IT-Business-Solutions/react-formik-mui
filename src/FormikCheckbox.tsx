@@ -2,26 +2,29 @@ import * as React from "react";
 import Checkbox, { CheckboxProps } from "@material-ui/core/Checkbox";
 import { FastField, FastFieldProps } from "formik";
 import { FormControlLabel, FormHelperText } from "@material-ui/core";
+import { FormHelperTextProps } from "@material-ui/core/FormHelperText";
+import { FormControlLabelProps } from "@material-ui/core/FormControlLabel";
 
-export interface IFormikCheckboxProps {
+interface IBaseProps {
   name: string;
   label?: string;
   helperText?: string;
   error?: boolean;
-  formControlLabelProps?: any; // any because the interface FormControlLabelProps has required properties
-  checkBoxProps?: CheckboxProps;
-  fastFieldProps?: any;
+  formControlLabelProps?: Omit<FormControlLabelProps, "control" | "label">;
+  formHelperTextProps?: FormHelperTextProps;
 }
 
-export function FormikCheckbox(props: IFormikCheckboxProps) {
+export type FormikCheckboxProps = IBaseProps & CheckboxProps;
+
+export function FormikCheckbox(props: FormikCheckboxProps) {
   const {
     name,
     label,
     helperText,
     error,
-    checkBoxProps,
     formControlLabelProps,
-    fastFieldProps
+    formHelperTextProps,
+    ...others
   } = props;
 
   return (
@@ -30,18 +33,18 @@ export function FormikCheckbox(props: IFormikCheckboxProps) {
       render={({ field, form }: FastFieldProps<any>) => (
         <React.Fragment>
           <FormControlLabel
-            control={<Checkbox {...field} {...checkBoxProps} />}
+            control={<Checkbox {...field} {...others} />}
             label={label}
             {...formControlLabelProps}
           />
           <FormHelperText
             error={(form.errors && form.errors[name] != null) || error}
+            {...formHelperTextProps}
           >
             {(form.errors && form.errors[name]) || helperText}
           </FormHelperText>
         </React.Fragment>
       )}
-      {...fastFieldProps}
     />
   );
 }

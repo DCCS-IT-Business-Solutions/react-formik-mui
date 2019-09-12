@@ -5,14 +5,15 @@ import FormControl, { FormControlProps } from "@material-ui/core/FormControl";
 import InputLabel from "@material-ui/core/InputLabel";
 import { FastField, FastFieldProps } from "formik";
 import { FormHelperText } from "@material-ui/core";
+import { FormHelperTextProps } from "@material-ui/core/FormHelperText";
 
 interface IBaseProps {
   name: string;
   options: any[];
   label?: string;
   helperText?: string;
-  fastFieldProps?: any;
   formControlProps?: FormControlProps;
+  formHelperTextProps?: FormHelperTextProps;
 }
 
 export type FormikSelectProps = IBaseProps & SelectProps;
@@ -25,7 +26,7 @@ export function FormikSelect(props: FormikSelectProps) {
     helperText,
     options,
     formControlProps,
-    fastFieldProps,
+    formHelperTextProps,
     ...others
   } = props;
 
@@ -61,12 +62,12 @@ export function FormikSelect(props: FormikSelectProps) {
           </Select>
           <FormHelperText
             error={(form.errors && form.errors[name] != null) || error}
+            {...formHelperTextProps}
           >
             {(form.errors && form.errors[name]) || helperText}
           </FormHelperText>
         </FormControl>
       )}
-      {...fastFieldProps}
     />
   );
 }
