@@ -149,10 +149,10 @@ It also accepts formControlLabelProps and formHelperTextProps.
     		<FormikRadio  label="Male"  name="radioGroup"  value="male"  />
     		<FormikRadio  label="Other"  name="radioGroup"  value="other"  />
     		<FormikRadio
-    		label="(Disabled option)"
-    		name="radioGroup"
-    		value="disabled"
-    		disabled
+          label="(Disabled option)"
+          name="radioGroup"
+          value="disabled"
+          disabled
     		/>
     	</RadioGroup>
     </FormControl>
