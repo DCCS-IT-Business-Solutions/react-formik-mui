@@ -23,11 +23,14 @@ Dependencies required by FormikTextField,-Select,-Switch,-Checkbox,-Radio
 
 Dependencies required by FormikDatepicker
 [You can also look at the documentation of the MUI-Datepicker](https://material-ui-pickers.dev/getting-started/installation)
-npm install @material-ui/pickers
-npm install @date-io/date-fns@latest
-npm install date-fns@latest
+
+    npm install @material-ui/pickers
+    npm install @date-io/date-fns@latest
+    npm install date-fns@latest
+
 Dependencies required by FormikAutocomplete
-npm install @dccs/react-autocomplete-mui
+
+    npm install @dccs/react-autocomplete-mui
 
 ## Available Components
 
