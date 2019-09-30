@@ -55,6 +55,7 @@ More Examples:
 FormikTextField-Props are almost identical to [Material-UI TextField Props](https://material-ui.com/de/api/text-field/)
 The only difference is, that "name" is required.
 
+```javascript
     <FormikTextField  label="First Name"  name="firstName" />
 
     <FormikTextField label="Salary" name="salary" type="number" />
@@ -82,6 +83,7 @@ The only difference is, that "name" is required.
     		)
     	}}
     />
+```
 
 **_FormikCheckbox_**
 
@@ -89,14 +91,19 @@ FormikCheckbox-Props are almost identical to [https://material-ui.com/api/checkb
 
 It also accepts formControlLabelProps and formHelperTextProps.
 
-    <FormikCheckbox  label="Checkbox"  name="checkbox"></FormikCheckbox>
+```javascript
+<FormikCheckbox label="Checkbox" name="checkbox"></FormikCheckbox>
+```
 
 Label Placement
+
+```javascript
 <FormikCheckbox
-label="Checkbox Bottom"
-name="checkboxBottom"
-formControlLabelProps={{ labelPlacement:  "bottom" }}
+  label="Checkbox Bottom"
+  name="checkboxBottom"
+  formControlLabelProps={{ labelPlacement: "bottom" }}
 />
+```
 
 **_FormikSwitch_**
 
@@ -107,37 +114,43 @@ It also accepts formControlLabelProps and formHelperTextProps.
 
 Label Placement
 
-    <FormikSwitch
-    	label="Switch Bottom"
-    	name="switchBottom"
-    	formControlLabelProps={{ labelPlacement:  "bottom" }}
-    />
+```javascript
+<FormikSwitch
+  label="Switch Bottom"
+  name="switchBottom"
+  formControlLabelProps={{ labelPlacement: "bottom" }}
+/>
+```
 
 **_FormikSelect_**
 FormikSelect-Props are almost identical to [https://material-ui.com/api/select/](https://material-ui.com/api/select/)
 
 It also accepts formControlProps and formHelperTextProps.
 
-    <FormikSelect
-    	label="Select"
-    	name="select"
-    	options={[
-    		{ key:  1, value:  "Entry 1" },
-    		{ key:  2, value:  "Entry 2" },
-    		{ key:  3, value:  "Entry 3" }
-    	]}
-    />
+```javascript
+<FormikSelect
+  label="Select"
+  name="select"
+  options={[
+    { key: 1, value: "Entry 1" },
+    { key: 2, value: "Entry 2" },
+    { key: 3, value: "Entry 3" }
+  ]}
+/>
+```
 
 Without Label
 
-    <FormikSelect
-    	name="select2"
-    	options={[
-    		{ key:  1, value:  "Entry 1" },
-    		{ key:  2, value:  "Entry 2" },
-    		{ key:  3, value:  "Entry 3" }
-    	]}
-    />
+```javascript
+<FormikSelect
+  name="select2"
+  options={[
+    { key: 1, value: "Entry 1" },
+    { key: 2, value: "Entry 2" },
+    { key: 3, value: "Entry 3" }
+  ]}
+/>
+```
 
 **_FormikRadio_**
 
@@ -145,33 +158,55 @@ FormikRadio-Props are almost identical to [https://material-ui.com/api/radio/](h
 
 It also accepts formControlLabelProps and formHelperTextProps.
 
-    <FormControl>
-    	<FormLabel>Gender</FormLabel>
-    	<RadioGroup  name="radioGroup">
-    		<FormikRadio  label="Female"  name="radioGroup"  value="female"  />
-    		<FormikRadio  label="Male"  name="radioGroup"  value="male"  />
-    		<FormikRadio  label="Other"  name="radioGroup"  value="other"  />
-    		<FormikRadio
-          label="(Disabled option)"
-          name="radioGroup"
-          value="disabled"
-          disabled
-    		/>
-    	</RadioGroup>
-    </FormControl>
+```javascript
+<FormControl>
+  <FormLabel>Gender</FormLabel>
+  <RadioGroup name="radioGroup">
+    <FormikRadio label="Female" name="radioGroup" value="female" />
+    <FormikRadio label="Male" name="radioGroup" value="male" />
+    <FormikRadio label="Other" name="radioGroup" value="other" />
+    <FormikRadio
+      label="(Disabled option)"
+      name="radioGroup"
+      value="disabled"
+      disabled
+    />
+  </RadioGroup>
+</FormControl>
+```
 
 **_FormikDatepicker_**
 
 FormikDatepicker-Props are almost identical to [https://material-ui-pickers.dev/api/KeyboardDatePicker](https://material-ui-pickers.dev/api/KeyboardDatePicker)
 
-    <MuiPickersUtilsProvider  utils={DateFnsUtils}>
-    	<FormikDatepicker  name="date"  label="Date"></FormikDatepicker>
-    </MuiPickersUtilsProvider>
+```javascript
+<MuiPickersUtilsProvider utils={DateFnsUtils}>
+  <FormikDatepicker name="date" label="Date"></FormikDatepicker>
+</MuiPickersUtilsProvider>
+```
+
+**_FormikFilePicker_**
+
+FormikFilePicker-Props are almost identical to [https://github.com/DCCS-IT-Business-Solutions/react-filepicker-mui](https://github.com/DCCS-IT-Business-Solutions/react-filepicker-mui)
+
+```javascript
+<FormikFilePicker
+  name="files"
+  uploadFile={(file: File) => {
+    // should return an id with wich the file can be found
+  }}
+  getFile={(fileId: string) => {
+    // should return file metadata
+    // needed properties are id and name
+  }}
+/>
+```
 
 **_Custom Components_**
 
 For more information: https://jaredpalmer.com/formik/docs/api/fastfield
 
+```javascript
     <FastField
     	name="custom"
     	render={(fastFieldProps: FastFieldProps<any>) => (
@@ -184,27 +219,30 @@ For more information: https://jaredpalmer.com/formik/docs/api/fastfield
     		</React.Fragment>
     	)}
     />
+```
 
 With HandleChange
 
-    <FastField
-    	name="custom2"
-    	render={(fastFieldProps: FastFieldProps<any>) => (
-    		<React.Fragment>
-    			{/* Merge FastField-Props into Input */}
-    			<input
-    				{...fastFieldProps.field}
-    				onChange={(e: React.ChangeEvent<any>) => {
-    					//Do stuff before HandleChange
-    					formikProps.handleChange(e);
-    					//Do stuff after HandleChange
-    				}}
-    			/>
-    			{/* Show Errormessage after Touch */}
-    			{formikProps.touched.custom2 ? formikProps.errors.custom2 : null}
-    		</React.Fragment>
-    	)}
-    />
+```javascript
+<FastField
+  name="custom2"
+  render={(fastFieldProps: FastFieldProps<any>) => (
+    <React.Fragment>
+      {/* Merge FastField-Props into Input */}
+      <input
+        {...fastFieldProps.field}
+        onChange={(e: React.ChangeEvent<any>) => {
+          //Do stuff before HandleChange
+          formikProps.handleChange(e);
+          //Do stuff after HandleChange
+        }}
+      />
+      {/* Show Errormessage after Touch */}
+      {formikProps.touched.custom2 ? formikProps.errors.custom2 : null}
+    </React.Fragment>
+  )}
+/>
+```
 
 ## Contributing
 
