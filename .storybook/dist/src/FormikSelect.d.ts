@@ -198,7 +198,7 @@ export declare namespace FormikSelect {
                     "name": string;
                 };
             };
-            "type": {
+            "onError": {
                 "defaultValue": null;
                 "description": string;
                 "name": string;
@@ -1306,15 +1306,6 @@ export declare namespace FormikSelect {
                 };
             };
             "onLoadCapture": {
-                "defaultValue": null;
-                "description": string;
-                "name": string;
-                "required": boolean;
-                "type": {
-                    "name": string;
-                };
-            };
-            "onError": {
                 "defaultValue": null;
                 "description": string;
                 "name": string;
@@ -2484,6 +2475,15 @@ export declare namespace FormikSelect {
                     "name": string;
                 };
             };
+            "css": {
+                "defaultValue": null;
+                "description": string;
+                "name": string;
+                "required": boolean;
+                "type": {
+                    "name": string;
+                };
+            };
             "disabled": {
                 "defaultValue": null;
                 "description": string;
@@ -2584,6 +2584,15 @@ export declare namespace FormikSelect {
                 };
             };
             "rowsMax": {
+                "defaultValue": null;
+                "description": string;
+                "name": string;
+                "required": boolean;
+                "type": {
+                    "name": string;
+                };
+            };
+            "type": {
                 "defaultValue": null;
                 "description": string;
                 "name": string;
