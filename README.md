@@ -28,10 +28,6 @@ Dependencies required by FormikDatepicker
     npm install @date-io/date-fns@latest
     npm install date-fns@latest
 
-Dependencies required by FormikAutocomplete
-
-    npm install @dccs/react-autocomplete-mui
-
 ## Available Components
 
 All MUI-Components are used inside of the renderfunction of a Formik-FastField.
@@ -43,6 +39,7 @@ All MUI-Components are used inside of the renderfunction of a Formik-FastField.
 - FormikSwitch (Material UI Switch) - Renders a MUI-FormControlLabel with a MUI-Radio and a MUI-FormHelperText
 - FormikDatepicker (Material UI Pickers KeyboardDatepicker) - Renders a MUI-KeyboardDatepicker
 - FormikAutoComplete ([@DCCS Autocomplete](https://www.npmjs.com/package/@dccs/react-autocomplete-mui)) - Renders a Autocomplete-Component
+- FomikFilePicker ([@DCCS FilePicker](https://github.com/DCCS-IT-Business-Solutions/react-filepicker-mui)) - Renders a FilePicker-Component
 
 ## How it works
 
