@@ -30,6 +30,51 @@ export declare namespace FormikTextField {
                     "name": string;
                 };
             };
+            "onChange": {
+                "defaultValue": null;
+                "description": string;
+                "name": string;
+                "required": boolean;
+                "type": {
+                    "name": string;
+                };
+            };
+            "variant": {
+                "defaultValue": null;
+                "description": string;
+                "name": string;
+                "required": boolean;
+                "type": {
+                    "name": string;
+                };
+            };
+            "onError": {
+                "defaultValue": null;
+                "description": string;
+                "name": string;
+                "required": boolean;
+                "type": {
+                    "name": string;
+                };
+            };
+            "value": {
+                "defaultValue": null;
+                "description": string;
+                "name": string;
+                "required": boolean;
+                "type": {
+                    "name": string;
+                };
+            };
+            "classes": {
+                "defaultValue": null;
+                "description": string;
+                "name": string;
+                "required": boolean;
+                "type": {
+                    "name": string;
+                };
+            };
             "label": {
                 "defaultValue": null;
                 "description": string;
@@ -76,15 +121,6 @@ export declare namespace FormikTextField {
                 };
             };
             "className": {
-                "defaultValue": null;
-                "description": string;
-                "name": string;
-                "required": boolean;
-                "type": {
-                    "name": string;
-                };
-            };
-            "classes": {
                 "defaultValue": null;
                 "description": string;
                 "name": string;
@@ -1056,15 +1092,6 @@ export declare namespace FormikTextField {
                     "name": string;
                 };
             };
-            "onChange": {
-                "defaultValue": null;
-                "description": string;
-                "name": string;
-                "required": boolean;
-                "type": {
-                    "name": string;
-                };
-            };
             "onChangeCapture": {
                 "defaultValue": null;
                 "description": string;
@@ -1174,15 +1201,6 @@ export declare namespace FormikTextField {
                 };
             };
             "onLoadCapture": {
-                "defaultValue": null;
-                "description": string;
-                "name": string;
-                "required": boolean;
-                "type": {
-                    "name": string;
-                };
-            };
-            "onError": {
                 "defaultValue": null;
                 "description": string;
                 "name": string;
@@ -2352,6 +2370,15 @@ export declare namespace FormikTextField {
                     "name": string;
                 };
             };
+            "css": {
+                "defaultValue": null;
+                "description": string;
+                "name": string;
+                "required": boolean;
+                "type": {
+                    "name": string;
+                };
+            };
             "disabled": {
                 "defaultValue": null;
                 "description": string;
@@ -2398,15 +2425,6 @@ export declare namespace FormikTextField {
                 };
             };
             "required": {
-                "defaultValue": null;
-                "description": string;
-                "name": string;
-                "required": boolean;
-                "type": {
-                    "name": string;
-                };
-            };
-            "variant": {
                 "defaultValue": null;
                 "description": string;
                 "name": string;
@@ -2515,15 +2533,6 @@ export declare namespace FormikTextField {
                 };
             };
             "SelectProps": {
-                "defaultValue": null;
-                "description": string;
-                "name": string;
-                "required": boolean;
-                "type": {
-                    "name": string;
-                };
-            };
-            "value": {
                 "defaultValue": null;
                 "description": string;
                 "name": string;

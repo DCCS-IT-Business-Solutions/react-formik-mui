@@ -3,8 +3,9 @@ import * as React from "react";
 import { storiesOf } from "@storybook/react";
 import { FormikTextField } from "../src/FormikTextField";
 import { FormikAutocomplete } from "../src/FormikAutocomplete";
+import { FormikFilePicker } from "../src/FormikFilePicker";
 import { FormikDatepicker } from "../src/FormikDatepicker";
-//import { MBFSTextField } from "../src/MBFSTextField";
+// import { MBFSTextField } from "../src/MBFSTextField";
 import { Formik, FormikProps, FastField, FastFieldProps } from "formik";
 import {
   Button,
@@ -20,6 +21,9 @@ import { FormikRadio } from "../src/FormikRadio";
 import AccountCircle from "@material-ui/icons/AccountCircle";
 import { MuiPickersUtilsProvider } from "@material-ui/pickers";
 import DateFnsUtils from "@date-io/date-fns";
+import { FileMetadata } from "@dccs/react-filepicker-mui";
+import { reject, resolve } from "q";
+import { sleep } from "@dccs/utils";
 
 storiesOf("Formik", module).add("TextFields", () => (
   <Formik
@@ -42,88 +46,76 @@ storiesOf("Formik", module).add("TextFields", () => (
     render={(formikProps: FormikProps<any>) => (
       <form onSubmit={formikProps.handleSubmit}>
         Default:
-        <br></br>
+        <br />
         <FormikTextField label="First Name" name="firstName" />
-        <br></br>
-        <br></br>
+        <br />
+        <br />
         Type="number":
-        <br></br>
-        <FormikTextField
-          label="Salary"
-          name="salary"
-          type="number"
-        ></FormikTextField>
-        <br></br>
-        <br></br>
+        <br />
+        <FormikTextField label="Salary" name="salary" type="number" />
+        <br />
+        <br />
         Multiline:
-        <br></br>
-        <FormikTextField
-          label="Multiline"
-          name="multiline"
-          multiline
-        ></FormikTextField>
-        <br></br>
-        <br></br>
+        <br />
+        <FormikTextField label="Multiline" name="multiline" multiline />
+        <br />
+        <br />
         With helpertext
-        <br></br>
+        <br />
         <FormikTextField
           label="Helpertext"
           name="helpertext"
           helperText="Info"
-        ></FormikTextField>
-        <br></br>
-        <br></br>
+        />
+        <br />
+        <br />
         With Error=true and Helpertext
-        <br></br>
+        <br />
         <FormikTextField
           label="Error"
           name="error"
           error={true}
           helperText="Error"
-        ></FormikTextField>
-        <br></br>
-        <br></br>
+        />
+        <br />
+        <br />
         Variant Outlined:
-        <br></br>
+        <br />
         <FormikTextField
           label="Variant Outline"
           name="outline"
           variant="outlined"
-        ></FormikTextField>
-        <br></br>
-        <br></br>
+        />
+        <br />
+        <br />
         Variant Filled:
-        <br></br>
+        <br />
         <FormikTextField
           label="Variant filled"
           name="filled"
           variant="filled"
-        ></FormikTextField>
-        <br></br>
-        <br></br>
+        />
+        <br />
+        <br />
         Type="password":
-        <br></br>
-        <FormikTextField
-          label="Password"
-          name="password"
-          type="password"
-        ></FormikTextField>
-        <br></br>
-        <br></br>
+        <br />
+        <FormikTextField label="Password" name="password" type="password" />
+        <br />
+        <br />
         Input Adornments:
-        <br></br>
+        <br />
         <FormikTextField
           label="Input Adornments"
           name="adornments"
           InputProps={{
             startAdornment: (
               <InputAdornment position="start">
-                <AccountCircle></AccountCircle>
+                <AccountCircle />
               </InputAdornment>
             )
           }}
-        ></FormikTextField>
-        <br></br>
+        />
+        <br />
         <Button type="submit" disabled={formikProps.isSubmitting}>
           Save
         </Button>
@@ -147,9 +139,9 @@ storiesOf("Formik", module).add("Datepicker", () => (
       render={(formikProps: FormikProps<any>) => (
         <form onSubmit={formikProps.handleSubmit}>
           Default:
-          <br></br>
+          <br />
           <FormikDatepicker name="date" label="Date" />
-          <br></br>
+          <br />
           <Button type="submit">Save</Button>
           <Button onClick={formikProps.handleReset}>Reset</Button>
         </form>
@@ -172,18 +164,18 @@ storiesOf("Formik", module).add("Switches", () => (
     render={(formikProps: FormikProps<any>) => (
       <form onSubmit={formikProps.handleSubmit}>
         Default:
-        <br></br>
-        <FormikSwitch label="Switch" name="switch"></FormikSwitch>
-        <br></br>
-        <br></br>
+        <br />
+        <FormikSwitch label="Switch" name="switch" />
+        <br />
+        <br />
         Label Placement Bottom
-        <br></br>
+        <br />
         <FormikSwitch
           label="Switch Bottom"
           name="switchBottom"
           formControlLabelProps={{ labelPlacement: "bottom" }}
-        ></FormikSwitch>
-        <br></br>
+        />
+        <br />
         <Button type="submit">Save</Button>
         <Button onClick={formikProps.handleReset}>Reset</Button>
       </form>
@@ -205,7 +197,7 @@ storiesOf("Formik", module).add("Selects", () => (
     render={(formikProps: FormikProps<any>) => (
       <form onSubmit={formikProps.handleSubmit}>
         Default:
-        <br></br>
+        <br />
         <FormikSelect
           label="Select"
           name="select"
@@ -215,9 +207,9 @@ storiesOf("Formik", module).add("Selects", () => (
             { key: 3, value: "Entry 3" }
           ]}
         />
-        <br></br>
+        <br />
         Without Label:
-        <br></br>
+        <br />
         <FormikSelect
           name="select2"
           options={[
@@ -225,8 +217,8 @@ storiesOf("Formik", module).add("Selects", () => (
             { key: 2, value: "Entry 2" },
             { key: 3, value: "Entry 3" }
           ]}
-        ></FormikSelect>
-        <br></br>
+        />
+        <br />
         <Button type="submit">Save</Button>
         <Button onClick={formikProps.handleReset}>Reset</Button>
       </form>
@@ -248,18 +240,18 @@ storiesOf("Formik", module).add("Checkboxes", () => (
     render={(formikProps: FormikProps<any>) => (
       <form onSubmit={formikProps.handleSubmit}>
         Default:
-        <br></br>
-        <FormikCheckbox label="Checkbox" name="checkbox"></FormikCheckbox>
-        <br></br>
-        <br></br>
+        <br />
+        <FormikCheckbox label="Checkbox" name="checkbox" />
+        <br />
+        <br />
         Label Placement Bottom
-        <br></br>
+        <br />
         <FormikCheckbox
           label="Checkbox Bottom"
           name="checkboxBottom"
           formControlLabelProps={{ labelPlacement: "bottom" }}
-        ></FormikCheckbox>
-        <br></br>
+        />
+        <br />
         <Button type="submit">Save</Button>
         <Button onClick={formikProps.handleReset}>Reset</Button>
       </form>
@@ -293,7 +285,7 @@ storiesOf("Formik", module).add("Radio Buttons", () => (
             />
           </RadioGroup>
         </FormControl>
-        <br></br>
+        <br />
         <Button type="submit">Save</Button>
         <Button onClick={formikProps.handleReset}>Reset</Button>
       </form>
@@ -331,6 +323,70 @@ storiesOf("Formik", module).add("Autocomplete", () => (
   />
 ));
 
+const server: FileMetadata[] = [];
+function setServer(data: FileMetadata) {
+  server.push(data);
+}
+
+function DummyFilePicker() {
+  React.useEffect(() => {
+    return;
+  }, [server.length]);
+
+  const [fileIds, setFileIds] = React.useState<string[]>([]);
+
+  async function uploadFile(newFile: File) {
+    await sleep(500);
+    const newId = (Math.random() * 1000000000).toString();
+    setServer({
+      id: newId,
+      name: newFile.name,
+      size: newFile.size.toString()
+    });
+    return resolve<string>(newId);
+  }
+
+  async function getFile(id: string) {
+    await sleep(500);
+    window.console.log("searching file", id, "server files", server);
+    const file = server.find(e => e.id === id);
+    if (file) {
+      return resolve<FileMetadata>(file);
+    } else {
+      return reject<any>("file not found!");
+    }
+  }
+
+  return (
+    <FormikFilePicker
+      name="files"
+      multiple={true}
+      uploadFile={uploadFile}
+      getFile={getFile}
+    />
+  );
+}
+
+storiesOf("Formik", module).add("FilePicker", () => (
+  <Formik
+    initialValues={{
+      files: ""
+    }}
+    onSubmit={(values, actions) => {
+      setTimeout(() => {
+        alert(JSON.stringify(values, null, 2));
+      });
+    }}
+    render={(formikProps: FormikProps<any>) => (
+      <form onSubmit={formikProps.handleSubmit} autoComplete="off">
+        <DummyFilePicker />
+        <Button type="submit">Save</Button>
+        <Button onClick={formikProps.handleReset}>Reset</Button>
+      </form>
+    )}
+  />
+));
+
 storiesOf("Formik", module).add("Custom Components", () => (
   <Formik
     initialValues={{
@@ -345,7 +401,7 @@ storiesOf("Formik", module).add("Custom Components", () => (
     render={(formikProps: FormikProps<any>) => (
       <form onSubmit={formikProps.handleSubmit}>
         Custom Component:
-        <br></br>
+        <br />
         <FastField
           name="custom"
           render={(fastFieldProps: FastFieldProps<any>) => (
@@ -361,9 +417,9 @@ storiesOf("Formik", module).add("Custom Components", () => (
             </React.Fragment>
           )}
         />
-        <br></br>
+        <br />
         Custom Component with handleChange:
-        <br></br>
+        <br />
         <FastField
           name="custom2"
           render={(fastFieldProps: FastFieldProps<any>) => (
@@ -372,11 +428,11 @@ storiesOf("Formik", module).add("Custom Components", () => (
               <input
                 {...fastFieldProps.field}
                 onChange={(e: React.ChangeEvent<any>) => {
-                  //Do stuff before HandleChange
+                  // Do stuff before HandleChange
 
                   formikProps.handleChange(e);
 
-                  //Do stuff after HandleChange
+                  // Do stuff after HandleChange
                 }}
               />
 
@@ -388,19 +444,19 @@ storiesOf("Formik", module).add("Custom Components", () => (
             </React.Fragment>
           )}
         />
-        <br></br>
+        <br />
         <Button type="submit">Save</Button>
         <Button onClick={formikProps.handleReset}>Reset</Button>
-        <br></br>
+        <br />
         For more Information:
-        <br></br>
+        <br />
         <a href="https://jaredpalmer.com/formik/docs/api/fastfield">Formik</a>
       </form>
     )}
   />
 ));
 
-//Generate Dummy Inital Values
+// Generate Dummy Inital Values
 
 const initialValues = {} as any;
 
@@ -422,14 +478,11 @@ storiesOf("Formik", module).add("Huge Form", () => (
           <form onSubmit={formikProps.handleSubmit}>
             {Object.keys(formikProps.initialValues).map((property, index) => {
               return (
-                <FormikTextField
-                  label={property}
-                  name={property}
-                ></FormikTextField>
+                <FormikTextField key={index} label={property} name={property} />
               );
             })}
 
-            <br></br>
+            <br />
             <Button type="submit">Save</Button>
             <Button onClick={formikProps.handleReset}>Reset</Button>
           </form>

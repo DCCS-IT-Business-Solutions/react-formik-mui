@@ -109,7 +109,16 @@ export declare namespace FormikRadio {
                     "name": string;
                 };
             };
-            "type": {
+            "onChange": {
+                "defaultValue": null;
+                "description": string;
+                "name": string;
+                "required": boolean;
+                "type": {
+                    "name": string;
+                };
+            };
+            "onError": {
                 "defaultValue": null;
                 "description": string;
                 "name": string;
@@ -1117,15 +1126,6 @@ export declare namespace FormikRadio {
                     "name": string;
                 };
             };
-            "onChange": {
-                "defaultValue": null;
-                "description": string;
-                "name": string;
-                "required": boolean;
-                "type": {
-                    "name": string;
-                };
-            };
             "onChangeCapture": {
                 "defaultValue": null;
                 "description": string;
@@ -1235,15 +1235,6 @@ export declare namespace FormikRadio {
                 };
             };
             "onLoadCapture": {
-                "defaultValue": null;
-                "description": string;
-                "name": string;
-                "required": boolean;
-                "type": {
-                    "name": string;
-                };
-            };
-            "onError": {
                 "defaultValue": null;
                 "description": string;
                 "name": string;
@@ -2413,6 +2404,15 @@ export declare namespace FormikRadio {
                     "name": string;
                 };
             };
+            "css": {
+                "defaultValue": null;
+                "description": string;
+                "name": string;
+                "required": boolean;
+                "type": {
+                    "name": string;
+                };
+            };
             "disabled": {
                 "defaultValue": null;
                 "description": string;
@@ -2458,7 +2458,7 @@ export declare namespace FormikRadio {
                     "name": string;
                 };
             };
-            "readOnly": {
+            "type": {
                 "defaultValue": null;
                 "description": string;
                 "name": string;
@@ -2467,7 +2467,7 @@ export declare namespace FormikRadio {
                     "name": string;
                 };
             };
-            "checked": {
+            "readOnly": {
                 "defaultValue": null;
                 "description": string;
                 "name": string;
@@ -2621,6 +2621,15 @@ export declare namespace FormikRadio {
                 };
             };
             "size": {
+                "defaultValue": null;
+                "description": string;
+                "name": string;
+                "required": boolean;
+                "type": {
+                    "name": string;
+                };
+            };
+            "checked": {
                 "defaultValue": null;
                 "description": string;
                 "name": string;
