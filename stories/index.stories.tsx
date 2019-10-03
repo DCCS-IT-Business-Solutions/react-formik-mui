@@ -5,6 +5,7 @@ import { FormikTextField } from "../src/FormikTextField";
 import { FormikAutocomplete } from "../src/FormikAutocomplete";
 import { FormikFilePicker } from "../src/FormikFilePicker";
 import { FormikDatepicker } from "../src/FormikDatepicker";
+import { FormikDateTimepicker } from "../src/FormikDateTimepicker";
 // import { MBFSTextField } from "../src/MBFSTextField";
 import { Formik, FormikProps, FastField, FastFieldProps } from "formik";
 import {
@@ -127,9 +128,11 @@ storiesOf("Formik", module).add("TextFields", () => (
 
 storiesOf("Formik", module).add("Datepicker", () => (
   <MuiPickersUtilsProvider utils={DateFnsUtils}>
+    With DateFnsUtils:
     <Formik
       initialValues={{
-        date: ""
+        date: "",
+        dateTime: ""
       }}
       onSubmit={(values, actions) => {
         setTimeout(() => {
@@ -141,6 +144,10 @@ storiesOf("Formik", module).add("Datepicker", () => (
           Default:
           <br />
           <FormikDatepicker name="date" label="Date" />
+          <br />
+          Date+Time:
+          <br />
+          <FormikDateTimepicker name="dateTime" label="Date Time" />
           <br />
           <Button type="submit">Save</Button>
           <Button onClick={formikProps.handleReset}>Reset</Button>
