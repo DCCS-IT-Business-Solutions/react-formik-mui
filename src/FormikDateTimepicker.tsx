@@ -40,7 +40,6 @@ export function FormikDateTimepicker(props: FormikDateTimepickerProps) {
           // => || null  is needed for the label to work properly when Formik-"resetForm" or "handleReset" is used
           value={field.value || null}
           onChange={(date: any) => {
-            // if (date instanceof Date && !isNaN(date as any)) {
             form.setFieldValue(name, date);
           }}
           error={(form.errors && form.errors[name] != null) || error}
