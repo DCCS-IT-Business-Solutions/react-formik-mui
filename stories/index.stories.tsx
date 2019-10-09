@@ -22,6 +22,7 @@ import { FormikRadio } from "../src/FormikRadio";
 import AccountCircle from "@material-ui/icons/AccountCircle";
 import { MuiPickersUtilsProvider } from "@material-ui/pickers";
 import DateFnsUtils from "@date-io/date-fns";
+import MomentUtils from "@date-io/moment";
 import { FileMetadata } from "@dccs/react-filepicker-mui";
 import { reject, resolve } from "q";
 import { sleep } from "@dccs/utils";
@@ -126,9 +127,40 @@ storiesOf("Formik", module).add("TextFields", () => (
   />
 ));
 
-storiesOf("Formik", module).add("Datepicker", () => (
+storiesOf("Formik", module).add("Datepicker with datefns", () => (
   <MuiPickersUtilsProvider utils={DateFnsUtils}>
     With DateFnsUtils:
+    <Formik
+      initialValues={{
+        date: "",
+        dateTime: ""
+      }}
+      onSubmit={(values, actions) => {
+        setTimeout(() => {
+          alert(JSON.stringify(values, null, 2));
+        });
+      }}
+      render={(formikProps: FormikProps<any>) => (
+        <form onSubmit={formikProps.handleSubmit}>
+          Default:
+          <br />
+          <FormikDatepicker name="date" label="Date" />
+          <br />
+          Date+Time:
+          <br />
+          <FormikDateTimepicker name="dateTime" label="Date Time" />
+          <br />
+          <Button type="submit">Save</Button>
+          <Button onClick={formikProps.handleReset}>Reset</Button>
+        </form>
+      )}
+    />
+  </MuiPickersUtilsProvider>
+));
+
+storiesOf("Formik", module).add("Datepicker with moment", () => (
+  <MuiPickersUtilsProvider utils={MomentUtils}>
+    With MomentUtils:
     <Formik
       initialValues={{
         date: "",

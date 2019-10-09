@@ -37,12 +37,12 @@ export function FormikCheckbox(props: FormikCheckboxProps) {
             label={label}
             {...formControlLabelProps}
           />
-          <FormHelperText
-            error={(form.errors && form.errors[name] != null) || error}
-            {...formHelperTextProps}
-          >
-            {(form.errors && form.errors[name]) || helperText}
-          </FormHelperText>
+          {((form.errors && form.errors[name]) || helperText) && (
+            <FormHelperText
+              error={(form.errors && form.errors[name] != null) || error}
+              {...formHelperTextProps}
+            ></FormHelperText>
+          )}
         </React.Fragment>
       )}
     />
