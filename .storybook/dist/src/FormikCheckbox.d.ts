@@ -117,33 +117,6 @@ export declare namespace FormikCheckbox {
                     "name": string;
                 };
             };
-            "onChange": {
-                "defaultValue": null;
-                "description": string;
-                "name": string;
-                "required": boolean;
-                "type": {
-                    "name": string;
-                };
-            };
-            "onError": {
-                "defaultValue": null;
-                "description": string;
-                "name": string;
-                "required": boolean;
-                "type": {
-                    "name": string;
-                };
-            };
-            "value": {
-                "defaultValue": null;
-                "description": string;
-                "name": string;
-                "required": boolean;
-                "type": {
-                    "name": string;
-                };
-            };
             "form": {
                 "defaultValue": null;
                 "description": string;
@@ -1143,6 +1116,15 @@ export declare namespace FormikCheckbox {
                     "name": string;
                 };
             };
+            "onChange": {
+                "defaultValue": null;
+                "description": string;
+                "name": string;
+                "required": boolean;
+                "type": {
+                    "name": string;
+                };
+            };
             "onChangeCapture": {
                 "defaultValue": null;
                 "description": string;
@@ -1252,6 +1234,15 @@ export declare namespace FormikCheckbox {
                 };
             };
             "onLoadCapture": {
+                "defaultValue": null;
+                "description": string;
+                "name": string;
+                "required": boolean;
+                "type": {
+                    "name": string;
+                };
+            };
+            "onError": {
                 "defaultValue": null;
                 "description": string;
                 "name": string;
@@ -2475,6 +2466,15 @@ export declare namespace FormikCheckbox {
                     "name": string;
                 };
             };
+            "readOnly": {
+                "defaultValue": null;
+                "description": string;
+                "name": string;
+                "required": boolean;
+                "type": {
+                    "name": string;
+                };
+            };
             "type": {
                 "defaultValue": null;
                 "description": string;
@@ -2484,7 +2484,16 @@ export declare namespace FormikCheckbox {
                     "name": string;
                 };
             };
-            "readOnly": {
+            "value": {
+                "defaultValue": null;
+                "description": string;
+                "name": string;
+                "required": boolean;
+                "type": {
+                    "name": string;
+                };
+            };
+            "size": {
                 "defaultValue": null;
                 "description": string;
                 "name": string;
@@ -2629,15 +2638,6 @@ export declare namespace FormikCheckbox {
                 };
             };
             "edge": {
-                "defaultValue": null;
-                "description": string;
-                "name": string;
-                "required": boolean;
-                "type": {
-                    "name": string;
-                };
-            };
-            "size": {
                 "defaultValue": null;
                 "description": string;
                 "name": string;

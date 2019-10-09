@@ -326,15 +326,6 @@ export declare namespace FormikAutocomplete {
                     "name": string;
                 };
             };
-            "onError": {
-                "defaultValue": null;
-                "description": string;
-                "name": string;
-                "required": boolean;
-                "type": {
-                    "name": string;
-                };
-            };
             "style": {
                 "defaultValue": null;
                 "description": string;
@@ -1416,6 +1407,15 @@ export declare namespace FormikAutocomplete {
                 };
             };
             "onLoadCapture": {
+                "defaultValue": null;
+                "description": string;
+                "name": string;
+                "required": boolean;
+                "type": {
+                    "name": string;
+                };
+            };
+            "onError": {
                 "defaultValue": null;
                 "description": string;
                 "name": string;

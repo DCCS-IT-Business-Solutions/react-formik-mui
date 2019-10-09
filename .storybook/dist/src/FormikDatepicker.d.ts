@@ -70,146 +70,6 @@ export declare namespace FormikDatepicker {
                     "name": string;
                 };
             };
-            "open": {
-                "defaultValue": null;
-                "description": string;
-                "name": string;
-                "required": boolean;
-                "type": {
-                    "name": string;
-                };
-            };
-            "onAccept": {
-                "defaultValue": null;
-                "description": string;
-                "name": string;
-                "required": boolean;
-                "type": {
-                    "name": string;
-                };
-            };
-            "okLabel": {
-                "defaultValue": {
-                    value: string;
-                };
-                "description": string;
-                "name": string;
-                "required": boolean;
-                "type": {
-                    "name": string;
-                };
-            };
-            "cancelLabel": {
-                "defaultValue": {
-                    value: string;
-                };
-                "description": string;
-                "name": string;
-                "required": boolean;
-                "type": {
-                    "name": string;
-                };
-            };
-            "clearLabel": {
-                "defaultValue": {
-                    value: string;
-                };
-                "description": string;
-                "name": string;
-                "required": boolean;
-                "type": {
-                    "name": string;
-                };
-            };
-            "todayLabel": {
-                "defaultValue": {
-                    value: string;
-                };
-                "description": string;
-                "name": string;
-                "required": boolean;
-                "type": {
-                    "name": string;
-                };
-            };
-            "showTodayButton": {
-                "defaultValue": {
-                    value: string;
-                };
-                "description": string;
-                "name": string;
-                "required": boolean;
-                "type": {
-                    "name": string;
-                };
-            };
-            "clearable": {
-                "defaultValue": {
-                    value: string;
-                };
-                "description": string;
-                "name": string;
-                "required": boolean;
-                "type": {
-                    "name": string;
-                };
-            };
-            "DialogProps": {
-                "defaultValue": null;
-                "description": string;
-                "name": string;
-                "required": boolean;
-                "type": {
-                    "name": string;
-                };
-            };
-            "PopoverProps": {
-                "defaultValue": null;
-                "description": string;
-                "name": string;
-                "required": boolean;
-                "type": {
-                    "name": string;
-                };
-            };
-            "inputValue": {
-                "defaultValue": null;
-                "description": string;
-                "name": string;
-                "required": boolean;
-                "type": {
-                    "name": string;
-                };
-            };
-            "format": {
-                "defaultValue": null;
-                "description": string;
-                "name": string;
-                "required": boolean;
-                "type": {
-                    "name": string;
-                };
-            };
-            "variant": {
-                "defaultValue": {
-                    value: string;
-                };
-                "description": string;
-                "name": string;
-                "required": boolean;
-                "type": {
-                    "name": string;
-                };
-            };
-            "onError": {
-                "defaultValue": null;
-                "description": string;
-                "name": string;
-                "required": boolean;
-                "type": {
-                    "name": string;
-                };
-            };
             "select": {
                 "defaultValue": null;
                 "description": string;
@@ -1336,6 +1196,15 @@ export declare namespace FormikDatepicker {
                 };
             };
             "onLoadCapture": {
+                "defaultValue": null;
+                "description": string;
+                "name": string;
+                "required": boolean;
+                "type": {
+                    "name": string;
+                };
+            };
+            "onError": {
                 "defaultValue": null;
                 "description": string;
                 "name": string;
@@ -2559,8 +2428,10 @@ export declare namespace FormikDatepicker {
                     "name": string;
                 };
             };
-            "InputProps": {
-                "defaultValue": null;
+            "variant": {
+                "defaultValue": {
+                    value: string;
+                };
                 "description": string;
                 "name": string;
                 "required": boolean;
@@ -2569,6 +2440,15 @@ export declare namespace FormikDatepicker {
                 };
             };
             "inputProps": {
+                "defaultValue": null;
+                "description": string;
+                "name": string;
+                "required": boolean;
+                "type": {
+                    "name": string;
+                };
+            };
+            "multiline": {
                 "defaultValue": null;
                 "description": string;
                 "name": string;
@@ -2595,24 +2475,6 @@ export declare namespace FormikDatepicker {
                     "name": string;
                 };
             };
-            "FormHelperTextProps": {
-                "defaultValue": null;
-                "description": string;
-                "name": string;
-                "required": boolean;
-                "type": {
-                    "name": string;
-                };
-            };
-            "InputLabelProps": {
-                "defaultValue": null;
-                "description": string;
-                "name": string;
-                "required": boolean;
-                "type": {
-                    "name": string;
-                };
-            };
             "inputRef": {
                 "defaultValue": null;
                 "description": string;
@@ -2622,7 +2484,7 @@ export declare namespace FormikDatepicker {
                     "name": string;
                 };
             };
-            "multiline": {
+            "readOnly": {
                 "defaultValue": null;
                 "description": string;
                 "name": string;
@@ -2649,15 +2511,6 @@ export declare namespace FormikDatepicker {
                     "name": string;
                 };
             };
-            "SelectProps": {
-                "defaultValue": null;
-                "description": string;
-                "name": string;
-                "required": boolean;
-                "type": {
-                    "name": string;
-                };
-            };
             "type": {
                 "defaultValue": null;
                 "description": string;
@@ -2667,7 +2520,154 @@ export declare namespace FormikDatepicker {
                     "name": string;
                 };
             };
-            "readOnly": {
+            "InputProps": {
+                "defaultValue": null;
+                "description": string;
+                "name": string;
+                "required": boolean;
+                "type": {
+                    "name": string;
+                };
+            };
+            "FormHelperTextProps": {
+                "defaultValue": null;
+                "description": string;
+                "name": string;
+                "required": boolean;
+                "type": {
+                    "name": string;
+                };
+            };
+            "InputLabelProps": {
+                "defaultValue": null;
+                "description": string;
+                "name": string;
+                "required": boolean;
+                "type": {
+                    "name": string;
+                };
+            };
+            "SelectProps": {
+                "defaultValue": null;
+                "description": string;
+                "name": string;
+                "required": boolean;
+                "type": {
+                    "name": string;
+                };
+            };
+            "open": {
+                "defaultValue": null;
+                "description": string;
+                "name": string;
+                "required": boolean;
+                "type": {
+                    "name": string;
+                };
+            };
+            "onAccept": {
+                "defaultValue": null;
+                "description": string;
+                "name": string;
+                "required": boolean;
+                "type": {
+                    "name": string;
+                };
+            };
+            "okLabel": {
+                "defaultValue": {
+                    value: string;
+                };
+                "description": string;
+                "name": string;
+                "required": boolean;
+                "type": {
+                    "name": string;
+                };
+            };
+            "cancelLabel": {
+                "defaultValue": {
+                    value: string;
+                };
+                "description": string;
+                "name": string;
+                "required": boolean;
+                "type": {
+                    "name": string;
+                };
+            };
+            "clearLabel": {
+                "defaultValue": {
+                    value: string;
+                };
+                "description": string;
+                "name": string;
+                "required": boolean;
+                "type": {
+                    "name": string;
+                };
+            };
+            "todayLabel": {
+                "defaultValue": {
+                    value: string;
+                };
+                "description": string;
+                "name": string;
+                "required": boolean;
+                "type": {
+                    "name": string;
+                };
+            };
+            "showTodayButton": {
+                "defaultValue": {
+                    value: string;
+                };
+                "description": string;
+                "name": string;
+                "required": boolean;
+                "type": {
+                    "name": string;
+                };
+            };
+            "clearable": {
+                "defaultValue": {
+                    value: string;
+                };
+                "description": string;
+                "name": string;
+                "required": boolean;
+                "type": {
+                    "name": string;
+                };
+            };
+            "DialogProps": {
+                "defaultValue": null;
+                "description": string;
+                "name": string;
+                "required": boolean;
+                "type": {
+                    "name": string;
+                };
+            };
+            "PopoverProps": {
+                "defaultValue": null;
+                "description": string;
+                "name": string;
+                "required": boolean;
+                "type": {
+                    "name": string;
+                };
+            };
+            "inputValue": {
+                "defaultValue": null;
+                "description": string;
+                "name": string;
+                "required": boolean;
+                "type": {
+                    "name": string;
+                };
+            };
+            "format": {
                 "defaultValue": null;
                 "description": string;
                 "name": string;

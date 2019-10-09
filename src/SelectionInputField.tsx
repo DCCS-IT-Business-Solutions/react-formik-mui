@@ -97,7 +97,7 @@ export function SelectionInputField(props: FormikSelectionInputFieldProps) {
               <Select
                 {...defaultProps}
                 {...field}
-                //inputProps={customInputProps}
+                // inputProps={customInputProps}
                 // Material UI Bug:
                 // => || ""  is needed for the label to work properly when Formik-"resetForm" or "handleReset" is used
                 value={field.value || ""}

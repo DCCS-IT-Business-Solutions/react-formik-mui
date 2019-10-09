@@ -108,33 +108,6 @@ export declare namespace FormikSwitch {
                     "name": string;
                 };
             };
-            "onChange": {
-                "defaultValue": null;
-                "description": string;
-                "name": string;
-                "required": boolean;
-                "type": {
-                    "name": string;
-                };
-            };
-            "onError": {
-                "defaultValue": null;
-                "description": string;
-                "name": string;
-                "required": boolean;
-                "type": {
-                    "name": string;
-                };
-            };
-            "value": {
-                "defaultValue": null;
-                "description": string;
-                "name": string;
-                "required": boolean;
-                "type": {
-                    "name": string;
-                };
-            };
             "form": {
                 "defaultValue": null;
                 "description": string;
@@ -1134,6 +1107,15 @@ export declare namespace FormikSwitch {
                     "name": string;
                 };
             };
+            "onChange": {
+                "defaultValue": null;
+                "description": string;
+                "name": string;
+                "required": boolean;
+                "type": {
+                    "name": string;
+                };
+            };
             "onChangeCapture": {
                 "defaultValue": null;
                 "description": string;
@@ -1243,6 +1225,15 @@ export declare namespace FormikSwitch {
                 };
             };
             "onLoadCapture": {
+                "defaultValue": null;
+                "description": string;
+                "name": string;
+                "required": boolean;
+                "type": {
+                    "name": string;
+                };
+            };
+            "onError": {
                 "defaultValue": null;
                 "description": string;
                 "name": string;
@@ -2466,6 +2457,15 @@ export declare namespace FormikSwitch {
                     "name": string;
                 };
             };
+            "readOnly": {
+                "defaultValue": null;
+                "description": string;
+                "name": string;
+                "required": boolean;
+                "type": {
+                    "name": string;
+                };
+            };
             "type": {
                 "defaultValue": null;
                 "description": string;
@@ -2475,7 +2475,7 @@ export declare namespace FormikSwitch {
                     "name": string;
                 };
             };
-            "readOnly": {
+            "value": {
                 "defaultValue": null;
                 "description": string;
                 "name": string;

@@ -198,15 +198,6 @@ export declare namespace FormikSelect {
                     "name": string;
                 };
             };
-            "onError": {
-                "defaultValue": null;
-                "description": string;
-                "name": string;
-                "required": boolean;
-                "type": {
-                    "name": string;
-                };
-            };
             "style": {
                 "defaultValue": null;
                 "description": string;
@@ -1306,6 +1297,15 @@ export declare namespace FormikSelect {
                 };
             };
             "onLoadCapture": {
+                "defaultValue": null;
+                "description": string;
+                "name": string;
+                "required": boolean;
+                "type": {
+                    "name": string;
+                };
+            };
+            "onError": {
                 "defaultValue": null;
                 "description": string;
                 "name": string;
@@ -2538,6 +2538,15 @@ export declare namespace FormikSelect {
                     "name": string;
                 };
             };
+            "multiline": {
+                "defaultValue": null;
+                "description": string;
+                "name": string;
+                "required": boolean;
+                "type": {
+                    "name": string;
+                };
+            };
             "autoComplete": {
                 "defaultValue": null;
                 "description": string;
@@ -2548,51 +2557,6 @@ export declare namespace FormikSelect {
                 };
             };
             "autoFocus": {
-                "defaultValue": null;
-                "description": string;
-                "name": string;
-                "required": boolean;
-                "type": {
-                    "name": string;
-                };
-            };
-            "inputRef": {
-                "defaultValue": null;
-                "description": string;
-                "name": string;
-                "required": boolean;
-                "type": {
-                    "name": string;
-                };
-            };
-            "multiline": {
-                "defaultValue": null;
-                "description": string;
-                "name": string;
-                "required": boolean;
-                "type": {
-                    "name": string;
-                };
-            };
-            "rows": {
-                "defaultValue": null;
-                "description": string;
-                "name": string;
-                "required": boolean;
-                "type": {
-                    "name": string;
-                };
-            };
-            "rowsMax": {
-                "defaultValue": null;
-                "description": string;
-                "name": string;
-                "required": boolean;
-                "type": {
-                    "name": string;
-                };
-            };
-            "type": {
                 "defaultValue": null;
                 "description": string;
                 "name": string;
@@ -2619,6 +2583,15 @@ export declare namespace FormikSelect {
                     "name": string;
                 };
             };
+            "inputRef": {
+                "defaultValue": null;
+                "description": string;
+                "name": string;
+                "required": boolean;
+                "type": {
+                    "name": string;
+                };
+            };
             "readOnly": {
                 "defaultValue": null;
                 "description": string;
@@ -2637,7 +2610,34 @@ export declare namespace FormikSelect {
                     "name": string;
                 };
             };
+            "rows": {
+                "defaultValue": null;
+                "description": string;
+                "name": string;
+                "required": boolean;
+                "type": {
+                    "name": string;
+                };
+            };
+            "rowsMax": {
+                "defaultValue": null;
+                "description": string;
+                "name": string;
+                "required": boolean;
+                "type": {
+                    "name": string;
+                };
+            };
             "startAdornment": {
+                "defaultValue": null;
+                "description": string;
+                "name": string;
+                "required": boolean;
+                "type": {
+                    "name": string;
+                };
+            };
+            "type": {
                 "defaultValue": null;
                 "description": string;
                 "name": string;
