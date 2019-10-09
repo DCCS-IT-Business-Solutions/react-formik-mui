@@ -42,7 +42,7 @@ export function FormikRadio(props: FormikRadioProps) {
             <FormHelperText
               error={(form.errors && form.errors[name] != null) || error}
               {...formHelperTextProps}
-            ></FormHelperText>
+            />
           )}
         </React.Fragment>
       )}

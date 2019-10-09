@@ -62,9 +62,9 @@ export function FormikSelect(props: FormikSelectProps) {
           </Select>
           {((form.errors && form.errors[name]) || helperText) && (
             <FormHelperText
-              error={form.errors[name] != null || error}
+              error={(form.errors && form.errors[name] != null) || error}
               {...formHelperTextProps}
-            ></FormHelperText>
+            />
           )}
         </FormControl>
       )}
