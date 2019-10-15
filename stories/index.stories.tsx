@@ -208,6 +208,11 @@ storiesOf("Formik", module).add("Switches", () => (
         <FormikSwitch label="Switch" name="switch" />
         <br />
         <br />
+        "checked" initially true
+        <br />
+        <FormikSwitch label="Switch" name="switchInitialChecked" />
+        <br />
+        <br />
         Label Placement Bottom
         <br />
         <FormikSwitch
@@ -285,6 +290,11 @@ storiesOf("Formik", module).add("Checkboxes", () => (
         <FormikCheckbox label="Checkbox" name="checkbox" />
         <br />
         <br />
+        "checked" initially true
+        <br />
+        <FormikCheckbox label="Checkbox" name="checkboxInitialChecked" />
+        <br />
+        <br />
         Label Placement Bottom
         <br />
         <FormikCheckbox
@@ -303,7 +313,8 @@ storiesOf("Formik", module).add("Checkboxes", () => (
 storiesOf("Formik", module).add("Radio Buttons", () => (
   <Formik
     initialValues={{
-      radioGroup: ""
+      radioGroup: "",
+      radioInitalFemale: "female"
     }}
     onSubmit={(values, actions) => {
       setTimeout(() => {
@@ -321,6 +332,25 @@ storiesOf("Formik", module).add("Radio Buttons", () => (
             <FormikRadio
               label="(Disabled option)"
               name="radioGroup"
+              value="disabled"
+              disabled
+            />
+          </RadioGroup>
+        </FormControl>
+        <br />
+        <FormControl>
+          <FormLabel>Gender</FormLabel>
+          <RadioGroup name="radioInitalFemale">
+            <FormikRadio
+              label="Female"
+              name="radioInitalFemale"
+              value="female"
+            />
+            <FormikRadio label="Male" name="radioInitalFemale" value="male" />
+            <FormikRadio label="Other" name="radioInitalFemale" value="other" />
+            <FormikRadio
+              label="(Disabled option)"
+              name="radioInitalFemale"
               value="disabled"
               disabled
             />

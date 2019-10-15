@@ -25,6 +25,7 @@ export function FormikRadio(props: FormikRadioProps) {
     error,
     formControlLabelProps,
     formHelperTextProps,
+    value,
     ...others
   } = props;
 
@@ -34,7 +35,9 @@ export function FormikRadio(props: FormikRadioProps) {
       render={({ field, form }: FastFieldProps<any>) => (
         <React.Fragment>
           <FormControlLabel
-            control={<Radio {...field} {...others} />}
+            control={
+              <Radio {...field} checked={field.value === value} {...others} />
+            }
             label={label}
             {...formControlLabelProps}
           />
