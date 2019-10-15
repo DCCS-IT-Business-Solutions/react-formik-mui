@@ -338,8 +338,10 @@ storiesOf("Formik", module).add("Radio Buttons", () => (
           </RadioGroup>
         </FormControl>
         <br />
+        <br />
+        <br />
         <FormControl>
-          <FormLabel>Gender</FormLabel>
+          <FormLabel>Female set initially</FormLabel>
           <RadioGroup name="radioInitalFemale">
             <FormikRadio
               label="Female"
