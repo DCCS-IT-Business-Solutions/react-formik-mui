@@ -33,7 +33,7 @@ export function FormikSwitch(props: FormikSwitchProps) {
       render={({ field, form }: FastFieldProps<any>) => (
         <React.Fragment>
           <FormControlLabel
-            control={<Switch {...field} {...others} />}
+            control={<Switch {...field} checked={field.value} {...others} />}
             label={label}
             {...formControlLabelProps}
           />

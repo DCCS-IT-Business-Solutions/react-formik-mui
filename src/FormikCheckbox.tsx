@@ -33,7 +33,7 @@ export function FormikCheckbox(props: FormikCheckboxProps) {
       render={({ field, form }: FastFieldProps<any>) => (
         <React.Fragment>
           <FormControlLabel
-            control={<Checkbox {...field} {...others} />}
+            control={<Checkbox {...field} checked={field.value} {...others} />}
             label={label}
             {...formControlLabelProps}
           />
