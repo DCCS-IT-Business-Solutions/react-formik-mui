@@ -193,7 +193,8 @@ storiesOf("Formik", module).add("Switches", () => (
   <Formik
     initialValues={{
       switch: "",
-      switchBottom: ""
+      switchBottom: "",
+      switchInitialChecked: true
     }}
     onSubmit={(values, actions) => {
       setTimeout(() => {
@@ -269,7 +270,8 @@ storiesOf("Formik", module).add("Checkboxes", () => (
   <Formik
     initialValues={{
       checkbox: "",
-      checkboxBottom: ""
+      checkboxBottom: "",
+      checkboxInitialChecked: true
     }}
     onSubmit={(values, actions) => {
       setTimeout(() => {
