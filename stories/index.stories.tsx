@@ -5,6 +5,7 @@ import { FormikTextField } from "../src/FormikTextField";
 import { FormikAutocomplete } from "../src/FormikAutocomplete";
 import { FormikFilePicker } from "../src/FormikFilePicker";
 import { FormikDatepicker } from "../src/FormikDatepicker";
+import { FormikDateTimepicker } from "../src/FormikDateTimepicker";
 // import { MBFSTextField } from "../src/MBFSTextField";
 import { Formik, FormikProps, FastField, FastFieldProps } from "formik";
 import {
@@ -21,6 +22,7 @@ import { FormikRadio } from "../src/FormikRadio";
 import AccountCircle from "@material-ui/icons/AccountCircle";
 import { MuiPickersUtilsProvider } from "@material-ui/pickers";
 import DateFnsUtils from "@date-io/date-fns";
+import MomentUtils from "@date-io/moment";
 import { FileMetadata } from "@dccs/react-filepicker-mui";
 import { reject, resolve } from "q";
 import { sleep } from "@dccs/utils";
@@ -125,11 +127,13 @@ storiesOf("Formik", module).add("TextFields", () => (
   />
 ));
 
-storiesOf("Formik", module).add("Datepicker", () => (
+storiesOf("Formik", module).add("Datepicker with datefns", () => (
   <MuiPickersUtilsProvider utils={DateFnsUtils}>
+    With DateFnsUtils:
     <Formik
       initialValues={{
-        date: ""
+        date: "",
+        dateTime: ""
       }}
       onSubmit={(values, actions) => {
         setTimeout(() => {
@@ -141,6 +145,41 @@ storiesOf("Formik", module).add("Datepicker", () => (
           Default:
           <br />
           <FormikDatepicker name="date" label="Date" />
+          <br />
+          Date+Time:
+          <br />
+          <FormikDateTimepicker name="dateTime" label="Date Time" />
+          <br />
+          <Button type="submit">Save</Button>
+          <Button onClick={formikProps.handleReset}>Reset</Button>
+        </form>
+      )}
+    />
+  </MuiPickersUtilsProvider>
+));
+
+storiesOf("Formik", module).add("Datepicker with moment", () => (
+  <MuiPickersUtilsProvider utils={MomentUtils}>
+    With MomentUtils:
+    <Formik
+      initialValues={{
+        date: "",
+        dateTime: ""
+      }}
+      onSubmit={(values, actions) => {
+        setTimeout(() => {
+          alert(JSON.stringify(values, null, 2));
+        });
+      }}
+      render={(formikProps: FormikProps<any>) => (
+        <form onSubmit={formikProps.handleSubmit}>
+          Default:
+          <br />
+          <FormikDatepicker name="date" label="Date" />
+          <br />
+          Date+Time:
+          <br />
+          <FormikDateTimepicker name="dateTime" label="Date Time" />
           <br />
           <Button type="submit">Save</Button>
           <Button onClick={formikProps.handleReset}>Reset</Button>
@@ -154,7 +193,8 @@ storiesOf("Formik", module).add("Switches", () => (
   <Formik
     initialValues={{
       switch: "",
-      switchBottom: ""
+      switchBottom: "",
+      switchInitialChecked: true
     }}
     onSubmit={(values, actions) => {
       setTimeout(() => {
@@ -166,6 +206,11 @@ storiesOf("Formik", module).add("Switches", () => (
         Default:
         <br />
         <FormikSwitch label="Switch" name="switch" />
+        <br />
+        <br />
+        "checked" initially true
+        <br />
+        <FormikSwitch label="Switch" name="switchInitialChecked" />
         <br />
         <br />
         Label Placement Bottom
@@ -230,7 +275,8 @@ storiesOf("Formik", module).add("Checkboxes", () => (
   <Formik
     initialValues={{
       checkbox: "",
-      checkboxBottom: ""
+      checkboxBottom: "",
+      checkboxInitialChecked: true
     }}
     onSubmit={(values, actions) => {
       setTimeout(() => {
@@ -242,6 +288,11 @@ storiesOf("Formik", module).add("Checkboxes", () => (
         Default:
         <br />
         <FormikCheckbox label="Checkbox" name="checkbox" />
+        <br />
+        <br />
+        "checked" initially true
+        <br />
+        <FormikCheckbox label="Checkbox" name="checkboxInitialChecked" />
         <br />
         <br />
         Label Placement Bottom
@@ -262,7 +313,8 @@ storiesOf("Formik", module).add("Checkboxes", () => (
 storiesOf("Formik", module).add("Radio Buttons", () => (
   <Formik
     initialValues={{
-      radioGroup: ""
+      radioGroup: "",
+      radioInitalFemale: "female"
     }}
     onSubmit={(values, actions) => {
       setTimeout(() => {
@@ -280,6 +332,27 @@ storiesOf("Formik", module).add("Radio Buttons", () => (
             <FormikRadio
               label="(Disabled option)"
               name="radioGroup"
+              value="disabled"
+              disabled
+            />
+          </RadioGroup>
+        </FormControl>
+        <br />
+        <br />
+        <br />
+        <FormControl>
+          <FormLabel>Female set initially</FormLabel>
+          <RadioGroup name="radioInitalFemale">
+            <FormikRadio
+              label="Female"
+              name="radioInitalFemale"
+              value="female"
+            />
+            <FormikRadio label="Male" name="radioInitalFemale" value="male" />
+            <FormikRadio label="Other" name="radioInitalFemale" value="other" />
+            <FormikRadio
+              label="(Disabled option)"
+              name="radioInitalFemale"
               value="disabled"
               disabled
             />

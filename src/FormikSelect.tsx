@@ -60,12 +60,12 @@ export function FormikSelect(props: FormikSelectProps) {
                 </MenuItem>
               ))}
           </Select>
-          <FormHelperText
-            error={(form.errors && form.errors[name] != null) || error}
-            {...formHelperTextProps}
-          >
-            {(form.errors && form.errors[name]) || helperText}
-          </FormHelperText>
+          {((form.errors && form.errors[name]) || helperText) && (
+            <FormHelperText
+              error={(form.errors && form.errors[name] != null) || error}
+              {...formHelperTextProps}
+            />
+          )}
         </FormControl>
       )}
     />

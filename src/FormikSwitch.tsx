@@ -33,16 +33,16 @@ export function FormikSwitch(props: FormikSwitchProps) {
       render={({ field, form }: FastFieldProps<any>) => (
         <React.Fragment>
           <FormControlLabel
-            control={<Switch {...field} {...others} />}
+            control={<Switch {...field} checked={field.value} {...others} />}
             label={label}
             {...formControlLabelProps}
           />
-          <FormHelperText
-            error={(form.errors && form.errors[name] != null) || error}
-            {...formHelperTextProps}
-          >
-            {(form.errors && form.errors[name]) || helperText}
-          </FormHelperText>
+          {((form.errors && form.errors[name]) || helperText) && (
+            <FormHelperText
+              error={(form.errors && form.errors[name] != null) || error}
+              {...formHelperTextProps}
+            />
+          )}
         </React.Fragment>
       )}
     />

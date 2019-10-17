@@ -109,16 +109,7 @@ export declare namespace FormikRadio {
                     "name": string;
                 };
             };
-            "onChange": {
-                "defaultValue": null;
-                "description": string;
-                "name": string;
-                "required": boolean;
-                "type": {
-                    "name": string;
-                };
-            };
-            "onError": {
+            "type": {
                 "defaultValue": null;
                 "description": string;
                 "name": string;
@@ -1126,6 +1117,15 @@ export declare namespace FormikRadio {
                     "name": string;
                 };
             };
+            "onChange": {
+                "defaultValue": null;
+                "description": string;
+                "name": string;
+                "required": boolean;
+                "type": {
+                    "name": string;
+                };
+            };
             "onChangeCapture": {
                 "defaultValue": null;
                 "description": string;
@@ -1235,6 +1235,15 @@ export declare namespace FormikRadio {
                 };
             };
             "onLoadCapture": {
+                "defaultValue": null;
+                "description": string;
+                "name": string;
+                "required": boolean;
+                "type": {
+                    "name": string;
+                };
+            };
+            "onError": {
                 "defaultValue": null;
                 "description": string;
                 "name": string;
@@ -2450,15 +2459,6 @@ export declare namespace FormikRadio {
                 };
             };
             "inputRef": {
-                "defaultValue": null;
-                "description": string;
-                "name": string;
-                "required": boolean;
-                "type": {
-                    "name": string;
-                };
-            };
-            "type": {
                 "defaultValue": null;
                 "description": string;
                 "name": string;

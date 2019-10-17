@@ -117,25 +117,7 @@ export declare namespace FormikCheckbox {
                     "name": string;
                 };
             };
-            "onChange": {
-                "defaultValue": null;
-                "description": string;
-                "name": string;
-                "required": boolean;
-                "type": {
-                    "name": string;
-                };
-            };
-            "onError": {
-                "defaultValue": null;
-                "description": string;
-                "name": string;
-                "required": boolean;
-                "type": {
-                    "name": string;
-                };
-            };
-            "value": {
+            "type": {
                 "defaultValue": null;
                 "description": string;
                 "name": string;
@@ -1143,6 +1125,15 @@ export declare namespace FormikCheckbox {
                     "name": string;
                 };
             };
+            "onChange": {
+                "defaultValue": null;
+                "description": string;
+                "name": string;
+                "required": boolean;
+                "type": {
+                    "name": string;
+                };
+            };
             "onChangeCapture": {
                 "defaultValue": null;
                 "description": string;
@@ -1252,6 +1243,15 @@ export declare namespace FormikCheckbox {
                 };
             };
             "onLoadCapture": {
+                "defaultValue": null;
+                "description": string;
+                "name": string;
+                "required": boolean;
+                "type": {
+                    "name": string;
+                };
+            };
+            "onError": {
                 "defaultValue": null;
                 "description": string;
                 "name": string;
@@ -2475,7 +2475,7 @@ export declare namespace FormikCheckbox {
                     "name": string;
                 };
             };
-            "type": {
+            "value": {
                 "defaultValue": null;
                 "description": string;
                 "name": string;
