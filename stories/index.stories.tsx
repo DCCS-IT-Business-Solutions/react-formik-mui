@@ -13,7 +13,8 @@ import {
   InputAdornment,
   FormControl,
   FormLabel,
-  RadioGroup
+  RadioGroup,
+  Typography
 } from "@material-ui/core";
 import { FormikSwitch } from "../src/FormikSwitch";
 import { FormikSelect } from "../src/FormikSelect";
@@ -366,65 +367,47 @@ storiesOf("Formik", module).add("Radio Buttons", () => (
   />
 ));
 
-storiesOf("Formik", module)
-  .add("Autocomplete", () => (
-    <Formik
-      initialValues={{
-        country: ""
-      }}
-      onSubmit={(values, actions) => {
-        setTimeout(() => {
-          alert(JSON.stringify(values, null, 2));
-        });
-      }}
-      render={(formikProps: FormikProps<any>) => (
-        <form onSubmit={formikProps.handleSubmit} autoComplete="off">
-          <FormikAutocomplete
-            name="country"
-            label="Länder"
-            onLoadOptions={(q: string) => [
-              { id: 1, name: "test 1" },
-              { id: 2, name: "test 2" },
-              { id: 3, name: "test 3" }
-            ]}
-            textProp={(value: any) => value.id + " " + value.name}
-            valueProp={(value: any) => ({ x: value.id + " " + value.name })}
-          />
-          <Button type="submit">Save</Button>
-          <Button onClick={formikProps.handleReset}>Reset</Button>
-        </form>
-      )}
-    />
-  ))
-  .add("Autocomplete with initial Value", () => (
-    <Formik
-      initialValues={{
-        country: 1
-      }}
-      onSubmit={(values, actions) => {
-        setTimeout(() => {
-          alert(JSON.stringify(values, null, 2));
-        });
-      }}
-      render={(formikProps: FormikProps<any>) => (
-        <form onSubmit={formikProps.handleSubmit} autoComplete="off">
-          <FormikAutocomplete
-            name="country"
-            label="Länder"
-            onLoadOptions={(q: string) => [
-              { id: 1, name: "test 1" },
-              { id: 2, name: "test 2" },
-              { id: 3, name: "test 3" }
-            ]}
-            textProp={value => value.id + " " + value.name}
-            valueProp={value => value.id}
-          />
-          <Button type="submit">Save</Button>
-          <Button onClick={formikProps.handleReset}>Reset</Button>
-        </form>
-      )}
-    />
-  ));
+storiesOf("Formik", module).add("Autocomplete", () => (
+  <Formik
+    initialValues={{
+      country: "",
+      countryWithInitial: 2
+    }}
+    onSubmit={(values, actions) => {
+      setTimeout(() => {
+        alert(JSON.stringify(values, null, 2));
+      });
+    }}
+    render={(formikProps: FormikProps<any>) => (
+      <form onSubmit={formikProps.handleSubmit} autoComplete="off">
+        <FormikAutocomplete
+          name="country"
+          label="No initial value"
+          onLoadOptions={(q: string) => [
+            { id: 1, name: "test 1" },
+            { id: 2, name: "test 2" },
+            { id: 3, name: "test 3" }
+          ]}
+          textProp={(value: any) => value.id + " " + value.name}
+          valueProp={(value: any) => value.id}
+        />
+        <FormikAutocomplete
+          name="countryWithInitial"
+          label="Initial value"
+          onLoadOptions={(q: string) => [
+            { id: 1, name: "test 1" },
+            { id: 2, name: "test 2" },
+            { id: 3, name: "test 3" }
+          ]}
+          textProp={value => value.id + " " + value.name}
+          valueProp={value => value.id}
+        />
+        <Button type="submit">Save</Button>
+        <Button onClick={formikProps.handleReset}>Reset</Button>
+      </form>
+    )}
+  />
+));
 
 const server: FileMetadata[] = [];
 function setServer(data: FileMetadata) {
