@@ -13,7 +13,8 @@ import {
   InputAdornment,
   FormControl,
   FormLabel,
-  RadioGroup
+  RadioGroup,
+  Typography
 } from "@material-ui/core";
 import { FormikSwitch } from "../src/FormikSwitch";
 import { FormikSelect } from "../src/FormikSelect";
@@ -369,7 +370,8 @@ storiesOf("Formik", module).add("Radio Buttons", () => (
 storiesOf("Formik", module).add("Autocomplete", () => (
   <Formik
     initialValues={{
-      country: ""
+      country: "",
+      countryWithInitial: 2
     }}
     onSubmit={(values, actions) => {
       setTimeout(() => {
@@ -380,14 +382,25 @@ storiesOf("Formik", module).add("Autocomplete", () => (
       <form onSubmit={formikProps.handleSubmit} autoComplete="off">
         <FormikAutocomplete
           name="country"
-          label="Länder"
+          label="No initial value"
           onLoadOptions={(q: string) => [
-            { id: 1, value: "test 1" },
-            { id: 2, value: "test 2" },
-            { id: 3, value: "test 3" }
+            { id: 1, name: "test 1" },
+            { id: 2, name: "test 2" },
+            { id: 3, name: "test 3" }
           ]}
-          textProp={(value: any) => value.value}
+          textProp={(value: any) => value.id + " " + value.name}
           valueProp={(value: any) => value.id}
+        />
+        <FormikAutocomplete
+          name="countryWithInitial"
+          label="Initial value"
+          onLoadOptions={(q: string) => [
+            { id: 1, name: "test 1" },
+            { id: 2, name: "test 2" },
+            { id: 3, name: "test 3" }
+          ]}
+          textProp={value => value.id + " " + value.name}
+          valueProp={value => value.id}
         />
         <Button type="submit">Save</Button>
         <Button onClick={formikProps.handleReset}>Reset</Button>
