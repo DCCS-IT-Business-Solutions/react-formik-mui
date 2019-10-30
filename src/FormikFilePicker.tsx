@@ -1,8 +1,8 @@
 import * as React from "react";
 import { FastField, FastFieldProps } from "formik";
 import { FilePicker, FilePickerProps } from "@dccs/react-filepicker-mui";
-import { FormHelperText } from "@material-ui/core";
 import { FormHelperTextProps } from "@material-ui/core/FormHelperText";
+import FormHelperTextWrapper from "./FormHelperTextWrapper";
 
 interface IBaseProps {
   name: string;
@@ -36,12 +36,13 @@ export function FormikFilePicker(props: FormikFormikFilePicker) {
             }}
             {...others}
           />
-          <FormHelperText
-            error={(form.errors && form.errors[name] != null) || error}
-            {...formHelperTextProps}
-          >
-            {(form.errors && form.errors[name]) || helperText}
-          </FormHelperText>
+          <FormHelperTextWrapper
+            name={name}
+            form={form}
+            error={error}
+            formHelperTextProps={formHelperTextProps}
+            helperText={helperText}
+          ></FormHelperTextWrapper>
         </React.Fragment>
       )}
     />

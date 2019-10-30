@@ -1,9 +1,12 @@
 import * as React from "react";
 import { FastField, FastFieldProps } from "formik";
-import { FormControlLabel, FormHelperText, Radio } from "@material-ui/core";
+import { FormControlLabel, Radio } from "@material-ui/core";
 import { RadioProps } from "@material-ui/core/Radio";
 import { FormHelperTextProps } from "@material-ui/core/FormHelperText";
 import { FormControlLabelProps } from "@material-ui/core/FormControlLabel";
+import FormHelperTextWrapper, {
+  IFormHelperTextWrapperProps
+} from "./FormHelperTextWrapper";
 
 interface IBaseProps {
   name: string;
@@ -13,6 +16,7 @@ interface IBaseProps {
   error?: boolean;
   formControlLabelProps?: Omit<FormControlLabelProps, "control" | "label">;
   formHelperTextProps?: FormHelperTextProps;
+  formHelperTextWrapperProps?: IFormHelperTextWrapperProps;
 }
 
 export type FormikRadioProps = IBaseProps & RadioProps;
@@ -25,6 +29,7 @@ export function FormikRadio(props: FormikRadioProps) {
     error,
     formControlLabelProps,
     formHelperTextProps,
+    formHelperTextWrapperProps,
     value,
     ...others
   } = props;
@@ -36,17 +41,25 @@ export function FormikRadio(props: FormikRadioProps) {
         <React.Fragment>
           <FormControlLabel
             control={
-              <Radio {...field} checked={field.value === value} {...others} />
+              <Radio
+                {...field}
+                value={value}
+                checked={field.value === value}
+                {...others}
+              />
             }
             label={label}
             {...formControlLabelProps}
           />
-          {((form.errors && form.errors[name]) || helperText) && (
-            <FormHelperText
-              error={(form.errors && form.errors[name] != null) || error}
-              {...formHelperTextProps}
-            />
-          )}
+          <FormHelperTextWrapper
+            name={name}
+            form={form}
+            error={error}
+            showEmptyFormHelperText={false} //prevent space between Radios without errors
+            formHelperTextProps={formHelperTextProps}
+            helperText={helperText}
+            {...formHelperTextWrapperProps}
+          ></FormHelperTextWrapper>
         </React.Fragment>
       )}
     />

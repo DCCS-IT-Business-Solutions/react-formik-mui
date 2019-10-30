@@ -2,6 +2,8 @@ import * as React from "react";
 import { FastField, FastFieldProps } from "formik";
 import { KeyboardDateTimePicker } from "@material-ui/pickers";
 import { KeyboardDateTimePickerProps } from "@material-ui/pickers/DateTimePicker/DateTimePicker";
+import { FormHelperTextProps } from "@material-ui/core/FormHelperText";
+import FormHelperTextWrapper from "./FormHelperTextWrapper";
 
 interface IBaseProps {
   name: string;
@@ -10,13 +12,14 @@ interface IBaseProps {
   error?: boolean;
   value?: any;
   onChange?: (date: any, value?: string | null) => void;
+  formHelperTextProps?: FormHelperTextProps;
 }
 
 export type FormikDateTimepickerProps = IBaseProps &
   Omit<KeyboardDateTimePickerProps, "onChange" | "value">;
 
 export function FormikDateTimepicker(props: FormikDateTimepickerProps) {
-  const { name, error, helperText, ...others } = props;
+  const { name, error, helperText, formHelperTextProps, ...others } = props;
 
   const defaultProps = {
     margin: "normal" as "normal",
@@ -33,19 +36,28 @@ export function FormikDateTimepicker(props: FormikDateTimepickerProps) {
     <FastField
       name={name}
       render={({ field, form }: FastFieldProps<any>) => (
-        <KeyboardDateTimePicker
-          {...defaultProps}
-          {...field}
-          // Material UI Bug:
-          // => || null  is needed for the label to work properly when Formik-"resetForm" or "handleReset" is used
-          value={field.value || null}
-          onChange={(date: any) => {
-            form.setFieldValue(name, date);
-          }}
-          error={(form.errors && form.errors[name] != null) || error}
-          helperText={(form.errors && form.errors[name]) || helperText}
-          {...others}
-        />
+        <React.Fragment>
+          <KeyboardDateTimePicker
+            {...defaultProps}
+            {...field}
+            // Material UI Bug:
+            // => || null  is needed for the label to work properly when Formik-"resetForm" or "handleReset" is used
+            value={field.value || null}
+            onChange={(date: any) => {
+              form.setFieldValue(name, date);
+            }}
+            // error={(form.errors && form.errors[name] != null) || error}
+            // helperText={(form.errors && form.errors[name]) || helperText}
+            {...others}
+          />
+          <FormHelperTextWrapper
+            name={name}
+            form={form}
+            error={error}
+            formHelperTextProps={formHelperTextProps}
+            helperText={helperText}
+          ></FormHelperTextWrapper>
+        </React.Fragment>
       )}
     />
   );

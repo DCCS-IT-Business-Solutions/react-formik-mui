@@ -18,10 +18,14 @@ import {
 } from "@material-ui/core";
 import { FormikSwitch } from "../src/FormikSwitch";
 import { FormikSelect } from "../src/FormikSelect";
+import { FormikSearchableSelect } from "../src/FormikSearchableSelect";
 import { FormikCheckbox } from "../src/FormikCheckbox";
 import { FormikRadio } from "../src/FormikRadio";
 import AccountCircle from "@material-ui/icons/AccountCircle";
-import { MuiPickersUtilsProvider } from "@material-ui/pickers";
+import {
+  MuiPickersUtilsProvider,
+  MuiPickersContext
+} from "@material-ui/pickers";
 import DateFnsUtils from "@date-io/date-fns";
 import MomentUtils from "@date-io/moment";
 import { FileMetadata } from "@dccs/react-filepicker-mui";
@@ -32,7 +36,7 @@ storiesOf("Formik", module).add("TextFields", () => (
   <Formik
     initialValues={{
       firstName: "",
-      salary: 0,
+      salary: "",
       multiline: "",
       helpertext: "",
       error: "",
@@ -153,6 +157,9 @@ storiesOf("Formik", module).add("Datepicker with datefns", () => (
           <br />
           <Button type="submit">Save</Button>
           <Button onClick={formikProps.handleReset}>Reset</Button>
+          <Button onClick={() => formikProps.setFieldError("date", "Error")}>
+            Set Error
+          </Button>
         </form>
       )}
     />
@@ -184,6 +191,9 @@ storiesOf("Formik", module).add("Datepicker with moment", () => (
           <br />
           <Button type="submit">Save</Button>
           <Button onClick={formikProps.handleReset}>Reset</Button>
+          <Button onClick={() => formikProps.setFieldError("date", "Error")}>
+            Set Error
+          </Button>
         </form>
       )}
     />
@@ -224,6 +234,9 @@ storiesOf("Formik", module).add("Switches", () => (
         <br />
         <Button type="submit">Save</Button>
         <Button onClick={formikProps.handleReset}>Reset</Button>
+        <Button onClick={() => formikProps.setFieldError("switch", "Error")}>
+          Set Error
+        </Button>
       </form>
     )}
   />
@@ -267,6 +280,80 @@ storiesOf("Formik", module).add("Selects", () => (
         <br />
         <Button type="submit">Save</Button>
         <Button onClick={formikProps.handleReset}>Reset</Button>
+        <Button onClick={() => formikProps.setFieldError("select", "Error")}>
+          Set Error
+        </Button>
+      </form>
+    )}
+  />
+));
+
+storiesOf("Formik", module).add("Searchable Selects", () => (
+  <Formik
+    initialValues={{
+      select: "",
+      select2: ""
+    }}
+    onSubmit={(values, actions) => {
+      setTimeout(() => {
+        alert(JSON.stringify(values, null, 2));
+      });
+    }}
+    render={(formikProps: FormikProps<any>) => (
+      <form onSubmit={formikProps.handleSubmit}>
+        Default:
+        <br />
+        <FormikSearchableSelect
+          label="Select"
+          name="select"
+          options={[
+            { key: 1, value: "Entry 1" },
+            { key: 2, value: "Entry 2" },
+            { key: 3, value: "Entry 3" }
+          ]}
+        />
+        <br />
+        Without Label:
+        <br />
+        <FormikSearchableSelect
+          name="select2"
+          options={[
+            { key: 1, value: "Entry 1" },
+            { key: 2, value: "Entry 2" },
+            { key: 3, value: "Entry 3" }
+          ]}
+        />
+        <FormControl>
+          <FormLabel>Gender</FormLabel>
+          <RadioGroup name="radioGroup">
+            <FormikRadio label="Female" name="radioGroup" value="female" />
+            <FormikRadio label="Male" name="radioGroup" value="male" />
+            <FormikRadio label="Other" name="radioGroup" value="other" />
+            <FormikRadio
+              label="(Disabled option)"
+              name="radioGroup"
+              value="disabled"
+              disabled
+            />
+          </RadioGroup>
+        </FormControl>
+        <FormikAutocomplete
+          name="country"
+          label="No initial value"
+          onLoadOptions={(q: string) => [
+            { id: 1, name: "test 1" },
+            { id: 2, name: "test 2" },
+            { id: 3, name: "test 3" }
+          ]}
+          textProp={(value: any) => value.id + " " + value.name}
+          valueProp={(value: any) => value.id}
+        />
+        <br />
+        <Button type="submit">Save</Button>
+        <Button onClick={formikProps.handleReset}>Reset</Button>
+        <Button onClick={() => formikProps.setFieldError("select", "Error")}>
+          Set Error
+        </Button>
       </form>
     )}
   />
@@ -306,6 +393,9 @@ storiesOf("Formik", module).add("Checkboxes", () => (
         <br />
         <Button type="submit">Save</Button>
         <Button onClick={formikProps.handleReset}>Reset</Button>
+        <Button onClick={() => formikProps.setFieldError("checkbox", "Error")}>
+          Set Error
+        </Button>
       </form>
     )}
   />
@@ -362,6 +452,11 @@ storiesOf("Formik", module).add("Radio Buttons", () => (
         <br />
         <Button type="submit">Save</Button>
         <Button onClick={formikProps.handleReset}>Reset</Button>
+        <Button
+          onClick={() => formikProps.setFieldError("radioGroup", "Error")}
+        >
+          Set Error
+        </Button>
       </form>
     )}
   />
@@ -404,6 +499,9 @@ storiesOf("Formik", module).add("Autocomplete", () => (
         />
         <Button type="submit">Save</Button>
         <Button onClick={formikProps.handleReset}>Reset</Button>
+        <Button onClick={() => formikProps.setFieldError("country", "Error")}>
+          Set Error
+        </Button>
       </form>
     )}
   />
@@ -468,6 +566,9 @@ storiesOf("Formik", module).add("FilePicker", () => (
         <DummyFilePicker />
         <Button type="submit">Save</Button>
         <Button onClick={formikProps.handleReset}>Reset</Button>
+        <Button onClick={() => formikProps.setFieldError("files", "Error")}>
+          Set Error
+        </Button>
       </form>
     )}
   />
@@ -533,6 +634,9 @@ storiesOf("Formik", module).add("Custom Components", () => (
         <br />
         <Button type="submit">Save</Button>
         <Button onClick={formikProps.handleReset}>Reset</Button>
+        <Button onClick={() => formikProps.setFieldError("custom", "Error")}>
+          Set Error
+        </Button>
         <br />
         For more Information:
         <br />
@@ -549,6 +653,97 @@ const initialValues = {} as any;
 for (let i = 1; i <= 500; i++) {
   initialValues["textField" + i.toString()] = "";
 }
+
+storiesOf("Formik", module).add("Playground", () => (
+  <MuiPickersUtilsProvider utils={MomentUtils}>
+    <Formik
+      initialValues={{
+        firstName: "",
+        date: "",
+        switch: "",
+        select: "",
+        radioGroup: "female",
+        checkbox: "",
+        country: "",
+        files: ""
+      }}
+      onSubmit={(values, actions) => {
+        setTimeout(() => {
+          alert(JSON.stringify(values, null, 2));
+        });
+      }}
+      render={(formikProps: FormikProps<any>) => (
+        <form onSubmit={formikProps.handleSubmit}>
+          <FormikTextField label="First Name" name="firstName" />
+          <FormikDatepicker name="date" label="Date" />
+          <FormikSwitch label="Switch" name="switch" />
+          <FormikSelect
+            label="Select"
+            name="select"
+            options={[
+              { key: 1, value: "Entry 1" },
+              { key: 2, value: "Entry 2" },
+              { key: 3, value: "Entry 3" }
+            ]}
+          />
+          <FormikSearchableSelect
+            label="Select"
+            name="select"
+            options={[
+              { key: 1, value: "Entry 1" },
+              { key: 2, value: "Entry 2" },
+              { key: 3, value: "Entry 3" }
+            ]}
+          />
+          <FormControl>
+            <FormLabel>Gender</FormLabel>
+            <RadioGroup name="radioGroup">
+              <FormikRadio label="Female" name="radioGroup" value="female" />
+              <FormikRadio label="Male" name="radioGroup" value="male" />
+              <FormikRadio label="Other" name="radioGroup" value="other" />
+              <FormikRadio
+                label="(Disabled option)"
+                name="radioGroup"
+                value="disabled"
+                disabled
+              />
+            </RadioGroup>
+          </FormControl>
+          <FormikCheckbox label="Checkbox" name="checkbox" />
+          <FormikAutocomplete
+            name="country"
+            label="No initial value"
+            onLoadOptions={(q: string) => [
+              { id: 1, name: "test 1" },
+              { id: 2, name: "test 2" },
+              { id: 3, name: "test 3" }
+            ]}
+            textProp={(value: any) => value.id + " " + value.name}
+            valueProp={(value: any) => value.id}
+          />
+          <DummyFilePicker />
+          <hr></hr>
+          <Button type="submit">Save</Button>
+          <Button onClick={formikProps.handleReset}>Reset</Button>
+          <Button
+            onClick={() => {
+              formikProps.setFieldError("date", "Error");
+              formikProps.setFieldError("select", "Error");
+              formikProps.setFieldError("firstName", "Error");
+              formikProps.setFieldError("switch", "Error");
+              formikProps.setFieldError("radioGroup", "Error");
+              formikProps.setFieldError("checkbox", "Error");
+              formikProps.setFieldError("country", "Error");
+              formikProps.setFieldError("files", "Error");
+            }}
+          >
+            Set Error
+          </Button>
+        </form>
+      )}
+    />
+  </MuiPickersUtilsProvider>
+));
 
 storiesOf("Formik", module).add("Huge Form", () => (
   <React.Fragment>

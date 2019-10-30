@@ -4,8 +4,8 @@ import MenuItem from "@material-ui/core/MenuItem";
 import FormControl, { FormControlProps } from "@material-ui/core/FormControl";
 import InputLabel from "@material-ui/core/InputLabel";
 import { FastField, FastFieldProps } from "formik";
-import { FormHelperText } from "@material-ui/core";
 import { FormHelperTextProps } from "@material-ui/core/FormHelperText";
+import FormHelperTextWrapper from "./FormHelperTextWrapper";
 
 interface IBaseProps {
   name: string;
@@ -60,12 +60,13 @@ export function FormikSelect(props: FormikSelectProps) {
                 </MenuItem>
               ))}
           </Select>
-          {((form.errors && form.errors[name]) || helperText) && (
-            <FormHelperText
-              error={(form.errors && form.errors[name] != null) || error}
-              {...formHelperTextProps}
-            />
-          )}
+          <FormHelperTextWrapper
+            name={name}
+            form={form}
+            error={error}
+            formHelperTextProps={formHelperTextProps}
+            helperText={helperText}
+          ></FormHelperTextWrapper>
         </FormControl>
       )}
     />

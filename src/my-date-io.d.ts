@@ -1,3 +1,3 @@
-declare module "@date-io/type" {
-  export type DateType = Date;
-}
+// declare module "@date-io/type" {
+//   export type DateType = Date;
+// }

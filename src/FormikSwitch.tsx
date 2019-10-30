@@ -1,9 +1,11 @@
 import * as React from "react";
 import Switch, { SwitchProps } from "@material-ui/core/Switch";
 import { FastField, FastFieldProps } from "formik";
-import { FormControlLabel, FormHelperText } from "@material-ui/core";
+import { FormControlLabel, FormControl } from "@material-ui/core";
 import { FormControlLabelProps } from "@material-ui/core/FormControlLabel";
 import { FormHelperTextProps } from "@material-ui/core/FormHelperText";
+import FormHelperTextWrapper from "./FormHelperTextWrapper";
+import { FormControlProps } from "@material-ui/core/FormControl";
 
 interface IBaseProps {
   name: string;
@@ -11,6 +13,7 @@ interface IBaseProps {
   helperText?: string;
   error?: boolean;
   formControlLabelProps?: Omit<FormControlLabelProps, "control" | "label">;
+  formControlProps?: FormControlProps;
   formHelperTextProps?: FormHelperTextProps;
 }
 
@@ -24,6 +27,7 @@ export function FormikSwitch(props: FormikSwitchProps) {
     error,
     formControlLabelProps,
     formHelperTextProps,
+    formControlProps,
     ...others
   } = props;
 
@@ -31,19 +35,20 @@ export function FormikSwitch(props: FormikSwitchProps) {
     <FastField
       name={name}
       render={({ field, form }: FastFieldProps<any>) => (
-        <React.Fragment>
+        <FormControl margin="normal" {...formControlProps}>
           <FormControlLabel
-            control={<Switch {...field} checked={field.value} {...others} />}
+            control={<Switch {...field} {...others} />}
             label={label}
             {...formControlLabelProps}
           />
-          {((form.errors && form.errors[name]) || helperText) && (
-            <FormHelperText
-              error={(form.errors && form.errors[name] != null) || error}
-              {...formHelperTextProps}
-            />
-          )}
-        </React.Fragment>
+          <FormHelperTextWrapper
+            name={name}
+            form={form}
+            error={error}
+            helperText={helperText}
+            formHelperTextProps={formHelperTextProps}
+          ></FormHelperTextWrapper>
+        </FormControl>
       )}
     />
   );
