@@ -2,6 +2,7 @@
 import { RadioProps } from "@material-ui/core/Radio";
 import { FormHelperTextProps } from "@material-ui/core/FormHelperText";
 import { FormControlLabelProps } from "@material-ui/core/FormControlLabel";
+import { IFormHelperTextWrapperProps } from "./FormHelperTextWrapper";
 interface IBaseProps {
     name: string;
     value: any;
@@ -10,6 +11,7 @@ interface IBaseProps {
     error?: boolean;
     formControlLabelProps?: Omit<FormControlLabelProps, "control" | "label">;
     formHelperTextProps?: FormHelperTextProps;
+    formHelperTextWrapperProps?: IFormHelperTextWrapperProps;
 }
 export declare type FormikRadioProps = IBaseProps & RadioProps;
 export declare function FormikRadio(props: FormikRadioProps): JSX.Element;
@@ -82,6 +84,15 @@ export declare namespace FormikRadio {
                     "name": string;
                 };
             };
+            "formHelperTextWrapperProps": {
+                "defaultValue": null;
+                "description": string;
+                "name": string;
+                "required": boolean;
+                "type": {
+                    "name": string;
+                };
+            };
             "checkedIcon": {
                 "defaultValue": null;
                 "description": string;
@@ -109,7 +120,61 @@ export declare namespace FormikRadio {
                     "name": string;
                 };
             };
-            "type": {
+            "onDrop": {
+                "defaultValue": null;
+                "description": string;
+                "name": string;
+                "required": boolean;
+                "type": {
+                    "name": string;
+                };
+            };
+            "onDragEnter": {
+                "defaultValue": null;
+                "description": string;
+                "name": string;
+                "required": boolean;
+                "type": {
+                    "name": string;
+                };
+            };
+            "onDragOver": {
+                "defaultValue": null;
+                "description": string;
+                "name": string;
+                "required": boolean;
+                "type": {
+                    "name": string;
+                };
+            };
+            "onDragLeave": {
+                "defaultValue": null;
+                "description": string;
+                "name": string;
+                "required": boolean;
+                "type": {
+                    "name": string;
+                };
+            };
+            "disabled": {
+                "defaultValue": null;
+                "description": string;
+                "name": string;
+                "required": boolean;
+                "type": {
+                    "name": string;
+                };
+            };
+            "onChange": {
+                "defaultValue": null;
+                "description": string;
+                "name": string;
+                "required": boolean;
+                "type": {
+                    "name": string;
+                };
+            };
+            "ref": {
                 "defaultValue": null;
                 "description": string;
                 "name": string;
@@ -137,15 +202,6 @@ export declare namespace FormikRadio {
                 };
             };
             "title": {
-                "defaultValue": null;
-                "description": string;
-                "name": string;
-                "required": boolean;
-                "type": {
-                    "name": string;
-                };
-            };
-            "ref": {
                 "defaultValue": null;
                 "description": string;
                 "name": string;
@@ -1117,15 +1173,6 @@ export declare namespace FormikRadio {
                     "name": string;
                 };
             };
-            "onChange": {
-                "defaultValue": null;
-                "description": string;
-                "name": string;
-                "required": boolean;
-                "type": {
-                    "name": string;
-                };
-            };
             "onChangeCapture": {
                 "defaultValue": null;
                 "description": string;
@@ -1819,15 +1866,6 @@ export declare namespace FormikRadio {
                     "name": string;
                 };
             };
-            "onDragEnter": {
-                "defaultValue": null;
-                "description": string;
-                "name": string;
-                "required": boolean;
-                "type": {
-                    "name": string;
-                };
-            };
             "onDragEnterCapture": {
                 "defaultValue": null;
                 "description": string;
@@ -1855,25 +1893,7 @@ export declare namespace FormikRadio {
                     "name": string;
                 };
             };
-            "onDragLeave": {
-                "defaultValue": null;
-                "description": string;
-                "name": string;
-                "required": boolean;
-                "type": {
-                    "name": string;
-                };
-            };
             "onDragLeaveCapture": {
-                "defaultValue": null;
-                "description": string;
-                "name": string;
-                "required": boolean;
-                "type": {
-                    "name": string;
-                };
-            };
-            "onDragOver": {
                 "defaultValue": null;
                 "description": string;
                 "name": string;
@@ -1901,15 +1921,6 @@ export declare namespace FormikRadio {
                 };
             };
             "onDragStartCapture": {
-                "defaultValue": null;
-                "description": string;
-                "name": string;
-                "required": boolean;
-                "type": {
-                    "name": string;
-                };
-            };
-            "onDrop": {
                 "defaultValue": null;
                 "description": string;
                 "name": string;
@@ -2422,7 +2433,7 @@ export declare namespace FormikRadio {
                     "name": string;
                 };
             };
-            "disabled": {
+            "size": {
                 "defaultValue": null;
                 "description": string;
                 "name": string;
@@ -2459,6 +2470,15 @@ export declare namespace FormikRadio {
                 };
             };
             "inputRef": {
+                "defaultValue": null;
+                "description": string;
+                "name": string;
+                "required": boolean;
+                "type": {
+                    "name": string;
+                };
+            };
+            "type": {
                 "defaultValue": null;
                 "description": string;
                 "name": string;
@@ -2513,6 +2533,15 @@ export declare namespace FormikRadio {
                 };
             };
             "formTarget": {
+                "defaultValue": null;
+                "description": string;
+                "name": string;
+                "required": boolean;
+                "type": {
+                    "name": string;
+                };
+            };
+            "checked": {
                 "defaultValue": null;
                 "description": string;
                 "name": string;
@@ -2612,24 +2641,6 @@ export declare namespace FormikRadio {
                 };
             };
             "edge": {
-                "defaultValue": null;
-                "description": string;
-                "name": string;
-                "required": boolean;
-                "type": {
-                    "name": string;
-                };
-            };
-            "size": {
-                "defaultValue": null;
-                "description": string;
-                "name": string;
-                "required": boolean;
-                "type": {
-                    "name": string;
-                };
-            };
-            "checked": {
                 "defaultValue": null;
                 "description": string;
                 "name": string;

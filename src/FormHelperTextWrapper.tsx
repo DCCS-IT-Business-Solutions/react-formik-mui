@@ -31,9 +31,9 @@ export default function FormHelperTextWrapper(
     Object.keys(form.errors).length === 0 &&
     !form.errors[name] &&
     !helperText
-  )
+  ) {
     return null;
-
+  }
   return (
     <React.Fragment>
       <FormHelperText

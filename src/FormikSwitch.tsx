@@ -47,7 +47,7 @@ export function FormikSwitch(props: FormikSwitchProps) {
             error={error}
             helperText={helperText}
             formHelperTextProps={formHelperTextProps}
-          ></FormHelperTextWrapper>
+          />
         </FormControl>
       )}
     />

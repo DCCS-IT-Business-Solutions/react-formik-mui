@@ -47,7 +47,7 @@ export function FormikCheckbox(props: FormikCheckboxProps) {
             error={error}
             formHelperTextProps={formHelperTextProps}
             helperText={helperText}
-          ></FormHelperTextWrapper>
+          />
         </FormControl>
       )}
     />

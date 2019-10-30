@@ -51,7 +51,7 @@ export declare namespace FormikFilePicker {
                     "name": string;
                 };
             };
-            "onDragEnter": {
+            "multiple": {
                 "defaultValue": null;
                 "description": string;
                 "name": string;
@@ -60,7 +60,7 @@ export declare namespace FormikFilePicker {
                     "name": string;
                 };
             };
-            "onDragLeave": {
+            "onDragEnter": {
                 "defaultValue": null;
                 "description": string;
                 "name": string;
@@ -78,16 +78,7 @@ export declare namespace FormikFilePicker {
                     "name": string;
                 };
             };
-            "disabled": {
-                "defaultValue": null;
-                "description": string;
-                "name": string;
-                "required": boolean;
-                "type": {
-                    "name": string;
-                };
-            };
-            "multiple": {
+            "onDragLeave": {
                 "defaultValue": null;
                 "description": string;
                 "name": string;
@@ -160,6 +151,15 @@ export declare namespace FormikFilePicker {
                 };
             };
             "noDragEventsBubbling": {
+                "defaultValue": null;
+                "description": string;
+                "name": string;
+                "required": boolean;
+                "type": {
+                    "name": string;
+                };
+            };
+            "disabled": {
                 "defaultValue": null;
                 "description": string;
                 "name": string;

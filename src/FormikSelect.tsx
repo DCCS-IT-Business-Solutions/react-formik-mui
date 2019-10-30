@@ -66,7 +66,7 @@ export function FormikSelect(props: FormikSelectProps) {
             error={error}
             formHelperTextProps={formHelperTextProps}
             helperText={helperText}
-          ></FormHelperTextWrapper>
+          />
         </FormControl>
       )}
     />

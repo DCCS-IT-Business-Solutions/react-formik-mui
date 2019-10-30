@@ -42,7 +42,7 @@ export function FormikFilePicker(props: FormikFormikFilePicker) {
             error={error}
             formHelperTextProps={formHelperTextProps}
             helperText={helperText}
-          ></FormHelperTextWrapper>
+          />
         </React.Fragment>
       )}
     />

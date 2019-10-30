@@ -1,6 +1,9 @@
 import * as React from "react";
 import { FastField, FastFieldProps } from "formik";
-import { KeyboardDateTimePicker } from "@material-ui/pickers";
+import {
+  KeyboardDateTimePicker,
+  MuiPickersContext
+} from "@material-ui/pickers";
 import { KeyboardDateTimePickerProps } from "@material-ui/pickers/DateTimePicker/DateTimePicker";
 import { FormHelperTextProps } from "@material-ui/core/FormHelperText";
 import FormHelperTextWrapper from "./FormHelperTextWrapper";
@@ -18,19 +21,31 @@ interface IBaseProps {
 export type FormikDateTimepickerProps = IBaseProps &
   Omit<KeyboardDateTimePickerProps, "onChange" | "value">;
 
+const defaultProps = {
+  margin: "normal" as "normal",
+  style: { minWidth: "240px" },
+  format: "dd.MM.yyyy HH:mm",
+  placeholder: "tt.mm.jjjj",
+  clearable: true,
+  autoOk: true,
+  variant: "inline" as any,
+  ampm: false
+};
+
 export function FormikDateTimepicker(props: FormikDateTimepickerProps) {
   const { name, error, helperText, formHelperTextProps, ...others } = props;
 
-  const defaultProps = {
-    margin: "normal" as "normal",
-    style: { minWidth: "240px" },
-    format: "dd.MM.yyyy HH:mm",
-    placeholder: "tt.mm.jjjj",
-    clearable: true,
-    autoOk: true,
-    variant: "inline" as any,
-    ampm: false
-  };
+  // Check context for moment/datefns because formats are different
+  const context = React.useContext(MuiPickersContext);
+
+  if (context && context.constructor) {
+    if (context.constructor.name === "MomentUtils") {
+      (defaultProps as any).format = "DD.MM.YYYY";
+    }
+    if (context.constructor.name === "DateFnsUtils") {
+      (defaultProps as any).format = "dd.MM.yyyy";
+    }
+  }
 
   return (
     <FastField
@@ -56,7 +71,7 @@ export function FormikDateTimepicker(props: FormikDateTimepickerProps) {
             error={error}
             formHelperTextProps={formHelperTextProps}
             helperText={helperText}
-          ></FormHelperTextWrapper>
+          />
         </React.Fragment>
       )}
     />

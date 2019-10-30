@@ -2,6 +2,7 @@
 import { CheckboxProps } from "@material-ui/core/Checkbox";
 import { FormHelperTextProps } from "@material-ui/core/FormHelperText";
 import { FormControlLabelProps } from "@material-ui/core/FormControlLabel";
+import { FormControlProps } from "@material-ui/core/FormControl";
 interface IBaseProps {
     name: string;
     label?: string;
@@ -9,6 +10,7 @@ interface IBaseProps {
     error?: boolean;
     formControlLabelProps?: Omit<FormControlLabelProps, "control" | "label">;
     formHelperTextProps?: FormHelperTextProps;
+    formControlProps?: FormControlProps;
 }
 export declare type FormikCheckboxProps = IBaseProps & CheckboxProps;
 export declare function FormikCheckbox(props: FormikCheckboxProps): JSX.Element;
@@ -72,6 +74,15 @@ export declare namespace FormikCheckbox {
                     "name": string;
                 };
             };
+            "formControlProps": {
+                "defaultValue": null;
+                "description": string;
+                "name": string;
+                "required": boolean;
+                "type": {
+                    "name": string;
+                };
+            };
             "checkedIcon": {
                 "defaultValue": null;
                 "description": string;
@@ -117,7 +128,70 @@ export declare namespace FormikCheckbox {
                     "name": string;
                 };
             };
-            "type": {
+            "onDrop": {
+                "defaultValue": null;
+                "description": string;
+                "name": string;
+                "required": boolean;
+                "type": {
+                    "name": string;
+                };
+            };
+            "onDragEnter": {
+                "defaultValue": null;
+                "description": string;
+                "name": string;
+                "required": boolean;
+                "type": {
+                    "name": string;
+                };
+            };
+            "onDragOver": {
+                "defaultValue": null;
+                "description": string;
+                "name": string;
+                "required": boolean;
+                "type": {
+                    "name": string;
+                };
+            };
+            "onDragLeave": {
+                "defaultValue": null;
+                "description": string;
+                "name": string;
+                "required": boolean;
+                "type": {
+                    "name": string;
+                };
+            };
+            "disabled": {
+                "defaultValue": null;
+                "description": string;
+                "name": string;
+                "required": boolean;
+                "type": {
+                    "name": string;
+                };
+            };
+            "value": {
+                "defaultValue": null;
+                "description": string;
+                "name": string;
+                "required": boolean;
+                "type": {
+                    "name": string;
+                };
+            };
+            "onChange": {
+                "defaultValue": null;
+                "description": string;
+                "name": string;
+                "required": boolean;
+                "type": {
+                    "name": string;
+                };
+            };
+            "ref": {
                 "defaultValue": null;
                 "description": string;
                 "name": string;
@@ -145,15 +219,6 @@ export declare namespace FormikCheckbox {
                 };
             };
             "title": {
-                "defaultValue": null;
-                "description": string;
-                "name": string;
-                "required": boolean;
-                "type": {
-                    "name": string;
-                };
-            };
-            "ref": {
                 "defaultValue": null;
                 "description": string;
                 "name": string;
@@ -1125,15 +1190,6 @@ export declare namespace FormikCheckbox {
                     "name": string;
                 };
             };
-            "onChange": {
-                "defaultValue": null;
-                "description": string;
-                "name": string;
-                "required": boolean;
-                "type": {
-                    "name": string;
-                };
-            };
             "onChangeCapture": {
                 "defaultValue": null;
                 "description": string;
@@ -1827,15 +1883,6 @@ export declare namespace FormikCheckbox {
                     "name": string;
                 };
             };
-            "onDragEnter": {
-                "defaultValue": null;
-                "description": string;
-                "name": string;
-                "required": boolean;
-                "type": {
-                    "name": string;
-                };
-            };
             "onDragEnterCapture": {
                 "defaultValue": null;
                 "description": string;
@@ -1863,25 +1910,7 @@ export declare namespace FormikCheckbox {
                     "name": string;
                 };
             };
-            "onDragLeave": {
-                "defaultValue": null;
-                "description": string;
-                "name": string;
-                "required": boolean;
-                "type": {
-                    "name": string;
-                };
-            };
             "onDragLeaveCapture": {
-                "defaultValue": null;
-                "description": string;
-                "name": string;
-                "required": boolean;
-                "type": {
-                    "name": string;
-                };
-            };
-            "onDragOver": {
                 "defaultValue": null;
                 "description": string;
                 "name": string;
@@ -1909,15 +1938,6 @@ export declare namespace FormikCheckbox {
                 };
             };
             "onDragStartCapture": {
-                "defaultValue": null;
-                "description": string;
-                "name": string;
-                "required": boolean;
-                "type": {
-                    "name": string;
-                };
-            };
-            "onDrop": {
                 "defaultValue": null;
                 "description": string;
                 "name": string;
@@ -2430,7 +2450,7 @@ export declare namespace FormikCheckbox {
                     "name": string;
                 };
             };
-            "disabled": {
+            "size": {
                 "defaultValue": null;
                 "description": string;
                 "name": string;
@@ -2475,7 +2495,7 @@ export declare namespace FormikCheckbox {
                     "name": string;
                 };
             };
-            "value": {
+            "type": {
                 "defaultValue": null;
                 "description": string;
                 "name": string;
@@ -2530,6 +2550,15 @@ export declare namespace FormikCheckbox {
                 };
             };
             "formTarget": {
+                "defaultValue": null;
+                "description": string;
+                "name": string;
+                "required": boolean;
+                "type": {
+                    "name": string;
+                };
+            };
+            "checked": {
                 "defaultValue": null;
                 "description": string;
                 "name": string;
@@ -2629,24 +2658,6 @@ export declare namespace FormikCheckbox {
                 };
             };
             "edge": {
-                "defaultValue": null;
-                "description": string;
-                "name": string;
-                "required": boolean;
-                "type": {
-                    "name": string;
-                };
-            };
-            "size": {
-                "defaultValue": null;
-                "description": string;
-                "name": string;
-                "required": boolean;
-                "type": {
-                    "name": string;
-                };
-            };
-            "checked": {
                 "defaultValue": null;
                 "description": string;
                 "name": string;

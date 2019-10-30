@@ -33,10 +33,12 @@ export function FormikDatepicker(props: FormikDatepickerProps) {
   const context = React.useContext(MuiPickersContext);
 
   if (context && context.constructor) {
-    if (context.constructor.name === "MomentUtils")
+    if (context.constructor.name === "MomentUtils") {
       (defaultProps as any).format = "DD.MM.YYYY";
-    if (context.constructor.name === "DateFnsUtils")
+    }
+    if (context.constructor.name === "DateFnsUtils") {
       (defaultProps as any).format = "dd.MM.yyyy";
+    }
   }
 
   return (

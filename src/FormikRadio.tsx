@@ -55,11 +55,11 @@ export function FormikRadio(props: FormikRadioProps) {
             name={name}
             form={form}
             error={error}
-            showEmptyFormHelperText={false} //prevent space between Radios without errors
+            showEmptyFormHelperText={false} // prevent space between Radios without errors
             formHelperTextProps={formHelperTextProps}
             helperText={helperText}
             {...formHelperTextWrapperProps}
-          ></FormHelperTextWrapper>
+          />
         </React.Fragment>
       )}
     />
