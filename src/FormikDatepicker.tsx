@@ -21,6 +21,7 @@ const defaultProps = {
   margin: "normal" as "normal",
   style: { minWidth: "240px" },
   placeholder: "tt.mm.jjjj",
+  format: "dd.MM.yyyy",
   clearable: true,
   autoOk: true,
   variant: "inline" as any
@@ -34,10 +35,10 @@ export function FormikDatepicker(props: FormikDatepickerProps) {
 
   if (context && context.constructor) {
     if (context.constructor.name === "MomentUtils") {
-      (defaultProps as any).format = "DD.MM.YYYY";
+      defaultProps.format = "DD.MM.YYYY";
     }
     if (context.constructor.name === "DateFnsUtils") {
-      (defaultProps as any).format = "dd.MM.yyyy";
+      defaultProps.format = "dd.MM.yyyy";
     }
   }
 

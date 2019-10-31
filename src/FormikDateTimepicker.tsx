@@ -40,13 +40,12 @@ export function FormikDateTimepicker(props: FormikDateTimepickerProps) {
 
   if (context && context.constructor) {
     if (context.constructor.name === "MomentUtils") {
-      (defaultProps as any).format = "DD.MM.YYYY";
+      defaultProps.format = "DD.MM.YYYY HH:mm";
     }
     if (context.constructor.name === "DateFnsUtils") {
-      (defaultProps as any).format = "dd.MM.yyyy";
+      defaultProps.format = "dd.MM.yyyy HH:mm";
     }
   }
-
   return (
     <FastField
       name={name}

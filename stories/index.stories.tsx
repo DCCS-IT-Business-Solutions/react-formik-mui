@@ -5,6 +5,7 @@ import { FormikTextField } from "../src/FormikTextField";
 import { FormikAutocomplete } from "../src/FormikAutocomplete";
 import { FormikFilePicker } from "../src/FormikFilePicker";
 import { FormikDatepicker } from "../src/FormikDatepicker";
+import { FormikSlider } from "../src/FormikSlider";
 import { FormikDateTimepicker } from "../src/FormikDateTimepicker";
 // import { MBFSTextField } from "../src/MBFSTextField";
 import { Formik, FormikProps, FastField, FastFieldProps } from "formik";
@@ -574,6 +575,58 @@ storiesOf("Formik", module).add("FilePicker", () => (
   />
 ));
 
+storiesOf("Formik", module).add("Slider", () => (
+  <Formik
+    initialValues={{
+      slider: ""
+    }}
+    onSubmit={(values, actions) => {
+      setTimeout(() => {
+        alert(JSON.stringify(values, null, 2));
+      });
+    }}
+    render={(formikProps: FormikProps<any>) => (
+      <form onSubmit={formikProps.handleSubmit} autoComplete="off">
+        <div style={{ padding: "20px" }}>
+          <FormikSlider
+            name="slider"
+            defaultValue={80}
+            getAriaValueText={() => "Test C"}
+            aria-labelledby="discrete-slider-always"
+            step={10}
+            marks={[
+              {
+                value: 0,
+                label: "0°C"
+              },
+              {
+                value: 20,
+                label: "20°C"
+              },
+              {
+                value: 37,
+                label: "37°C"
+              },
+              {
+                value: 100,
+                label: "100°C"
+              }
+            ]}
+            valueLabelDisplay="on"
+          ></FormikSlider>
+        </div>
+        <br></br>
+        <br></br>
+        <Button type="submit">Save</Button>
+        <Button onClick={formikProps.handleReset}>Reset</Button>
+        <Button onClick={() => formikProps.setFieldError("slider", "Error")}>
+          Set Error
+        </Button>
+      </form>
+    )}
+  />
+));
+
 storiesOf("Formik", module).add("Custom Components", () => (
   <Formik
     initialValues={{
@@ -676,6 +729,7 @@ storiesOf("Formik", module).add("Playground", () => (
         <form onSubmit={formikProps.handleSubmit}>
           <FormikTextField label="First Name" name="firstName" />
           <FormikDatepicker name="date" label="Date" />
+          <FormikDateTimepicker name="date" label="Date" />
           <FormikSwitch label="Switch" name="switch" />
           <FormikSelect
             label="Select"

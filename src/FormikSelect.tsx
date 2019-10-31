@@ -18,6 +18,10 @@ interface IBaseProps {
 
 export type FormikSelectProps = IBaseProps & SelectProps;
 
+const defaultProps = {
+  style: { minWidth: "240px" }
+};
+
 export function FormikSelect(props: FormikSelectProps) {
   const {
     label,
@@ -29,10 +33,6 @@ export function FormikSelect(props: FormikSelectProps) {
     formHelperTextProps,
     ...others
   } = props;
-
-  const defaultProps = {
-    style: { minWidth: "240px" }
-  };
 
   return (
     <FastField

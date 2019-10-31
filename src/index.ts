@@ -7,4 +7,5 @@ export * from "./FormikSwitch";
 export * from "./FormikSelect";
 export * from "./FormikAutocomplete";
 export * from "./FormikFilePicker";
+export * from "./FormikSlider";
 export * from "./FormikSearchableSelect";
