@@ -216,43 +216,7 @@ export declare namespace FormikSelect {
                     "name": string;
                 };
             };
-            "onDrop": {
-                "defaultValue": null;
-                "description": string;
-                "name": string;
-                "required": boolean;
-                "type": {
-                    "name": string;
-                };
-            };
-            "onDragEnter": {
-                "defaultValue": null;
-                "description": string;
-                "name": string;
-                "required": boolean;
-                "type": {
-                    "name": string;
-                };
-            };
-            "onDragOver": {
-                "defaultValue": null;
-                "description": string;
-                "name": string;
-                "required": boolean;
-                "type": {
-                    "name": string;
-                };
-            };
-            "onDragLeave": {
-                "defaultValue": null;
-                "description": string;
-                "name": string;
-                "required": boolean;
-                "type": {
-                    "name": string;
-                };
-            };
-            "disabled": {
+            "type": {
                 "defaultValue": null;
                 "description": string;
                 "name": string;
@@ -1944,6 +1908,15 @@ export declare namespace FormikSelect {
                     "name": string;
                 };
             };
+            "onDragEnter": {
+                "defaultValue": null;
+                "description": string;
+                "name": string;
+                "required": boolean;
+                "type": {
+                    "name": string;
+                };
+            };
             "onDragEnterCapture": {
                 "defaultValue": null;
                 "description": string;
@@ -1971,7 +1944,25 @@ export declare namespace FormikSelect {
                     "name": string;
                 };
             };
+            "onDragLeave": {
+                "defaultValue": null;
+                "description": string;
+                "name": string;
+                "required": boolean;
+                "type": {
+                    "name": string;
+                };
+            };
             "onDragLeaveCapture": {
+                "defaultValue": null;
+                "description": string;
+                "name": string;
+                "required": boolean;
+                "type": {
+                    "name": string;
+                };
+            };
+            "onDragOver": {
                 "defaultValue": null;
                 "description": string;
                 "name": string;
@@ -1999,6 +1990,15 @@ export declare namespace FormikSelect {
                 };
             };
             "onDragStartCapture": {
+                "defaultValue": null;
+                "description": string;
+                "name": string;
+                "required": boolean;
+                "type": {
+                    "name": string;
+                };
+            };
+            "onDrop": {
                 "defaultValue": null;
                 "description": string;
                 "name": string;
@@ -2511,6 +2511,15 @@ export declare namespace FormikSelect {
                     "name": string;
                 };
             };
+            "disabled": {
+                "defaultValue": null;
+                "description": string;
+                "name": string;
+                "required": boolean;
+                "type": {
+                    "name": string;
+                };
+            };
             "error": {
                 "defaultValue": null;
                 "description": string;
@@ -2602,15 +2611,6 @@ export declare namespace FormikSelect {
                 };
             };
             "rowsMax": {
-                "defaultValue": null;
-                "description": string;
-                "name": string;
-                "required": boolean;
-                "type": {
-                    "name": string;
-                };
-            };
-            "type": {
                 "defaultValue": null;
                 "description": string;
                 "name": string;

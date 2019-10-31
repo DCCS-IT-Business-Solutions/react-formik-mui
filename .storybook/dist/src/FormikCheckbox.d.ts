@@ -128,61 +128,7 @@ export declare namespace FormikCheckbox {
                     "name": string;
                 };
             };
-            "onDrop": {
-                "defaultValue": null;
-                "description": string;
-                "name": string;
-                "required": boolean;
-                "type": {
-                    "name": string;
-                };
-            };
-            "onDragEnter": {
-                "defaultValue": null;
-                "description": string;
-                "name": string;
-                "required": boolean;
-                "type": {
-                    "name": string;
-                };
-            };
-            "onDragOver": {
-                "defaultValue": null;
-                "description": string;
-                "name": string;
-                "required": boolean;
-                "type": {
-                    "name": string;
-                };
-            };
-            "onDragLeave": {
-                "defaultValue": null;
-                "description": string;
-                "name": string;
-                "required": boolean;
-                "type": {
-                    "name": string;
-                };
-            };
-            "disabled": {
-                "defaultValue": null;
-                "description": string;
-                "name": string;
-                "required": boolean;
-                "type": {
-                    "name": string;
-                };
-            };
-            "value": {
-                "defaultValue": null;
-                "description": string;
-                "name": string;
-                "required": boolean;
-                "type": {
-                    "name": string;
-                };
-            };
-            "onChange": {
+            "type": {
                 "defaultValue": null;
                 "description": string;
                 "name": string;
@@ -1190,6 +1136,15 @@ export declare namespace FormikCheckbox {
                     "name": string;
                 };
             };
+            "onChange": {
+                "defaultValue": null;
+                "description": string;
+                "name": string;
+                "required": boolean;
+                "type": {
+                    "name": string;
+                };
+            };
             "onChangeCapture": {
                 "defaultValue": null;
                 "description": string;
@@ -1883,6 +1838,15 @@ export declare namespace FormikCheckbox {
                     "name": string;
                 };
             };
+            "onDragEnter": {
+                "defaultValue": null;
+                "description": string;
+                "name": string;
+                "required": boolean;
+                "type": {
+                    "name": string;
+                };
+            };
             "onDragEnterCapture": {
                 "defaultValue": null;
                 "description": string;
@@ -1910,7 +1874,25 @@ export declare namespace FormikCheckbox {
                     "name": string;
                 };
             };
+            "onDragLeave": {
+                "defaultValue": null;
+                "description": string;
+                "name": string;
+                "required": boolean;
+                "type": {
+                    "name": string;
+                };
+            };
             "onDragLeaveCapture": {
+                "defaultValue": null;
+                "description": string;
+                "name": string;
+                "required": boolean;
+                "type": {
+                    "name": string;
+                };
+            };
+            "onDragOver": {
                 "defaultValue": null;
                 "description": string;
                 "name": string;
@@ -1938,6 +1920,15 @@ export declare namespace FormikCheckbox {
                 };
             };
             "onDragStartCapture": {
+                "defaultValue": null;
+                "description": string;
+                "name": string;
+                "required": boolean;
+                "type": {
+                    "name": string;
+                };
+            };
+            "onDrop": {
                 "defaultValue": null;
                 "description": string;
                 "name": string;
@@ -2450,7 +2441,7 @@ export declare namespace FormikCheckbox {
                     "name": string;
                 };
             };
-            "size": {
+            "disabled": {
                 "defaultValue": null;
                 "description": string;
                 "name": string;
@@ -2495,7 +2486,7 @@ export declare namespace FormikCheckbox {
                     "name": string;
                 };
             };
-            "type": {
+            "value": {
                 "defaultValue": null;
                 "description": string;
                 "name": string;
@@ -2505,6 +2496,15 @@ export declare namespace FormikCheckbox {
                 };
             };
             "readOnly": {
+                "defaultValue": null;
+                "description": string;
+                "name": string;
+                "required": boolean;
+                "type": {
+                    "name": string;
+                };
+            };
+            "size": {
                 "defaultValue": null;
                 "description": string;
                 "name": string;
