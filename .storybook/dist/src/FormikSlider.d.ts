@@ -1,33 +1,26 @@
 /// <reference types="react" />
-import { SelectProps } from "@material-ui/core/Select";
-import { FormControlProps } from "@material-ui/core/FormControl";
 import { FormHelperTextProps } from "@material-ui/core/FormHelperText";
+import { FormControlLabelProps } from "@material-ui/core/FormControlLabel";
+import { FormControlProps } from "@material-ui/core/FormControl";
+import { SliderProps } from "@material-ui/core/Slider";
 interface IBaseProps {
     name: string;
-    options: any[];
     label?: string;
     helperText?: string;
-    formControlProps?: FormControlProps;
+    error?: boolean;
+    formControlLabelProps?: Omit<FormControlLabelProps, "control" | "label">;
     formHelperTextProps?: FormHelperTextProps;
+    formControlProps?: FormControlProps;
 }
-export declare type FormikSearchableSelectProps = IBaseProps & SelectProps;
-export declare function FormikSearchableSelect(props: FormikSearchableSelectProps): JSX.Element;
-export declare namespace FormikSearchableSelect {
+export declare type FormikSliderProps = IBaseProps & SliderProps;
+export declare function FormikSlider(props: FormikSliderProps): JSX.Element;
+export declare namespace FormikSlider {
     var displayName: string;
     var __docgenInfo: {
         "description": string;
         "displayName": string;
         "props": {
             "name": {
-                "defaultValue": null;
-                "description": string;
-                "name": string;
-                "required": boolean;
-                "type": {
-                    "name": string;
-                };
-            };
-            "options": {
                 "defaultValue": null;
                 "description": string;
                 "name": string;
@@ -54,7 +47,16 @@ export declare namespace FormikSearchableSelect {
                     "name": string;
                 };
             };
-            "formControlProps": {
+            "error": {
+                "defaultValue": null;
+                "description": string;
+                "name": string;
+                "required": boolean;
+                "type": {
+                    "name": string;
+                };
+            };
+            "formControlLabelProps": {
                 "defaultValue": null;
                 "description": string;
                 "name": string;
@@ -72,7 +74,7 @@ export declare namespace FormikSearchableSelect {
                     "name": string;
                 };
             };
-            "autoWidth": {
+            "formControlProps": {
                 "defaultValue": null;
                 "description": string;
                 "name": string;
@@ -81,7 +83,7 @@ export declare namespace FormikSearchableSelect {
                     "name": string;
                 };
             };
-            "displayEmpty": {
+            "aria-label": {
                 "defaultValue": null;
                 "description": string;
                 "name": string;
@@ -90,7 +92,7 @@ export declare namespace FormikSearchableSelect {
                     "name": string;
                 };
             };
-            "IconComponent": {
+            "aria-labelledby": {
                 "defaultValue": null;
                 "description": string;
                 "name": string;
@@ -99,7 +101,7 @@ export declare namespace FormikSearchableSelect {
                     "name": string;
                 };
             };
-            "input": {
+            "aria-valuetext": {
                 "defaultValue": null;
                 "description": string;
                 "name": string;
@@ -108,7 +110,7 @@ export declare namespace FormikSearchableSelect {
                     "name": string;
                 };
             };
-            "labelId": {
+            "color": {
                 "defaultValue": null;
                 "description": string;
                 "name": string;
@@ -117,7 +119,7 @@ export declare namespace FormikSearchableSelect {
                     "name": string;
                 };
             };
-            "labelWidth": {
+            "component": {
                 "defaultValue": null;
                 "description": string;
                 "name": string;
@@ -126,7 +128,7 @@ export declare namespace FormikSearchableSelect {
                     "name": string;
                 };
             };
-            "MenuProps": {
+            "defaultValue": {
                 "defaultValue": null;
                 "description": string;
                 "name": string;
@@ -135,7 +137,7 @@ export declare namespace FormikSearchableSelect {
                     "name": string;
                 };
             };
-            "multiple": {
+            "disabled": {
                 "defaultValue": null;
                 "description": string;
                 "name": string;
@@ -144,7 +146,7 @@ export declare namespace FormikSearchableSelect {
                     "name": string;
                 };
             };
-            "native": {
+            "getAriaLabel": {
                 "defaultValue": null;
                 "description": string;
                 "name": string;
@@ -153,7 +155,7 @@ export declare namespace FormikSearchableSelect {
                     "name": string;
                 };
             };
-            "onClose": {
+            "getAriaValueText": {
                 "defaultValue": null;
                 "description": string;
                 "name": string;
@@ -162,7 +164,7 @@ export declare namespace FormikSearchableSelect {
                     "name": string;
                 };
             };
-            "onOpen": {
+            "marks": {
                 "defaultValue": null;
                 "description": string;
                 "name": string;
@@ -171,7 +173,7 @@ export declare namespace FormikSearchableSelect {
                     "name": string;
                 };
             };
-            "open": {
+            "max": {
                 "defaultValue": null;
                 "description": string;
                 "name": string;
@@ -180,7 +182,7 @@ export declare namespace FormikSearchableSelect {
                     "name": string;
                 };
             };
-            "renderValue": {
+            "min": {
                 "defaultValue": null;
                 "description": string;
                 "name": string;
@@ -189,7 +191,52 @@ export declare namespace FormikSearchableSelect {
                     "name": string;
                 };
             };
-            "SelectDisplayProps": {
+            "onChange": {
+                "defaultValue": null;
+                "description": string;
+                "name": string;
+                "required": boolean;
+                "type": {
+                    "name": string;
+                };
+            };
+            "onChangeCommitted": {
+                "defaultValue": null;
+                "description": string;
+                "name": string;
+                "required": boolean;
+                "type": {
+                    "name": string;
+                };
+            };
+            "orientation": {
+                "defaultValue": null;
+                "description": string;
+                "name": string;
+                "required": boolean;
+                "type": {
+                    "name": string;
+                };
+            };
+            "step": {
+                "defaultValue": null;
+                "description": string;
+                "name": string;
+                "required": boolean;
+                "type": {
+                    "name": string;
+                };
+            };
+            "ThumbComponent": {
+                "defaultValue": null;
+                "description": string;
+                "name": string;
+                "required": boolean;
+                "type": {
+                    "name": string;
+                };
+            };
+            "track": {
                 "defaultValue": null;
                 "description": string;
                 "name": string;
@@ -207,7 +254,7 @@ export declare namespace FormikSearchableSelect {
                     "name": string;
                 };
             };
-            "variant": {
+            "ValueLabelComponent": {
                 "defaultValue": null;
                 "description": string;
                 "name": string;
@@ -216,7 +263,16 @@ export declare namespace FormikSearchableSelect {
                     "name": string;
                 };
             };
-            "ref": {
+            "valueLabelDisplay": {
+                "defaultValue": null;
+                "description": string;
+                "name": string;
+                "required": boolean;
+                "type": {
+                    "name": string;
+                };
+            };
+            "valueLabelFormat": {
                 "defaultValue": null;
                 "description": string;
                 "name": string;
@@ -252,25 +308,7 @@ export declare namespace FormikSearchableSelect {
                     "name": string;
                 };
             };
-            "innerRef": {
-                "defaultValue": null;
-                "description": string;
-                "name": string;
-                "required": boolean;
-                "type": {
-                    "name": string;
-                };
-            };
             "defaultChecked": {
-                "defaultValue": null;
-                "description": string;
-                "name": string;
-                "required": boolean;
-                "type": {
-                    "name": string;
-                };
-            };
-            "defaultValue": {
                 "defaultValue": null;
                 "description": string;
                 "name": string;
@@ -532,15 +570,6 @@ export declare namespace FormikSearchableSelect {
                 };
             };
             "autoSave": {
-                "defaultValue": null;
-                "description": string;
-                "name": string;
-                "required": boolean;
-                "type": {
-                    "name": string;
-                };
-            };
-            "color": {
                 "defaultValue": null;
                 "description": string;
                 "name": string;
@@ -819,24 +848,6 @@ export declare namespace FormikSearchableSelect {
                     "name": string;
                 };
             };
-            "aria-label": {
-                "defaultValue": null;
-                "description": string;
-                "name": string;
-                "required": boolean;
-                "type": {
-                    "name": string;
-                };
-            };
-            "aria-labelledby": {
-                "defaultValue": null;
-                "description": string;
-                "name": string;
-                "required": boolean;
-                "type": {
-                    "name": string;
-                };
-            };
             "aria-level": {
                 "defaultValue": null;
                 "description": string;
@@ -1036,15 +1047,6 @@ export declare namespace FormikSearchableSelect {
                 };
             };
             "aria-valuenow": {
-                "defaultValue": null;
-                "description": string;
-                "name": string;
-                "required": boolean;
-                "type": {
-                    "name": string;
-                };
-            };
-            "aria-valuetext": {
                 "defaultValue": null;
                 "description": string;
                 "name": string;
@@ -2502,177 +2504,6 @@ export declare namespace FormikSearchableSelect {
                     "name": string;
                 };
             };
-            "disabled": {
-                "defaultValue": null;
-                "description": string;
-                "name": string;
-                "required": boolean;
-                "type": {
-                    "name": string;
-                };
-            };
-            "error": {
-                "defaultValue": null;
-                "description": string;
-                "name": string;
-                "required": boolean;
-                "type": {
-                    "name": string;
-                };
-            };
-            "fullWidth": {
-                "defaultValue": null;
-                "description": string;
-                "name": string;
-                "required": boolean;
-                "type": {
-                    "name": string;
-                };
-            };
-            "margin": {
-                "defaultValue": null;
-                "description": string;
-                "name": string;
-                "required": boolean;
-                "type": {
-                    "name": string;
-                };
-            };
-            "required": {
-                "defaultValue": null;
-                "description": string;
-                "name": string;
-                "required": boolean;
-                "type": {
-                    "name": string;
-                };
-            };
-            "multiline": {
-                "defaultValue": null;
-                "description": string;
-                "name": string;
-                "required": boolean;
-                "type": {
-                    "name": string;
-                };
-            };
-            "autoComplete": {
-                "defaultValue": null;
-                "description": string;
-                "name": string;
-                "required": boolean;
-                "type": {
-                    "name": string;
-                };
-            };
-            "autoFocus": {
-                "defaultValue": null;
-                "description": string;
-                "name": string;
-                "required": boolean;
-                "type": {
-                    "name": string;
-                };
-            };
-            "endAdornment": {
-                "defaultValue": null;
-                "description": string;
-                "name": string;
-                "required": boolean;
-                "type": {
-                    "name": string;
-                };
-            };
-            "inputComponent": {
-                "defaultValue": null;
-                "description": string;
-                "name": string;
-                "required": boolean;
-                "type": {
-                    "name": string;
-                };
-            };
-            "inputProps": {
-                "defaultValue": null;
-                "description": string;
-                "name": string;
-                "required": boolean;
-                "type": {
-                    "name": string;
-                };
-            };
-            "inputRef": {
-                "defaultValue": null;
-                "description": string;
-                "name": string;
-                "required": boolean;
-                "type": {
-                    "name": string;
-                };
-            };
-            "readOnly": {
-                "defaultValue": null;
-                "description": string;
-                "name": string;
-                "required": boolean;
-                "type": {
-                    "name": string;
-                };
-            };
-            "renderPrefix": {
-                "defaultValue": null;
-                "description": string;
-                "name": string;
-                "required": boolean;
-                "type": {
-                    "name": string;
-                };
-            };
-            "rows": {
-                "defaultValue": null;
-                "description": string;
-                "name": string;
-                "required": boolean;
-                "type": {
-                    "name": string;
-                };
-            };
-            "rowsMax": {
-                "defaultValue": null;
-                "description": string;
-                "name": string;
-                "required": boolean;
-                "type": {
-                    "name": string;
-                };
-            };
-            "startAdornment": {
-                "defaultValue": null;
-                "description": string;
-                "name": string;
-                "required": boolean;
-                "type": {
-                    "name": string;
-                };
-            };
-            "type": {
-                "defaultValue": null;
-                "description": string;
-                "name": string;
-                "required": boolean;
-                "type": {
-                    "name": string;
-                };
-            };
-            "disableUnderline": {
-                "defaultValue": null;
-                "description": string;
-                "name": string;
-                "required": boolean;
-                "type": {
-                    "name": string;
-                };
-            };
             "classes": {
                 "defaultValue": null;
                 "description": string;
@@ -2682,7 +2513,16 @@ export declare namespace FormikSearchableSelect {
                     "name": string;
                 };
             };
-            "onChange": {
+            "innerRef": {
+                "defaultValue": null;
+                "description": string;
+                "name": string;
+                "required": boolean;
+                "type": {
+                    "name": string;
+                };
+            };
+            "ref": {
                 "defaultValue": null;
                 "description": string;
                 "name": string;

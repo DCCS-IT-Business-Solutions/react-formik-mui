@@ -38,6 +38,7 @@ All MUI-Components are used inside of the renderfunction of a Formik-FastField.
 - FormikRadio (Material UI Radiobutton) - Renders a MUI-FormControlLabel with a MUI-Radio and a MUI-FormHelperText
 - FormikSwitch (Material UI Switch) - Renders a MUI-FormControlLabel with a MUI-Radio and a MUI-FormHelperText
 - FormikDatepicker (Material UI Pickers KeyboardDatepicker) - Renders a MUI-KeyboardDatepicker
+- FormikSlider (Material UI Slider) - Renders a MUI-FormControl with a MUI-Slider and a MUI-FormHelperText
 - FormikAutoComplete ([@DCCS Autocomplete](https://www.npmjs.com/package/@dccs/react-autocomplete-mui)) - Renders a Autocomplete-Component
 - FomikFilePicker ([@DCCS FilePicker](https://github.com/DCCS-IT-Business-Solutions/react-filepicker-mui)) - Renders a FilePicker-Component
 

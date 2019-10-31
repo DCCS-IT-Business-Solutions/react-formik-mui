@@ -81,15 +81,6 @@ export declare namespace FormikDateTimepicker {
                     "name": string;
                 };
             };
-            "type": {
-                "defaultValue": null;
-                "description": string;
-                "name": string;
-                "required": boolean;
-                "type": {
-                    "name": string;
-                };
-            };
             "ref": {
                 "defaultValue": null;
                 "description": string;
@@ -2459,16 +2450,7 @@ export declare namespace FormikDateTimepicker {
                     "name": string;
                 };
             };
-            "InputProps": {
-                "defaultValue": null;
-                "description": string;
-                "name": string;
-                "required": boolean;
-                "type": {
-                    "name": string;
-                };
-            };
-            "inputProps": {
+            "multiline": {
                 "defaultValue": null;
                 "description": string;
                 "name": string;
@@ -2495,16 +2477,7 @@ export declare namespace FormikDateTimepicker {
                     "name": string;
                 };
             };
-            "FormHelperTextProps": {
-                "defaultValue": null;
-                "description": string;
-                "name": string;
-                "required": boolean;
-                "type": {
-                    "name": string;
-                };
-            };
-            "InputLabelProps": {
+            "inputProps": {
                 "defaultValue": null;
                 "description": string;
                 "name": string;
@@ -2522,7 +2495,7 @@ export declare namespace FormikDateTimepicker {
                     "name": string;
                 };
             };
-            "multiline": {
+            "readOnly": {
                 "defaultValue": null;
                 "description": string;
                 "name": string;
@@ -2549,7 +2522,7 @@ export declare namespace FormikDateTimepicker {
                     "name": string;
                 };
             };
-            "SelectProps": {
+            "type": {
                 "defaultValue": null;
                 "description": string;
                 "name": string;
@@ -2558,7 +2531,34 @@ export declare namespace FormikDateTimepicker {
                     "name": string;
                 };
             };
-            "readOnly": {
+            "InputProps": {
+                "defaultValue": null;
+                "description": string;
+                "name": string;
+                "required": boolean;
+                "type": {
+                    "name": string;
+                };
+            };
+            "FormHelperTextProps": {
+                "defaultValue": null;
+                "description": string;
+                "name": string;
+                "required": boolean;
+                "type": {
+                    "name": string;
+                };
+            };
+            "InputLabelProps": {
+                "defaultValue": null;
+                "description": string;
+                "name": string;
+                "required": boolean;
+                "type": {
+                    "name": string;
+                };
+            };
+            "SelectProps": {
                 "defaultValue": null;
                 "description": string;
                 "name": string;
