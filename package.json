@@ -43,7 +43,7 @@
   "dependencies": {
     "@dccs/react-autocomplete-mui": "^0.6.5",
     "@dccs/react-filepicker-mui": "^0.0.3",
-    "@dccs/react-searchable-select-mui": "^0.2.10",
+    "@dccs/react-searchable-select-mui": "^0.2.11",
     "react-dropzone": "^10.1.9"
   },
   "peerDependencies": {
