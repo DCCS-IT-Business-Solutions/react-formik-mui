@@ -81,6 +81,15 @@ export declare namespace FormikDatepicker {
                     "name": string;
                 };
             };
+            "type": {
+                "defaultValue": null;
+                "description": string;
+                "name": string;
+                "required": boolean;
+                "type": {
+                    "name": string;
+                };
+            };
             "ref": {
                 "defaultValue": null;
                 "description": string;
@@ -2450,7 +2459,16 @@ export declare namespace FormikDatepicker {
                     "name": string;
                 };
             };
-            "multiline": {
+            "InputProps": {
+                "defaultValue": null;
+                "description": string;
+                "name": string;
+                "required": boolean;
+                "type": {
+                    "name": string;
+                };
+            };
+            "inputProps": {
                 "defaultValue": null;
                 "description": string;
                 "name": string;
@@ -2477,7 +2495,16 @@ export declare namespace FormikDatepicker {
                     "name": string;
                 };
             };
-            "inputProps": {
+            "FormHelperTextProps": {
+                "defaultValue": null;
+                "description": string;
+                "name": string;
+                "required": boolean;
+                "type": {
+                    "name": string;
+                };
+            };
+            "InputLabelProps": {
                 "defaultValue": null;
                 "description": string;
                 "name": string;
@@ -2495,7 +2522,7 @@ export declare namespace FormikDatepicker {
                     "name": string;
                 };
             };
-            "readOnly": {
+            "multiline": {
                 "defaultValue": null;
                 "description": string;
                 "name": string;
@@ -2522,43 +2549,16 @@ export declare namespace FormikDatepicker {
                     "name": string;
                 };
             };
-            "type": {
-                "defaultValue": null;
-                "description": string;
-                "name": string;
-                "required": boolean;
-                "type": {
-                    "name": string;
-                };
-            };
-            "InputProps": {
-                "defaultValue": null;
-                "description": string;
-                "name": string;
-                "required": boolean;
-                "type": {
-                    "name": string;
-                };
-            };
-            "FormHelperTextProps": {
-                "defaultValue": null;
-                "description": string;
-                "name": string;
-                "required": boolean;
-                "type": {
-                    "name": string;
-                };
-            };
-            "InputLabelProps": {
-                "defaultValue": null;
-                "description": string;
-                "name": string;
-                "required": boolean;
-                "type": {
-                    "name": string;
-                };
-            };
             "SelectProps": {
+                "defaultValue": null;
+                "description": string;
+                "name": string;
+                "required": boolean;
+                "type": {
+                    "name": string;
+                };
+            };
+            "readOnly": {
                 "defaultValue": null;
                 "description": string;
                 "name": string;
