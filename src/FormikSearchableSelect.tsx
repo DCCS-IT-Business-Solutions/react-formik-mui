@@ -43,9 +43,7 @@ export function FormikSearchableSelect(props: FormikSearchableSelectProps) {
             label={label}
             formControlProps={formControlProps}
             formHelperTextProps={formHelperTextProps}
-            // Material UI Bug:
-            // => || ""  is needed for the label to work properly when Formik-"resetForm" or "handleReset" is used
-            value={field.value || ""}
+            value={field.value != null ? field.value : ""}
             options={options}
             error={(form.errors && form.errors[name] != null) || error}
             helperText={

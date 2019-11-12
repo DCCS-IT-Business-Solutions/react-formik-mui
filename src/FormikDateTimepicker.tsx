@@ -54,14 +54,10 @@ export function FormikDateTimepicker(props: FormikDateTimepickerProps) {
           <KeyboardDateTimePicker
             {...defaultProps}
             {...field}
-            // Material UI Bug:
-            // => || null  is needed for the label to work properly when Formik-"resetForm" or "handleReset" is used
             value={field.value || null}
             onChange={(date: any) => {
               form.setFieldValue(name, date);
             }}
-            // error={(form.errors && form.errors[name] != null) || error}
-            // helperText={(form.errors && form.errors[name]) || helperText}
             {...others}
           />
           <FormHelperTextWrapper

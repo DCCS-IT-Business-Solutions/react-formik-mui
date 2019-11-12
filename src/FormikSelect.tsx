@@ -10,6 +10,8 @@ import FormHelperTextWrapper from "./FormHelperTextWrapper";
 interface IBaseProps {
   name: string;
   options: any[];
+  hideRemoveSelection?:boolean;
+  removeSelectionText?:string;
   label?: string;
   helperText?: string;
   formControlProps?: FormControlProps;
@@ -22,6 +24,8 @@ const defaultProps = {
   style: { minWidth: "240px" }
 };
 
+const defaultRemoveSelectionText="Auswahl aufheben...";
+
 export function FormikSelect(props: FormikSelectProps) {
   const {
     label,
@@ -31,8 +35,12 @@ export function FormikSelect(props: FormikSelectProps) {
     options,
     formControlProps,
     formHelperTextProps,
+    hideRemoveSelection,
+    removeSelectionText,
     ...others
   } = props;
+
+  const removeSelection=removeSelectionText || defaultRemoveSelectionText;
 
   return (
     <FastField
@@ -43,15 +51,13 @@ export function FormikSelect(props: FormikSelectProps) {
           <Select
             {...defaultProps}
             {...field}
-            // Material UI Bug:
-            // => || ""  is needed for the label to work properly when Formik-"resetForm" or "handleReset" is used
-            value={field.value || ""}
+            value={field.value != null ? field.value : ""}
             error={(form.errors && form.errors[name] != null) || error}
             {...others}
           >
-            <MenuItem value="">
-              <em>Auswahl aufheben</em>
-            </MenuItem>
+            {hideRemoveSelection!==true && <MenuItem value="">
+              <em>{removeSelection}</em>
+            </MenuItem>}
             {options &&
               options.map &&
               options.map((d, idx) => (

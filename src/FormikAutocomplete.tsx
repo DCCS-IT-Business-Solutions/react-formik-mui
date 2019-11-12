@@ -23,7 +23,7 @@ export function FormikAutocomplete(props: FormikAutocompleteProps) {
         <Autocomplete
           {...defaultProps}
           {...field}
-          value={field.value || ""}
+          value={field.value!=null? field.value: ""}
           onOptionSelected={(value: any) => {
             form.setFieldValue(name, value);
           }}

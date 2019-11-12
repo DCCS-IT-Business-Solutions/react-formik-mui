@@ -30,7 +30,7 @@ export function FormikFilePicker(props: FormikFormikFilePicker) {
           <FilePicker
             {...defaultProps}
             {...field}
-            value={field.value || []}
+            value={field.value!=null? field.value : []}
             onChange={(value: string[]) => {
               form.setFieldValue(name, value);
             }}

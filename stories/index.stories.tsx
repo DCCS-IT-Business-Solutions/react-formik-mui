@@ -247,7 +247,8 @@ storiesOf("Formik", module).add("Selects", () => (
   <Formik
     initialValues={{
       select: "",
-      select2: ""
+      select2: "",
+      select3: 2
     }}
     onSubmit={(values, actions) => {
       setTimeout(() => {
@@ -262,6 +263,48 @@ storiesOf("Formik", module).add("Selects", () => (
           label="Select"
           name="select"
           options={[
+            { key: 0, value: "Entry 0" },
+            { key: 1, value: "Entry 1" },
+            { key: 2, value: "Entry 2" },
+            { key: 3, value: "Entry 3" }
+          ]}
+        />
+        <br />
+        Initial Value Set to 2:
+        <br />
+        <FormikSelect
+          label="Select"
+          name="select3"
+          options={[
+            { key: 0, value: "Entry 0" },
+            { key: 1, value: "Entry 1" },
+            { key: 2, value: "Entry 2" },
+            { key: 3, value: "Entry 3" }
+          ]}
+        />
+        <br />
+        Hidden 'Remove Selection Text':
+        <br />
+        <FormikSelect
+          label="Select"
+          name="select3"
+          hideRemoveSelection={true}        
+          options={[
+            { key: 0, value: "Entry 0" },
+            { key: 1, value: "Entry 1" },
+            { key: 2, value: "Entry 2" },
+            { key: 3, value: "Entry 3" }
+          ]}
+        />
+        <br />
+        Different Text for Remove Selection
+        <br />
+        <FormikSelect
+          label="Select"
+          name="select3"
+          removeSelectionText="Remooooooovious Selectious"      
+          options={[
+            { key: 0, value: "Entry 0" },
             { key: 1, value: "Entry 1" },
             { key: 2, value: "Entry 2" },
             { key: 3, value: "Entry 3" }

@@ -50,8 +50,6 @@ export function FormikDatepicker(props: FormikDatepickerProps) {
           <KeyboardDatePicker
             {...defaultProps}
             {...field}
-            // Material UI Bug:
-            // => || null  is needed for the label to work properly when Formik-"resetForm" or "handleReset" is used
             value={field.value || null}
             onChange={date => {
               form.setFieldValue(name, date);
