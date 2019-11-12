@@ -5,6 +5,8 @@ import { FormHelperTextProps } from "@material-ui/core/FormHelperText";
 interface IBaseProps {
     name: string;
     options: any[];
+    hideRemoveSelection?: boolean;
+    removeSelectionText?: string;
     label?: string;
     helperText?: string;
     formControlProps?: FormControlProps;
@@ -28,6 +30,24 @@ export declare namespace FormikSelect {
                 };
             };
             "options": {
+                "defaultValue": null;
+                "description": string;
+                "name": string;
+                "required": boolean;
+                "type": {
+                    "name": string;
+                };
+            };
+            "hideRemoveSelection": {
+                "defaultValue": null;
+                "description": string;
+                "name": string;
+                "required": boolean;
+                "type": {
+                    "name": string;
+                };
+            };
+            "removeSelectionText": {
                 "defaultValue": null;
                 "description": string;
                 "name": string;
@@ -208,15 +228,6 @@ export declare namespace FormikSelect {
                 };
             };
             "variant": {
-                "defaultValue": null;
-                "description": string;
-                "name": string;
-                "required": boolean;
-                "type": {
-                    "name": string;
-                };
-            };
-            "type": {
                 "defaultValue": null;
                 "description": string;
                 "name": string;
@@ -2556,7 +2567,7 @@ export declare namespace FormikSelect {
                     "name": string;
                 };
             };
-            "inputProps": {
+            "multiline": {
                 "defaultValue": null;
                 "description": string;
                 "name": string;
@@ -2583,42 +2594,6 @@ export declare namespace FormikSelect {
                     "name": string;
                 };
             };
-            "inputRef": {
-                "defaultValue": null;
-                "description": string;
-                "name": string;
-                "required": boolean;
-                "type": {
-                    "name": string;
-                };
-            };
-            "multiline": {
-                "defaultValue": null;
-                "description": string;
-                "name": string;
-                "required": boolean;
-                "type": {
-                    "name": string;
-                };
-            };
-            "rows": {
-                "defaultValue": null;
-                "description": string;
-                "name": string;
-                "required": boolean;
-                "type": {
-                    "name": string;
-                };
-            };
-            "rowsMax": {
-                "defaultValue": null;
-                "description": string;
-                "name": string;
-                "required": boolean;
-                "type": {
-                    "name": string;
-                };
-            };
             "endAdornment": {
                 "defaultValue": null;
                 "description": string;
@@ -2629,6 +2604,24 @@ export declare namespace FormikSelect {
                 };
             };
             "inputComponent": {
+                "defaultValue": null;
+                "description": string;
+                "name": string;
+                "required": boolean;
+                "type": {
+                    "name": string;
+                };
+            };
+            "inputProps": {
+                "defaultValue": null;
+                "description": string;
+                "name": string;
+                "required": boolean;
+                "type": {
+                    "name": string;
+                };
+            };
+            "inputRef": {
                 "defaultValue": null;
                 "description": string;
                 "name": string;
@@ -2655,7 +2648,34 @@ export declare namespace FormikSelect {
                     "name": string;
                 };
             };
+            "rows": {
+                "defaultValue": null;
+                "description": string;
+                "name": string;
+                "required": boolean;
+                "type": {
+                    "name": string;
+                };
+            };
+            "rowsMax": {
+                "defaultValue": null;
+                "description": string;
+                "name": string;
+                "required": boolean;
+                "type": {
+                    "name": string;
+                };
+            };
             "startAdornment": {
+                "defaultValue": null;
+                "description": string;
+                "name": string;
+                "required": boolean;
+                "type": {
+                    "name": string;
+                };
+            };
+            "type": {
                 "defaultValue": null;
                 "description": string;
                 "name": string;

@@ -216,15 +216,6 @@ export declare namespace FormikSearchableSelect {
                     "name": string;
                 };
             };
-            "type": {
-                "defaultValue": null;
-                "description": string;
-                "name": string;
-                "required": boolean;
-                "type": {
-                    "name": string;
-                };
-            };
             "ref": {
                 "defaultValue": null;
                 "description": string;
@@ -2556,7 +2547,7 @@ export declare namespace FormikSearchableSelect {
                     "name": string;
                 };
             };
-            "inputProps": {
+            "multiline": {
                 "defaultValue": null;
                 "description": string;
                 "name": string;
@@ -2583,42 +2574,6 @@ export declare namespace FormikSearchableSelect {
                     "name": string;
                 };
             };
-            "inputRef": {
-                "defaultValue": null;
-                "description": string;
-                "name": string;
-                "required": boolean;
-                "type": {
-                    "name": string;
-                };
-            };
-            "multiline": {
-                "defaultValue": null;
-                "description": string;
-                "name": string;
-                "required": boolean;
-                "type": {
-                    "name": string;
-                };
-            };
-            "rows": {
-                "defaultValue": null;
-                "description": string;
-                "name": string;
-                "required": boolean;
-                "type": {
-                    "name": string;
-                };
-            };
-            "rowsMax": {
-                "defaultValue": null;
-                "description": string;
-                "name": string;
-                "required": boolean;
-                "type": {
-                    "name": string;
-                };
-            };
             "endAdornment": {
                 "defaultValue": null;
                 "description": string;
@@ -2629,6 +2584,24 @@ export declare namespace FormikSearchableSelect {
                 };
             };
             "inputComponent": {
+                "defaultValue": null;
+                "description": string;
+                "name": string;
+                "required": boolean;
+                "type": {
+                    "name": string;
+                };
+            };
+            "inputProps": {
+                "defaultValue": null;
+                "description": string;
+                "name": string;
+                "required": boolean;
+                "type": {
+                    "name": string;
+                };
+            };
+            "inputRef": {
                 "defaultValue": null;
                 "description": string;
                 "name": string;
@@ -2655,7 +2628,34 @@ export declare namespace FormikSearchableSelect {
                     "name": string;
                 };
             };
+            "rows": {
+                "defaultValue": null;
+                "description": string;
+                "name": string;
+                "required": boolean;
+                "type": {
+                    "name": string;
+                };
+            };
+            "rowsMax": {
+                "defaultValue": null;
+                "description": string;
+                "name": string;
+                "required": boolean;
+                "type": {
+                    "name": string;
+                };
+            };
             "startAdornment": {
+                "defaultValue": null;
+                "description": string;
+                "name": string;
+                "required": boolean;
+                "type": {
+                    "name": string;
+                };
+            };
+            "type": {
                 "defaultValue": null;
                 "description": string;
                 "name": string;
