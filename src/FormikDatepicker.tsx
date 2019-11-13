@@ -22,9 +22,8 @@ const defaultProps = {
   style: { minWidth: "240px" },
   placeholder: "tt.mm.jjjj",
   format: "dd.MM.yyyy",
-  clearable: true,
   autoOk: true,
-  variant: "inline" as any
+  variant: "inline" as "inline"
 };
 
 export function FormikDatepicker(props: FormikDatepickerProps) {
@@ -48,8 +47,8 @@ export function FormikDatepicker(props: FormikDatepickerProps) {
       render={({ field, form }: FastFieldProps<any>) => (
         <React.Fragment>
           <KeyboardDatePicker
-            {...defaultProps}
-            {...field}
+            {...defaultProps} 
+            {...field}       
             value={field.value || null}
             onChange={date => {
               form.setFieldValue(name, date);
