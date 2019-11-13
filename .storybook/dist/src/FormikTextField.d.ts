@@ -2424,7 +2424,16 @@ export declare namespace FormikTextField {
                     "name": string;
                 };
             };
-            "multiline": {
+            "InputProps": {
+                "defaultValue": null;
+                "description": string;
+                "name": string;
+                "required": boolean;
+                "type": {
+                    "name": string;
+                };
+            };
+            "inputProps": {
                 "defaultValue": null;
                 "description": string;
                 "name": string;
@@ -2443,60 +2452,6 @@ export declare namespace FormikTextField {
                 };
             };
             "autoFocus": {
-                "defaultValue": null;
-                "description": string;
-                "name": string;
-                "required": boolean;
-                "type": {
-                    "name": string;
-                };
-            };
-            "inputProps": {
-                "defaultValue": null;
-                "description": string;
-                "name": string;
-                "required": boolean;
-                "type": {
-                    "name": string;
-                };
-            };
-            "inputRef": {
-                "defaultValue": null;
-                "description": string;
-                "name": string;
-                "required": boolean;
-                "type": {
-                    "name": string;
-                };
-            };
-            "rows": {
-                "defaultValue": null;
-                "description": string;
-                "name": string;
-                "required": boolean;
-                "type": {
-                    "name": string;
-                };
-            };
-            "rowsMax": {
-                "defaultValue": null;
-                "description": string;
-                "name": string;
-                "required": boolean;
-                "type": {
-                    "name": string;
-                };
-            };
-            "value": {
-                "defaultValue": null;
-                "description": string;
-                "name": string;
-                "required": boolean;
-                "type": {
-                    "name": string;
-                };
-            };
-            "InputProps": {
                 "defaultValue": null;
                 "description": string;
                 "name": string;
@@ -2532,7 +2487,52 @@ export declare namespace FormikTextField {
                     "name": string;
                 };
             };
+            "inputRef": {
+                "defaultValue": null;
+                "description": string;
+                "name": string;
+                "required": boolean;
+                "type": {
+                    "name": string;
+                };
+            };
+            "multiline": {
+                "defaultValue": null;
+                "description": string;
+                "name": string;
+                "required": boolean;
+                "type": {
+                    "name": string;
+                };
+            };
+            "rows": {
+                "defaultValue": null;
+                "description": string;
+                "name": string;
+                "required": boolean;
+                "type": {
+                    "name": string;
+                };
+            };
+            "rowsMax": {
+                "defaultValue": null;
+                "description": string;
+                "name": string;
+                "required": boolean;
+                "type": {
+                    "name": string;
+                };
+            };
             "SelectProps": {
+                "defaultValue": null;
+                "description": string;
+                "name": string;
+                "required": boolean;
+                "type": {
+                    "name": string;
+                };
+            };
+            "value": {
                 "defaultValue": null;
                 "description": string;
                 "name": string;
