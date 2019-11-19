@@ -1,5 +1,5 @@
 import * as React from "react";
-import { FastField, FastFieldProps } from "formik";
+import { FastFieldProps } from "formik";
 import { FormControlLabel, Radio } from "@material-ui/core";
 import { RadioProps } from "@material-ui/core/Radio";
 import { FormHelperTextProps } from "@material-ui/core/FormHelperText";
@@ -7,6 +7,7 @@ import { FormControlLabelProps } from "@material-ui/core/FormControlLabel";
 import FormHelperTextWrapper, {
   IFormHelperTextWrapperProps
 } from "./FormHelperTextWrapper";
+import { FormikField } from "./FormikField";
 
 interface IBaseProps {
   name: string;
@@ -14,6 +15,7 @@ interface IBaseProps {
   label?: string;
   helperText?: string;
   error?: boolean;
+  useField?: boolean;
   formControlLabelProps?: Omit<FormControlLabelProps, "control" | "label">;
   formHelperTextProps?: FormHelperTextProps;
   formHelperTextWrapperProps?: IFormHelperTextWrapperProps;
@@ -27,6 +29,7 @@ export function FormikRadio(props: FormikRadioProps) {
     label,
     helperText,
     error,
+    useField,
     formControlLabelProps,
     formHelperTextProps,
     formHelperTextWrapperProps,
@@ -35,9 +38,8 @@ export function FormikRadio(props: FormikRadioProps) {
   } = props;
 
   return (
-    <FastField
-      name={name}
-      render={({ field, form }: FastFieldProps<any>) => (
+    <FormikField name={name} useField={useField}>
+      {({ field, form }: FastFieldProps<any>) => (
         <React.Fragment>
           <FormControlLabel
             control={
@@ -62,6 +64,6 @@ export function FormikRadio(props: FormikRadioProps) {
           />
         </React.Fragment>
       )}
-    />
+    </FormikField>
   );
 }

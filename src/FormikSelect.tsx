@@ -3,16 +3,18 @@ import Select, { SelectProps } from "@material-ui/core/Select";
 import MenuItem from "@material-ui/core/MenuItem";
 import FormControl, { FormControlProps } from "@material-ui/core/FormControl";
 import InputLabel from "@material-ui/core/InputLabel";
-import { FastField, FastFieldProps } from "formik";
+import { FastFieldProps } from "formik";
 import { FormHelperTextProps } from "@material-ui/core/FormHelperText";
 import FormHelperTextWrapper from "./FormHelperTextWrapper";
+import { FormikField } from "./FormikField";
 
 interface IBaseProps {
   name: string;
   options: any[];
-  hideRemoveSelection?:boolean;
-  removeSelectionText?:string;
+  hideRemoveSelection?: boolean;
+  removeSelectionText?: string;
   label?: string;
+  useField?: boolean;
   helperText?: string;
   formControlProps?: FormControlProps;
   formHelperTextProps?: FormHelperTextProps;
@@ -24,7 +26,7 @@ const defaultProps = {
   style: { minWidth: "240px" }
 };
 
-const defaultRemoveSelectionText="Auswahl aufheben...";
+const defaultRemoveSelectionText = "Auswahl aufheben...";
 
 export function FormikSelect(props: FormikSelectProps) {
   const {
@@ -32,6 +34,7 @@ export function FormikSelect(props: FormikSelectProps) {
     name,
     error,
     helperText,
+    useField,
     options,
     formControlProps,
     formHelperTextProps,
@@ -40,12 +43,11 @@ export function FormikSelect(props: FormikSelectProps) {
     ...others
   } = props;
 
-  const removeSelection=removeSelectionText || defaultRemoveSelectionText;
+  const removeSelection = removeSelectionText || defaultRemoveSelectionText;
 
   return (
-    <FastField
-      name={name}
-      render={({ field, form }: FastFieldProps<any>) => (
+    <FormikField name={name} useField={useField}>
+      {({ field, form }: FastFieldProps<any>) => (
         <FormControl margin="normal" {...formControlProps}>
           {label && <InputLabel>{label}</InputLabel>}
           <Select
@@ -55,9 +57,11 @@ export function FormikSelect(props: FormikSelectProps) {
             error={(form.errors && form.errors[name] != null) || error}
             {...others}
           >
-            {hideRemoveSelection!==true && <MenuItem value="">
-              <em>{removeSelection}</em>
-            </MenuItem>}
+            {hideRemoveSelection !== true && (
+              <MenuItem value="">
+                <em>{removeSelection}</em>
+              </MenuItem>
+            )}
             {options &&
               options.map &&
               options.map((d, idx) => (
@@ -75,6 +79,6 @@ export function FormikSelect(props: FormikSelectProps) {
           />
         </FormControl>
       )}
-    />
+    </FormikField>
   );
 }

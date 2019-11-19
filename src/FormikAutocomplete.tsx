@@ -1,15 +1,17 @@
 import * as React from "react";
-import { FastField, FastFieldProps } from "formik";
+import { FastFieldProps } from "formik";
 import { IAutocompleteProps, Autocomplete } from "@dccs/react-autocomplete-mui";
+import { FormikField } from "./FormikField";
 
 interface IBaseProps {
   name: string;
+  useField?: boolean;
 }
 
 export type FormikAutocompleteProps = IBaseProps & IAutocompleteProps;
 
 export function FormikAutocomplete(props: FormikAutocompleteProps) {
-  const { name, error, helperText, ...others } = props;
+  const { name, error, useField, helperText, ...others } = props;
 
   const defaultProps = {
     margin: "normal" as any,
@@ -17,13 +19,12 @@ export function FormikAutocomplete(props: FormikAutocompleteProps) {
   };
 
   return (
-    <FastField
-      name={name}
-      render={({ field, form }: FastFieldProps<any>) => (
+    <FormikField name={name} useField={useField}>
+      {({ field, form }: FastFieldProps<any>) => (
         <Autocomplete
           {...defaultProps}
           {...field}
-          value={field.value!=null? field.value: ""}
+          value={field.value != null ? field.value : ""}
           onOptionSelected={(value: any) => {
             form.setFieldValue(name, value);
           }}
@@ -32,6 +33,6 @@ export function FormikAutocomplete(props: FormikAutocompleteProps) {
           {...others}
         />
       )}
-    />
+    </FormikField>
   );
 }

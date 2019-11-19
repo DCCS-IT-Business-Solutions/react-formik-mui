@@ -1,14 +1,16 @@
 import * as React from "react";
-import { FastField, FastFieldProps } from "formik";
+import { FastFieldProps } from "formik";
 import { KeyboardDatePicker, MuiPickersContext } from "@material-ui/pickers";
 import { KeyboardDatePickerProps } from "@material-ui/pickers/DatePicker/DatePicker";
 import { FormHelperTextProps } from "@material-ui/core/FormHelperText";
+import { FormikField } from "./FormikField";
 
 interface IBaseProps {
   name: string;
   label?: string;
   helperText?: string;
   error?: boolean;
+  useField?: boolean;
   value?: any;
   onChange?: (date: any, value?: string | null) => void;
   formHelperTextProps?: FormHelperTextProps;
@@ -27,7 +29,14 @@ const defaultProps = {
 };
 
 export function FormikDatepicker(props: FormikDatepickerProps) {
-  const { name, error, helperText, formHelperTextProps, ...others } = props;
+  const {
+    name,
+    error,
+    useField,
+    helperText,
+    formHelperTextProps,
+    ...others
+  } = props;
 
   // Check context for moment/datefns because formats are different
   const context = React.useContext(MuiPickersContext);
@@ -42,13 +51,12 @@ export function FormikDatepicker(props: FormikDatepickerProps) {
   }
 
   return (
-    <FastField
-      name={name}
-      render={({ field, form }: FastFieldProps<any>) => (
+    <FormikField name={name} useField={useField}>
+      {({ field, form }: FastFieldProps<any>) => (
         <React.Fragment>
           <KeyboardDatePicker
-            {...defaultProps} 
-            {...field}       
+            {...defaultProps}
+            {...field}
             value={field.value || null}
             onChange={date => {
               form.setFieldValue(name, date);
@@ -59,6 +67,6 @@ export function FormikDatepicker(props: FormikDatepickerProps) {
           />
         </React.Fragment>
       )}
-    />
+    </FormikField>
   );
 }

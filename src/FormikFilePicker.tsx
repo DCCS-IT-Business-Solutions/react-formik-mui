@@ -1,13 +1,15 @@
 import * as React from "react";
-import { FastField, FastFieldProps } from "formik";
+import { FastFieldProps } from "formik";
 import { FilePicker, FilePickerProps } from "@dccs/react-filepicker-mui";
 import { FormHelperTextProps } from "@material-ui/core/FormHelperText";
 import FormHelperTextWrapper from "./FormHelperTextWrapper";
+import { FormikField } from "./FormikField";
 
 interface IBaseProps {
   name: string;
   helperText?: string;
   error?: boolean;
+  useField?: boolean;
   formHelperTextProps?: FormHelperTextProps;
 }
 
@@ -15,7 +17,14 @@ export type FormikFormikFilePicker = IBaseProps &
   Omit<FilePickerProps, "value" | "onChange">;
 
 export function FormikFilePicker(props: FormikFormikFilePicker) {
-  const { name, error, helperText, formHelperTextProps, ...others } = props;
+  const {
+    name,
+    error,
+    useField,
+    helperText,
+    formHelperTextProps,
+    ...others
+  } = props;
 
   const defaultProps = {
     margin: "normal" as any,
@@ -23,14 +32,13 @@ export function FormikFilePicker(props: FormikFormikFilePicker) {
   };
 
   return (
-    <FastField
-      name={name}
-      render={({ field, form }: FastFieldProps<any>) => (
+    <FormikField name={name} useField={useField}>
+      {({ field, form }: FastFieldProps<any>) => (
         <React.Fragment>
           <FilePicker
             {...defaultProps}
             {...field}
-            value={field.value!=null? field.value : []}
+            value={field.value != null ? field.value : []}
             onChange={(value: string[]) => {
               form.setFieldValue(name, value);
             }}
@@ -45,6 +53,6 @@ export function FormikFilePicker(props: FormikFormikFilePicker) {
           />
         </React.Fragment>
       )}
-    />
+    </FormikField>
   );
 }

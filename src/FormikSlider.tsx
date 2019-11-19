@@ -1,17 +1,19 @@
 import * as React from "react";
-import { FastField, FastFieldProps } from "formik";
+import { FastFieldProps } from "formik";
 import { FormControl, Slider } from "@material-ui/core";
 import { FormHelperTextProps } from "@material-ui/core/FormHelperText";
 import { FormControlLabelProps } from "@material-ui/core/FormControlLabel";
 import FormHelperTextWrapper from "./FormHelperTextWrapper";
 import { FormControlProps } from "@material-ui/core/FormControl";
 import { SliderProps } from "@material-ui/core/Slider";
+import { FormikField } from "./FormikField";
 
 interface IBaseProps {
   name: string;
   label?: string;
   helperText?: string;
   error?: boolean;
+  useField?: boolean;
   formControlLabelProps?: Omit<FormControlLabelProps, "control" | "label">;
   formHelperTextProps?: FormHelperTextProps;
   formControlProps?: FormControlProps;
@@ -28,6 +30,7 @@ export function FormikSlider(props: FormikSliderProps) {
     name,
     label,
     helperText,
+    useField,
     error,
     formHelperTextProps,
     formControlProps,
@@ -35,16 +38,18 @@ export function FormikSlider(props: FormikSliderProps) {
   } = props;
 
   return (
-    <FastField
-      name={name}
-      render={({ field, form }: FastFieldProps<any>) => (
+    <FormikField name={name} useField={useField}>
+      {({ field, form }: FastFieldProps<any>) => (
         <FormControl
           margin="normal"
           {...defaultFormControlProps}
           {...formControlProps}
         >
           <Slider
-            {...field}
+            // in Blur threw a warning
+            // Added name, value and onchange without {...field} like it is on the other components
+            name={field.name}
+            value={field.value}
             onChange={(event: any, value: any) => {
               form.setFieldValue(name, value);
             }}
@@ -60,6 +65,6 @@ export function FormikSlider(props: FormikSliderProps) {
           />
         </FormControl>
       )}
-    />
+    </FormikField>
   );
 }

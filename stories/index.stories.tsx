@@ -290,7 +290,7 @@ storiesOf("Formik", module).add("Selects", () => (
         <FormikSelect
           label="Select"
           name="select3"
-          hideRemoveSelection={true}        
+          hideRemoveSelection={true}
           options={[
             { key: 0, value: "Entry 0" },
             { key: 1, value: "Entry 1" },
@@ -304,7 +304,7 @@ storiesOf("Formik", module).add("Selects", () => (
         <FormikSelect
           label="Select"
           name="select3"
-          removeSelectionText="Remooooooovious Selectious"      
+          removeSelectionText="Remooooooovious Selectious"
           options={[
             { key: 0, value: "Entry 0" },
             { key: 1, value: "Entry 1" },
@@ -368,31 +368,6 @@ storiesOf("Formik", module).add("Searchable Selects", () => (
             { key: 2, value: "Entry 2" },
             { key: 3, value: "Entry 3" }
           ]}
-        />
-        <FormControl>
-          <FormLabel>Gender</FormLabel>
-          <RadioGroup name="radioGroup">
-            <FormikRadio label="Female" name="radioGroup" value="female" />
-            <FormikRadio label="Male" name="radioGroup" value="male" />
-            <FormikRadio label="Other" name="radioGroup" value="other" />
-            <FormikRadio
-              label="(Disabled option)"
-              name="radioGroup"
-              value="disabled"
-              disabled
-            />
-          </RadioGroup>
-        </FormControl>
-        <FormikAutocomplete
-          name="country"
-          label="No initial value"
-          onLoadOptions={(q: string) => [
-            { id: 1, name: "test 1" },
-            { id: 2, name: "test 2" },
-            { id: 3, name: "test 3" }
-          ]}
-          textProp={(value: any) => value.id + " " + value.name}
-          valueProp={(value: any) => value.id}
         />
         <br />
         <Button type="submit">Save</Button>
@@ -597,28 +572,28 @@ function DummyFilePicker() {
   );
 }
 
-storiesOf("Formik", module).add("FilePicker", () => (
-  <Formik
-    initialValues={{
-      files: ""
-    }}
-    onSubmit={(values, actions) => {
-      setTimeout(() => {
-        alert(JSON.stringify(values, null, 2));
-      });
-    }}
-    render={(formikProps: FormikProps<any>) => (
-      <form onSubmit={formikProps.handleSubmit} autoComplete="off">
-        <DummyFilePicker />
-        <Button type="submit">Save</Button>
-        <Button onClick={formikProps.handleReset}>Reset</Button>
-        <Button onClick={() => formikProps.setFieldError("files", "Error")}>
-          Set Error
-        </Button>
-      </form>
-    )}
-  />
-));
+// storiesOf("Formik", module).add("FilePicker", () => (
+//   <Formik
+//     initialValues={{
+//       files: ""
+//     }}
+//     onSubmit={(values, actions) => {
+//       setTimeout(() => {
+//         alert(JSON.stringify(values, null, 2));
+//       });
+//     }}
+//     render={(formikProps: FormikProps<any>) => (
+//       <form onSubmit={formikProps.handleSubmit} autoComplete="off">
+//         <DummyFilePicker />
+//         <Button type="submit">Save</Button>
+//         <Button onClick={formikProps.handleReset}>Reset</Button>
+//         <Button onClick={() => formikProps.setFieldError("files", "Error")}>
+//           Set Error
+//         </Button>
+//       </form>
+//     )}
+//   />
+// ));
 
 storiesOf("Formik", module).add("Slider", () => (
   <Formik
@@ -820,7 +795,7 @@ storiesOf("Formik", module).add("Playground", () => (
             textProp={(value: any) => value.id + " " + value.name}
             valueProp={(value: any) => value.id}
           />
-          <DummyFilePicker />
+          {/* <DummyFilePicker /> */}
           <hr></hr>
           <Button type="submit">Save</Button>
           <Button onClick={formikProps.handleReset}>Reset</Button>
