@@ -7,6 +7,7 @@ import { FastFieldProps } from "formik";
 import { FormHelperTextProps } from "@material-ui/core/FormHelperText";
 import FormHelperTextWrapper from "./FormHelperTextWrapper";
 import { FormikField } from "./FormikField";
+import { hasError } from "./utils";
 
 interface IBaseProps {
   name: string;
@@ -54,7 +55,7 @@ export function FormikSelect(props: FormikSelectProps) {
             {...defaultProps}
             {...field}
             value={field.value != null ? field.value : ""}
-            error={(form.errors && form.errors[name] != null) || error}
+            error={hasError(name, form, error)}
             {...others}
           >
             {hideRemoveSelection !== true && (

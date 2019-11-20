@@ -2,7 +2,7 @@ import { FormikProps } from "formik";
 import * as React from "react";
 import { FormHelperText } from "@material-ui/core";
 import { FormHelperTextProps } from "@material-ui/core/FormHelperText";
-import { hasError, getHelperText } from "./utils";
+import { getHelperText, hasError } from "./utils";
 
 export interface IFormHelperTextWrapperProps {
   name: string;
@@ -10,23 +10,14 @@ export interface IFormHelperTextWrapperProps {
   error?: boolean;
   helperText?: string;
   formHelperTextProps?: FormHelperTextProps;
-  showEmptyFormHelperText?: boolean;
 }
 
 export default function FormHelperTextWrapper(
   props: IFormHelperTextWrapperProps
 ) {
-  const {
-    name,
-    helperText,
-    error,
-    form,
-    formHelperTextProps,
-    showEmptyFormHelperText
-  } = props;
+  const { name, helperText, error, form, formHelperTextProps } = props;
 
   if (
-    !showEmptyFormHelperText &&
     form &&
     form.errors &&
     Object.keys(form.errors).length === 0 &&
@@ -35,7 +26,6 @@ export default function FormHelperTextWrapper(
   ) {
     return null;
   }
-
   return (
     <React.Fragment>
       <FormHelperText
@@ -47,7 +37,3 @@ export default function FormHelperTextWrapper(
     </React.Fragment>
   );
 }
-
-FormHelperTextWrapper.defaultProps = {
-  showEmptyFormHelperText: true
-};

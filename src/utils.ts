@@ -7,7 +7,8 @@ export function hasError(
 ) {
   // When using Formik-Errors -> only show Error when touched
   return (
-    (form.errors && form.touched[name] && form.errors[name] != null) || error
+    (form.errors && form.touched[name] === true && form.errors[name] != null) ||
+    error
   );
 }
 

@@ -403,7 +403,11 @@ storiesOf("Formik", module).add("Checkboxes", () => (
       <form onSubmit={formikProps.handleSubmit}>
         Default:
         <br />
-        <FormikCheckbox label="Checkbox" name="checkbox" />
+        <FormikCheckbox
+          label="Checkbox"
+          name="checkbox"
+          helperText="Im helping!"
+        />
         <br />
         <br />
         "checked" initially true
