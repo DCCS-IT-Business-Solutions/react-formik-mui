@@ -54,7 +54,6 @@ export function FormikAutocomplete(props: FormikAutocompleteProps) {
             options={options}
             getOptionLabel={(option: any) => option.value}
             renderInput={(params: RenderInputParams) => {
-              console.log((params.inputProps as any).value);
               return (
                 <TextField
                   {...params}

@@ -61,15 +61,6 @@ export declare namespace FormikFilePicker {
                     "name": string;
                 };
             };
-            "disabled": {
-                "defaultValue": null;
-                "description": string;
-                "name": string;
-                "required": boolean;
-                "type": {
-                    "name": string;
-                };
-            };
             "onDragEnter": {
                 "defaultValue": null;
                 "description": string;
@@ -89,6 +80,15 @@ export declare namespace FormikFilePicker {
                 };
             };
             "onDragOver": {
+                "defaultValue": null;
+                "description": string;
+                "name": string;
+                "required": boolean;
+                "type": {
+                    "name": string;
+                };
+            };
+            "disabled": {
                 "defaultValue": null;
                 "description": string;
                 "name": string;
