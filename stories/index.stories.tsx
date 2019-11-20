@@ -494,11 +494,20 @@ storiesOf("Formik", module).add("Radio Buttons", () => (
   />
 ));
 
+const films = [
+  { value: "The Shawshank Redemption", key: 1 },
+  { value: "The Godfather", key: 2 },
+  { value: "The Godfather: Part II", key: 3 },
+  { value: "The Dark Knight", key: 4 },
+  { value: "12 Angry Men", key: 5 },
+  { value: "Schindler's List", key: 6 }
+];
+
 storiesOf("Formik", module).add("Autocomplete", () => (
   <Formik
     initialValues={{
       country: "",
-      countryWithInitial: 2
+      countryWithInitial: 1
     }}
     onSubmit={(values, actions) => {
       setTimeout(() => {
@@ -510,25 +519,15 @@ storiesOf("Formik", module).add("Autocomplete", () => (
         <FormikAutocomplete
           name="country"
           label="No initial value"
-          onLoadOptions={(q: string) => [
-            { id: 1, name: "test 1" },
-            { id: 2, name: "test 2" },
-            { id: 3, name: "test 3" }
-          ]}
-          textProp={(value: any) => value.id + " " + value.name}
-          valueProp={(value: any) => value.id}
+          options={films}
         />
+
         <FormikAutocomplete
           name="countryWithInitial"
-          label="Initial value"
-          onLoadOptions={(q: string) => [
-            { id: 1, name: "test 1" },
-            { id: 2, name: "test 2" },
-            { id: 3, name: "test 3" }
-          ]}
-          textProp={value => value.id + " " + value.name}
-          valueProp={value => value.id}
+          label="Initial Value 1"
+          options={films}
         />
+
         <Button type="submit">Save</Button>
         <Button onClick={formikProps.handleReset}>Reset</Button>
         <Button onClick={() => formikProps.setFieldError("country", "Error")}>
@@ -798,13 +797,11 @@ storiesOf("Formik", module).add("Playground", () => (
           <FormikAutocomplete
             name="country"
             label="No initial value"
-            onLoadOptions={(q: string) => [
-              { id: 1, name: "test 1" },
-              { id: 2, name: "test 2" },
-              { id: 3, name: "test 3" }
+            options={[
+              { key: 1, value: "Entry 1" },
+              { key: 2, value: "Entry 2" },
+              { key: 3, value: "Entry 3" }
             ]}
-            textProp={(value: any) => value.id + " " + value.name}
-            valueProp={(value: any) => value.id}
           />
           {/* <DummyFilePicker /> */}
           <hr></hr>
