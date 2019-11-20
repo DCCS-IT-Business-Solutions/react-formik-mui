@@ -2,6 +2,7 @@ import * as React from "react";
 import TextField, { TextFieldProps } from "@material-ui/core/TextField";
 import { FastFieldProps } from "formik";
 import { FormikField } from "./FormikField";
+import { hasError, getHelperText } from "./utils";
 
 interface IBaseProps {
   name: string;
@@ -28,8 +29,8 @@ export function FormikTextField(props: FormikTextFieldProps) {
           {...defaultProps}
           {...field}
           value={field.value != null ? field.value : ""}
-          error={(form.errors && form.errors[name] != null) || error}
-          helperText={(form.errors && form.errors[name]) || helperText}
+          error={hasError(name, form, error)}
+          helperText={getHelperText(name, form, helperText)}
           {...others}
         />
       )}

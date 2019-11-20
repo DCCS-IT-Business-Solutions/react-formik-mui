@@ -6,8 +6,8 @@ import {
 } from "@material-ui/pickers";
 import { KeyboardDateTimePickerProps } from "@material-ui/pickers/DateTimePicker/DateTimePicker";
 import { FormHelperTextProps } from "@material-ui/core/FormHelperText";
-import FormHelperTextWrapper from "./FormHelperTextWrapper";
 import { FormikField } from "./FormikField";
+import { hasError, getHelperText } from "./utils";
 
 interface IBaseProps {
   name: string;
@@ -66,14 +66,9 @@ export function FormikDateTimepicker(props: FormikDateTimepickerProps) {
             onChange={(date: any) => {
               form.setFieldValue(name, date);
             }}
+            error={hasError(name, form, error)}
+            helperText={getHelperText(name, form, helperText)}
             {...others}
-          />
-          <FormHelperTextWrapper
-            name={name}
-            form={form}
-            error={error}
-            formHelperTextProps={formHelperTextProps}
-            helperText={helperText}
           />
         </React.Fragment>
       )}

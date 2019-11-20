@@ -79,14 +79,9 @@ storiesOf("Formik", module).add("TextFields", () => (
         />
         <br />
         <br />
-        With Error=true and Helpertext
+        Use Set Error Button
         <br />
-        <FormikTextField
-          label="Error"
-          name="error"
-          error={true}
-          helperText="Error"
-        />
+        <FormikTextField label="Error" name="error" />
         <br />
         <br />
         Variant Outlined:
@@ -130,6 +125,13 @@ storiesOf("Formik", module).add("TextFields", () => (
           Save
         </Button>
         <Button onClick={formikProps.handleReset}>Reset</Button>
+        <Button
+          onClick={() => {
+            formikProps.setFieldError("error", "Error");
+          }}
+        >
+          Set Error
+        </Button>
       </form>
     )}
   />
@@ -160,7 +162,12 @@ storiesOf("Formik", module).add("Datepicker with datefns", () => (
           <br />
           <Button type="submit">Save</Button>
           <Button onClick={formikProps.handleReset}>Reset</Button>
-          <Button onClick={() => formikProps.setFieldError("date", "Error")}>
+          <Button
+            onClick={() => {
+              formikProps.setFieldError("date", "Error");
+              formikProps.setFieldError("dateTime", "Error");
+            }}
+          >
             Set Error
           </Button>
         </form>

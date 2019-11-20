@@ -2,6 +2,7 @@ import { FormikProps } from "formik";
 import * as React from "react";
 import { FormHelperText } from "@material-ui/core";
 import { FormHelperTextProps } from "@material-ui/core/FormHelperText";
+import { hasError, getHelperText } from "./utils";
 
 export interface IFormHelperTextWrapperProps {
   name: string;
@@ -34,13 +35,14 @@ export default function FormHelperTextWrapper(
   ) {
     return null;
   }
+
   return (
     <React.Fragment>
       <FormHelperText
-        error={form.errors[name] != null || error}
+        error={hasError(name, form, error)}
         {...formHelperTextProps}
       >
-        {(form.errors && form.errors[name]) || helperText || " "}
+        {getHelperText(name, form, helperText)}
       </FormHelperText>
     </React.Fragment>
   );

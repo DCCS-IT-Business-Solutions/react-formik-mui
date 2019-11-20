@@ -4,6 +4,7 @@ import { KeyboardDatePicker, MuiPickersContext } from "@material-ui/pickers";
 import { KeyboardDatePickerProps } from "@material-ui/pickers/DatePicker/DatePicker";
 import { FormHelperTextProps } from "@material-ui/core/FormHelperText";
 import { FormikField } from "./FormikField";
+import { hasError, getHelperText } from "./utils";
 
 interface IBaseProps {
   name: string;
@@ -61,8 +62,8 @@ export function FormikDatepicker(props: FormikDatepickerProps) {
             onChange={date => {
               form.setFieldValue(name, date);
             }}
-            error={(form.errors && form.errors[name] != null) || error}
-            helperText={(form.errors && form.errors[name]) || helperText}
+            error={hasError(name, form, error)}
+            helperText={getHelperText(name, form, helperText)}
             {...others}
           />
         </React.Fragment>

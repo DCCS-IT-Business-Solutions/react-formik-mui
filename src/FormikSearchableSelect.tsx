@@ -5,6 +5,7 @@ import { FastFieldProps } from "formik";
 import { FormHelperTextProps } from "@material-ui/core/FormHelperText";
 import { SearchableSelect } from "@dccs/react-searchable-select-mui";
 import { FormikField } from "./FormikField";
+import { hasError, getHelperText } from "./utils";
 
 interface IBaseProps {
   name: string;
@@ -47,10 +48,8 @@ export function FormikSearchableSelect(props: FormikSearchableSelectProps) {
             formHelperTextProps={formHelperTextProps}
             value={field.value != null ? field.value : ""}
             options={options}
-            error={(form.errors && form.errors[name] != null) || error}
-            helperText={
-              (form.errors && (form.errors[name] as any)) || helperText
-            }
+            error={hasError(name, form, error)}
+            helperText={getHelperText(name, form, helperText) as any}
             {...others}
           />
         </React.Fragment>

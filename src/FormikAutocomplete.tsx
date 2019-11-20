@@ -2,6 +2,7 @@ import * as React from "react";
 import { FastFieldProps } from "formik";
 import { IAutocompleteProps, Autocomplete } from "@dccs/react-autocomplete-mui";
 import { FormikField } from "./FormikField";
+import { getHelperText, hasError } from "./utils";
 
 interface IBaseProps {
   name: string;
@@ -28,8 +29,8 @@ export function FormikAutocomplete(props: FormikAutocompleteProps) {
           onOptionSelected={(value: any) => {
             form.setFieldValue(name, value);
           }}
-          error={(form.errors && form.errors[name] != null) || error}
-          helperText={(form.errors && form.errors[name]) || helperText}
+          error={hasError(name, form, error)}
+          helperText={getHelperText(name, form, helperText)}
           {...others}
         />
       )}
