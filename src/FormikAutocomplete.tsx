@@ -40,6 +40,7 @@ export function FormikAutocomplete(props: FormikAutocompleteProps) {
       {({ field, form }: FastFieldProps<any>) => (
         <React.Fragment>
           <Autocomplete
+            // Formik Reset only works if initial value has a value
             // TODO: KeyPropFn & valuePropFn
             value={options.find(element => element.key === field.value)}
             onChange={(event: any, value: any) => {
