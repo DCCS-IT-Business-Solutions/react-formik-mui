@@ -8,6 +8,7 @@ interface IBaseProps {
     hideRemoveSelection?: boolean;
     removeSelectionText?: string;
     label?: string;
+    useField?: boolean;
     helperText?: string;
     formControlProps?: FormControlProps;
     formHelperTextProps?: FormHelperTextProps;
@@ -57,6 +58,15 @@ export declare namespace FormikSelect {
                 };
             };
             "label": {
+                "defaultValue": null;
+                "description": string;
+                "name": string;
+                "required": boolean;
+                "type": {
+                    "name": string;
+                };
+            };
+            "useField": {
                 "defaultValue": null;
                 "description": string;
                 "name": string;
@@ -236,61 +246,7 @@ export declare namespace FormikSelect {
                     "name": string;
                 };
             };
-            "type": {
-                "defaultValue": null;
-                "description": string;
-                "name": string;
-                "required": boolean;
-                "type": {
-                    "name": string;
-                };
-            };
-            "ref": {
-                "defaultValue": null;
-                "description": string;
-                "name": string;
-                "required": boolean;
-                "type": {
-                    "name": string;
-                };
-            };
-            "style": {
-                "defaultValue": null;
-                "description": string;
-                "name": string;
-                "required": boolean;
-                "type": {
-                    "name": string;
-                };
-            };
-            "title": {
-                "defaultValue": null;
-                "description": string;
-                "name": string;
-                "required": boolean;
-                "type": {
-                    "name": string;
-                };
-            };
-            "className": {
-                "defaultValue": null;
-                "description": string;
-                "name": string;
-                "required": boolean;
-                "type": {
-                    "name": string;
-                };
-            };
-            "innerRef": {
-                "defaultValue": null;
-                "description": string;
-                "name": string;
-                "required": boolean;
-                "type": {
-                    "name": string;
-                };
-            };
-            "defaultChecked": {
+            "disabled": {
                 "defaultValue": null;
                 "description": string;
                 "name": string;
@@ -300,6 +256,15 @@ export declare namespace FormikSelect {
                 };
             };
             "defaultValue": {
+                "defaultValue": null;
+                "description": string;
+                "name": string;
+                "required": boolean;
+                "type": {
+                    "name": string;
+                };
+            };
+            "defaultChecked": {
                 "defaultValue": null;
                 "description": string;
                 "name": string;
@@ -327,6 +292,15 @@ export declare namespace FormikSelect {
                 };
             };
             "accessKey": {
+                "defaultValue": null;
+                "description": string;
+                "name": string;
+                "required": boolean;
+                "type": {
+                    "name": string;
+                };
+            };
+            "className": {
                 "defaultValue": null;
                 "description": string;
                 "name": string;
@@ -425,7 +399,25 @@ export declare namespace FormikSelect {
                     "name": string;
                 };
             };
+            "style": {
+                "defaultValue": null;
+                "description": string;
+                "name": string;
+                "required": boolean;
+                "type": {
+                    "name": string;
+                };
+            };
             "tabIndex": {
+                "defaultValue": null;
+                "description": string;
+                "name": string;
+                "required": boolean;
+                "type": {
+                    "name": string;
+                };
+            };
+            "title": {
                 "defaultValue": null;
                 "description": string;
                 "name": string;
@@ -2531,7 +2523,25 @@ export declare namespace FormikSelect {
                     "name": string;
                 };
             };
-            "disabled": {
+            "inputRef": {
+                "defaultValue": null;
+                "description": string;
+                "name": string;
+                "required": boolean;
+                "type": {
+                    "name": string;
+                };
+            };
+            "innerRef": {
+                "defaultValue": null;
+                "description": string;
+                "name": string;
+                "required": boolean;
+                "type": {
+                    "name": string;
+                };
+            };
+            "ref": {
                 "defaultValue": null;
                 "description": string;
                 "name": string;
@@ -2576,7 +2586,7 @@ export declare namespace FormikSelect {
                     "name": string;
                 };
             };
-            "inputProps": {
+            "multiline": {
                 "defaultValue": null;
                 "description": string;
                 "name": string;
@@ -2603,42 +2613,6 @@ export declare namespace FormikSelect {
                     "name": string;
                 };
             };
-            "inputRef": {
-                "defaultValue": null;
-                "description": string;
-                "name": string;
-                "required": boolean;
-                "type": {
-                    "name": string;
-                };
-            };
-            "multiline": {
-                "defaultValue": null;
-                "description": string;
-                "name": string;
-                "required": boolean;
-                "type": {
-                    "name": string;
-                };
-            };
-            "rows": {
-                "defaultValue": null;
-                "description": string;
-                "name": string;
-                "required": boolean;
-                "type": {
-                    "name": string;
-                };
-            };
-            "rowsMax": {
-                "defaultValue": null;
-                "description": string;
-                "name": string;
-                "required": boolean;
-                "type": {
-                    "name": string;
-                };
-            };
             "endAdornment": {
                 "defaultValue": null;
                 "description": string;
@@ -2649,6 +2623,15 @@ export declare namespace FormikSelect {
                 };
             };
             "inputComponent": {
+                "defaultValue": null;
+                "description": string;
+                "name": string;
+                "required": boolean;
+                "type": {
+                    "name": string;
+                };
+            };
+            "inputProps": {
                 "defaultValue": null;
                 "description": string;
                 "name": string;
@@ -2675,7 +2658,34 @@ export declare namespace FormikSelect {
                     "name": string;
                 };
             };
+            "rows": {
+                "defaultValue": null;
+                "description": string;
+                "name": string;
+                "required": boolean;
+                "type": {
+                    "name": string;
+                };
+            };
+            "rowsMax": {
+                "defaultValue": null;
+                "description": string;
+                "name": string;
+                "required": boolean;
+                "type": {
+                    "name": string;
+                };
+            };
             "startAdornment": {
+                "defaultValue": null;
+                "description": string;
+                "name": string;
+                "required": boolean;
+                "type": {
+                    "name": string;
+                };
+            };
+            "type": {
                 "defaultValue": null;
                 "description": string;
                 "name": string;

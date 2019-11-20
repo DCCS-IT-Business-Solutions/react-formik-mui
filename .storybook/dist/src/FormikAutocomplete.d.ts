@@ -2,6 +2,7 @@
 import { IAutocompleteProps } from "@dccs/react-autocomplete-mui";
 interface IBaseProps {
     name: string;
+    useField?: boolean;
 }
 export declare type FormikAutocompleteProps = IBaseProps & IAutocompleteProps;
 export declare function FormikAutocomplete(props: FormikAutocompleteProps): JSX.Element;
@@ -12,6 +13,15 @@ export declare namespace FormikAutocomplete {
         "displayName": string;
         "props": {
             "name": {
+                "defaultValue": null;
+                "description": string;
+                "name": string;
+                "required": boolean;
+                "type": {
+                    "name": string;
+                };
+            };
+            "useField": {
                 "defaultValue": null;
                 "description": string;
                 "name": string;
@@ -344,60 +354,6 @@ export declare namespace FormikAutocomplete {
                     "name": string;
                 };
             };
-            "ref": {
-                "defaultValue": null;
-                "description": string;
-                "name": string;
-                "required": boolean;
-                "type": {
-                    "name": string;
-                };
-            };
-            "style": {
-                "defaultValue": null;
-                "description": string;
-                "name": string;
-                "required": boolean;
-                "type": {
-                    "name": string;
-                };
-            };
-            "title": {
-                "defaultValue": null;
-                "description": string;
-                "name": string;
-                "required": boolean;
-                "type": {
-                    "name": string;
-                };
-            };
-            "className": {
-                "defaultValue": null;
-                "description": string;
-                "name": string;
-                "required": boolean;
-                "type": {
-                    "name": string;
-                };
-            };
-            "innerRef": {
-                "defaultValue": null;
-                "description": string;
-                "name": string;
-                "required": boolean;
-                "type": {
-                    "name": string;
-                };
-            };
-            "key": {
-                "defaultValue": null;
-                "description": string;
-                "name": string;
-                "required": boolean;
-                "type": {
-                    "name": string;
-                };
-            };
             "defaultChecked": {
                 "defaultValue": null;
                 "description": string;
@@ -426,6 +382,15 @@ export declare namespace FormikAutocomplete {
                 };
             };
             "accessKey": {
+                "defaultValue": null;
+                "description": string;
+                "name": string;
+                "required": boolean;
+                "type": {
+                    "name": string;
+                };
+            };
+            "className": {
                 "defaultValue": null;
                 "description": string;
                 "name": string;
@@ -506,7 +471,25 @@ export declare namespace FormikAutocomplete {
                     "name": string;
                 };
             };
+            "style": {
+                "defaultValue": null;
+                "description": string;
+                "name": string;
+                "required": boolean;
+                "type": {
+                    "name": string;
+                };
+            };
             "tabIndex": {
+                "defaultValue": null;
+                "description": string;
+                "name": string;
+                "required": boolean;
+                "type": {
+                    "name": string;
+                };
+            };
+            "title": {
                 "defaultValue": null;
                 "description": string;
                 "name": string;
@@ -2586,6 +2569,33 @@ export declare namespace FormikAutocomplete {
                 };
             };
             "css": {
+                "defaultValue": null;
+                "description": string;
+                "name": string;
+                "required": boolean;
+                "type": {
+                    "name": string;
+                };
+            };
+            "innerRef": {
+                "defaultValue": null;
+                "description": string;
+                "name": string;
+                "required": boolean;
+                "type": {
+                    "name": string;
+                };
+            };
+            "ref": {
+                "defaultValue": null;
+                "description": string;
+                "name": string;
+                "required": boolean;
+                "type": {
+                    "name": string;
+                };
+            };
+            "key": {
                 "defaultValue": null;
                 "description": string;
                 "name": string;

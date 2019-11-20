@@ -9,6 +9,9 @@ export interface IFormikFieldProps {
 export const FormikField: React.FunctionComponent<IFormikFieldProps> = props => {
   const { name, useField, children } = props;
 
-  if (useField) return <Field name={name}>{children}</Field>;
-  else return <FastField name={name}>{children}</FastField>;
+  if (useField) {
+    return <Field name={name}>{children}</Field>;
+  } else {
+    return <FastField name={name}>{children}</FastField>;
+  }
 };

@@ -7,13 +7,9 @@ export interface IFormHelperTextWrapperProps {
     error?: boolean;
     helperText?: string;
     formHelperTextProps?: FormHelperTextProps;
-    showEmptyFormHelperText?: boolean;
 }
 declare function FormHelperTextWrapper(props: IFormHelperTextWrapperProps): JSX.Element | null;
 declare namespace FormHelperTextWrapper {
-    var defaultProps: {
-        showEmptyFormHelperText: boolean;
-    };
     var displayName: string;
     var __docgenInfo: {
         "description": string;
@@ -56,15 +52,6 @@ declare namespace FormHelperTextWrapper {
                 };
             };
             "formHelperTextProps": {
-                "defaultValue": null;
-                "description": string;
-                "name": string;
-                "required": boolean;
-                "type": {
-                    "name": string;
-                };
-            };
-            "showEmptyFormHelperText": {
                 "defaultValue": null;
                 "description": string;
                 "name": string;

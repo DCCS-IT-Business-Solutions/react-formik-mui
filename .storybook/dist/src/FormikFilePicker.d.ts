@@ -5,6 +5,7 @@ interface IBaseProps {
     name: string;
     helperText?: string;
     error?: boolean;
+    useField?: boolean;
     formHelperTextProps?: FormHelperTextProps;
 }
 export declare type FormikFormikFilePicker = IBaseProps & Omit<FilePickerProps, "value" | "onChange">;
@@ -42,7 +43,25 @@ export declare namespace FormikFilePicker {
                     "name": string;
                 };
             };
+            "useField": {
+                "defaultValue": null;
+                "description": string;
+                "name": string;
+                "required": boolean;
+                "type": {
+                    "name": string;
+                };
+            };
             "formHelperTextProps": {
+                "defaultValue": null;
+                "description": string;
+                "name": string;
+                "required": boolean;
+                "type": {
+                    "name": string;
+                };
+            };
+            "disabled": {
                 "defaultValue": null;
                 "description": string;
                 "name": string;
@@ -70,15 +89,6 @@ export declare namespace FormikFilePicker {
                 };
             };
             "onDragOver": {
-                "defaultValue": null;
-                "description": string;
-                "name": string;
-                "required": boolean;
-                "type": {
-                    "name": string;
-                };
-            };
-            "disabled": {
                 "defaultValue": null;
                 "description": string;
                 "name": string;

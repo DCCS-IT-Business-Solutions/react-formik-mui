@@ -6,6 +6,7 @@ interface IBaseProps {
     label?: string;
     helperText?: string;
     error?: boolean;
+    useField?: boolean;
     value?: any;
     onChange?: (date: any, value?: string | null) => void;
     formHelperTextProps?: FormHelperTextProps;
@@ -54,6 +55,15 @@ export declare namespace FormikDatepicker {
                     "name": string;
                 };
             };
+            "useField": {
+                "defaultValue": null;
+                "description": string;
+                "name": string;
+                "required": boolean;
+                "type": {
+                    "name": string;
+                };
+            };
             "value": {
                 "defaultValue": null;
                 "description": string;
@@ -81,88 +91,7 @@ export declare namespace FormikDatepicker {
                     "name": string;
                 };
             };
-            "type": {
-                "defaultValue": null;
-                "description": string;
-                "name": string;
-                "required": boolean;
-                "type": {
-                    "name": string;
-                };
-            };
-            "ref": {
-                "defaultValue": null;
-                "description": string;
-                "name": string;
-                "required": boolean;
-                "type": {
-                    "name": string;
-                };
-            };
-            "select": {
-                "defaultValue": null;
-                "description": string;
-                "name": string;
-                "required": boolean;
-                "type": {
-                    "name": string;
-                };
-            };
-            "style": {
-                "defaultValue": null;
-                "description": string;
-                "name": string;
-                "required": boolean;
-                "type": {
-                    "name": string;
-                };
-            };
-            "title": {
-                "defaultValue": null;
-                "description": string;
-                "name": string;
-                "required": boolean;
-                "type": {
-                    "name": string;
-                };
-            };
-            "mask": {
-                "defaultValue": null;
-                "description": string;
-                "name": string;
-                "required": boolean;
-                "type": {
-                    "name": string;
-                };
-            };
-            "className": {
-                "defaultValue": null;
-                "description": string;
-                "name": string;
-                "required": boolean;
-                "type": {
-                    "name": string;
-                };
-            };
-            "innerRef": {
-                "defaultValue": null;
-                "description": string;
-                "name": string;
-                "required": boolean;
-                "type": {
-                    "name": string;
-                };
-            };
-            "key": {
-                "defaultValue": null;
-                "description": string;
-                "name": string;
-                "required": boolean;
-                "type": {
-                    "name": string;
-                };
-            };
-            "defaultChecked": {
+            "disabled": {
                 "defaultValue": null;
                 "description": string;
                 "name": string;
@@ -172,6 +101,15 @@ export declare namespace FormikDatepicker {
                 };
             };
             "defaultValue": {
+                "defaultValue": null;
+                "description": string;
+                "name": string;
+                "required": boolean;
+                "type": {
+                    "name": string;
+                };
+            };
+            "defaultChecked": {
                 "defaultValue": null;
                 "description": string;
                 "name": string;
@@ -199,6 +137,15 @@ export declare namespace FormikDatepicker {
                 };
             };
             "accessKey": {
+                "defaultValue": null;
+                "description": string;
+                "name": string;
+                "required": boolean;
+                "type": {
+                    "name": string;
+                };
+            };
+            "className": {
                 "defaultValue": null;
                 "description": string;
                 "name": string;
@@ -297,7 +244,25 @@ export declare namespace FormikDatepicker {
                     "name": string;
                 };
             };
+            "style": {
+                "defaultValue": null;
+                "description": string;
+                "name": string;
+                "required": boolean;
+                "type": {
+                    "name": string;
+                };
+            };
             "tabIndex": {
+                "defaultValue": null;
+                "description": string;
+                "name": string;
+                "required": boolean;
+                "type": {
+                    "name": string;
+                };
+            };
+            "title": {
                 "defaultValue": null;
                 "description": string;
                 "name": string;
@@ -2403,7 +2368,52 @@ export declare namespace FormikDatepicker {
                     "name": string;
                 };
             };
-            "disabled": {
+            "inputRef": {
+                "defaultValue": null;
+                "description": string;
+                "name": string;
+                "required": boolean;
+                "type": {
+                    "name": string;
+                };
+            };
+            "innerRef": {
+                "defaultValue": null;
+                "description": string;
+                "name": string;
+                "required": boolean;
+                "type": {
+                    "name": string;
+                };
+            };
+            "ref": {
+                "defaultValue": null;
+                "description": string;
+                "name": string;
+                "required": boolean;
+                "type": {
+                    "name": string;
+                };
+            };
+            "select": {
+                "defaultValue": null;
+                "description": string;
+                "name": string;
+                "required": boolean;
+                "type": {
+                    "name": string;
+                };
+            };
+            "mask": {
+                "defaultValue": null;
+                "description": string;
+                "name": string;
+                "required": boolean;
+                "type": {
+                    "name": string;
+                };
+            };
+            "key": {
                 "defaultValue": null;
                 "description": string;
                 "name": string;
@@ -2459,16 +2469,7 @@ export declare namespace FormikDatepicker {
                     "name": string;
                 };
             };
-            "InputProps": {
-                "defaultValue": null;
-                "description": string;
-                "name": string;
-                "required": boolean;
-                "type": {
-                    "name": string;
-                };
-            };
-            "inputProps": {
+            "multiline": {
                 "defaultValue": null;
                 "description": string;
                 "name": string;
@@ -2495,7 +2496,7 @@ export declare namespace FormikDatepicker {
                     "name": string;
                 };
             };
-            "FormHelperTextProps": {
+            "inputProps": {
                 "defaultValue": null;
                 "description": string;
                 "name": string;
@@ -2504,25 +2505,7 @@ export declare namespace FormikDatepicker {
                     "name": string;
                 };
             };
-            "InputLabelProps": {
-                "defaultValue": null;
-                "description": string;
-                "name": string;
-                "required": boolean;
-                "type": {
-                    "name": string;
-                };
-            };
-            "inputRef": {
-                "defaultValue": null;
-                "description": string;
-                "name": string;
-                "required": boolean;
-                "type": {
-                    "name": string;
-                };
-            };
-            "multiline": {
+            "readOnly": {
                 "defaultValue": null;
                 "description": string;
                 "name": string;
@@ -2549,7 +2532,7 @@ export declare namespace FormikDatepicker {
                     "name": string;
                 };
             };
-            "SelectProps": {
+            "type": {
                 "defaultValue": null;
                 "description": string;
                 "name": string;
@@ -2558,7 +2541,34 @@ export declare namespace FormikDatepicker {
                     "name": string;
                 };
             };
-            "readOnly": {
+            "InputProps": {
+                "defaultValue": null;
+                "description": string;
+                "name": string;
+                "required": boolean;
+                "type": {
+                    "name": string;
+                };
+            };
+            "FormHelperTextProps": {
+                "defaultValue": null;
+                "description": string;
+                "name": string;
+                "required": boolean;
+                "type": {
+                    "name": string;
+                };
+            };
+            "InputLabelProps": {
+                "defaultValue": null;
+                "description": string;
+                "name": string;
+                "required": boolean;
+                "type": {
+                    "name": string;
+                };
+            };
+            "SelectProps": {
                 "defaultValue": null;
                 "description": string;
                 "name": string;

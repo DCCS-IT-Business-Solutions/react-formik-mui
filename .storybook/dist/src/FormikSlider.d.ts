@@ -8,6 +8,7 @@ interface IBaseProps {
     label?: string;
     helperText?: string;
     error?: boolean;
+    useField?: boolean;
     formControlLabelProps?: Omit<FormControlLabelProps, "control" | "label">;
     formHelperTextProps?: FormHelperTextProps;
     formControlProps?: FormControlProps;
@@ -48,6 +49,15 @@ export declare namespace FormikSlider {
                 };
             };
             "error": {
+                "defaultValue": null;
+                "description": string;
+                "name": string;
+                "required": boolean;
+                "type": {
+                    "name": string;
+                };
+            };
+            "useField": {
                 "defaultValue": null;
                 "description": string;
                 "name": string;
@@ -281,33 +291,6 @@ export declare namespace FormikSlider {
                     "name": string;
                 };
             };
-            "style": {
-                "defaultValue": null;
-                "description": string;
-                "name": string;
-                "required": boolean;
-                "type": {
-                    "name": string;
-                };
-            };
-            "title": {
-                "defaultValue": null;
-                "description": string;
-                "name": string;
-                "required": boolean;
-                "type": {
-                    "name": string;
-                };
-            };
-            "className": {
-                "defaultValue": null;
-                "description": string;
-                "name": string;
-                "required": boolean;
-                "type": {
-                    "name": string;
-                };
-            };
             "defaultChecked": {
                 "defaultValue": null;
                 "description": string;
@@ -336,6 +319,15 @@ export declare namespace FormikSlider {
                 };
             };
             "accessKey": {
+                "defaultValue": null;
+                "description": string;
+                "name": string;
+                "required": boolean;
+                "type": {
+                    "name": string;
+                };
+            };
+            "className": {
                 "defaultValue": null;
                 "description": string;
                 "name": string;
@@ -434,7 +426,25 @@ export declare namespace FormikSlider {
                     "name": string;
                 };
             };
+            "style": {
+                "defaultValue": null;
+                "description": string;
+                "name": string;
+                "required": boolean;
+                "type": {
+                    "name": string;
+                };
+            };
             "tabIndex": {
+                "defaultValue": null;
+                "description": string;
+                "name": string;
+                "required": boolean;
+                "type": {
+                    "name": string;
+                };
+            };
+            "title": {
                 "defaultValue": null;
                 "description": string;
                 "name": string;
