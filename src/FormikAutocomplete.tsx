@@ -1,32 +1,29 @@
 import * as React from "react";
 import { FastFieldProps } from "formik";
-import Autocomplete, {
-  AutocompleteProps,
-  RenderInputParams
-} from "@material-ui/lab/Autocomplete";
 import { FormikField } from "./FormikField";
 import { getHelperText, hasError } from "./utils";
-import TextField, { TextFieldProps } from "@material-ui/core/TextField";
+import { Autocomplete, AutocompleteProps } from "@dccs/react-autocomplete-mui";
+import { TextFieldProps } from "@material-ui/core/TextField";
+// import TextField, { TextFieldProps } from "@material-ui/core/TextField";
 
 interface IBaseProps {
   name: string;
-  options: any[];
+  error?: boolean;
+  helperText?: React.ReactNode;
+  label?: React.ReactNode;
   useField?: boolean;
-  autocompleteProps?: AutocompleteProps;
 }
 
-export type FormikAutocompleteProps = IBaseProps &
-  Omit<TextFieldProps, "name" | "type">;
+export type FormikAutocompleteProps = IBaseProps & AutocompleteProps<any>;
 
 export function FormikAutocomplete(props: FormikAutocompleteProps) {
   const {
     name,
-    options,
-    autocompleteProps,
-    useField,
-    variant,
     error,
     helperText,
+    label,
+    useField,
+    textFieldProps,
     ...others
   } = props;
 
@@ -39,33 +36,20 @@ export function FormikAutocomplete(props: FormikAutocompleteProps) {
     <FormikField name={name} useField={useField}>
       {({ field, form }: FastFieldProps<any>) => (
         <React.Fragment>
-          <Autocomplete
-            // TODO: KeyPropFn & valuePropFn
-            value={options.find(element => element.key === field.value)}
-            onChange={(event: any, value: any) => {
-              if (value != null) {
-                form.setFieldValue(name, value.key);
-              } else {
-                form.setFieldValue(name, "");
-              }
+          <Autocomplete<any>
+            {...defaultProps}
+            {...field}
+            value={field.value || ""}
+            onChange={(_: any, value: any) => {
+              form.setFieldValue(name, value);
             }}
-            // TODO: Touched setzen für Error Message
-            // TODO: Async testen
-            options={options}
-            getOptionLabel={(option: any) => option.value}
-            renderInput={(params: RenderInputParams) => {
-              return (
-                <TextField
-                  {...params}
-                  variant={variant as any}
-                  {...defaultProps}
-                  error={hasError(name, form, error)}
-                  helperText={getHelperText(name, form, helperText)}
-                  {...others}
-                />
-              );
+            textFieldProps={{
+              ...textFieldProps,
+              error: hasError(name, form, error),
+              helperText: getHelperText(name, form, helperText),
+              label
             }}
-            {...autocompleteProps}
+            {...others}
           />
         </React.Fragment>
       )}
