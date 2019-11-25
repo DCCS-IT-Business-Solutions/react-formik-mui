@@ -3,7 +3,6 @@ import { FastFieldProps } from "formik";
 import { FormikField } from "./FormikField";
 import { getHelperText, hasError } from "./utils";
 import { Autocomplete, AutocompleteProps } from "@dccs/react-autocomplete-mui";
-import { TextFieldProps } from "@material-ui/core/TextField";
 // import TextField, { TextFieldProps } from "@material-ui/core/TextField";
 
 interface IBaseProps {
@@ -28,7 +27,6 @@ export function FormikAutocomplete(props: FormikAutocompleteProps) {
   } = props;
 
   const defaultProps = {
-    margin: "normal" as any,
     style: { minWidth: "240px" }
   };
 
@@ -45,6 +43,7 @@ export function FormikAutocomplete(props: FormikAutocompleteProps) {
             }}
             textFieldProps={{
               ...textFieldProps,
+              margin: "normal",
               error: hasError(name, form, error),
               helperText: getHelperText(name, form, helperText),
               label
