@@ -59,7 +59,7 @@ export function FormikSelect(props: FormikSelectProps) {
             {...others}
           >
             {hideRemoveSelection !== true && (
-              <MenuItem value="">
+              <MenuItem style={{ minHeight: "30px" }} value="">
                 <em>{removeSelection}</em>
               </MenuItem>
             )}
