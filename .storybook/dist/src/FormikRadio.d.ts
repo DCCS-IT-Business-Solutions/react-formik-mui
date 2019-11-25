@@ -2497,7 +2497,7 @@ export declare namespace FormikRadio {
                     "name": string;
                 };
             };
-            "checked": {
+            "size": {
                 "defaultValue": null;
                 "description": string;
                 "name": string;
@@ -2506,7 +2506,7 @@ export declare namespace FormikRadio {
                     "name": string;
                 };
             };
-            "size": {
+            "checked": {
                 "defaultValue": null;
                 "description": string;
                 "name": string;

@@ -27,7 +27,7 @@ const defaultProps = {
   style: { minWidth: "240px" }
 };
 
-const defaultRemoveSelectionText = "Auswahl aufheben...";
+const defaultRemoveSelectionText = "";
 
 export function FormikSelect(props: FormikSelectProps) {
   const {

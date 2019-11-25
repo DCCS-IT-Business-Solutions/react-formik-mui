@@ -2514,7 +2514,7 @@ export declare namespace FormikCheckbox {
                     "name": string;
                 };
             };
-            "checked": {
+            "size": {
                 "defaultValue": null;
                 "description": string;
                 "name": string;
@@ -2523,7 +2523,7 @@ export declare namespace FormikCheckbox {
                     "name": string;
                 };
             };
-            "size": {
+            "checked": {
                 "defaultValue": null;
                 "description": string;
                 "name": string;
