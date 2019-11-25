@@ -1,6 +1,6 @@
 {
   "name": "@dccs/react-formik-mui",
-  "version": "0.9.6",
+  "version": "0.9.7",
   "description": "Simple Formik <-> MaterialUI wrappers",
   "main": "lib/index.js",
   "scripts": {
