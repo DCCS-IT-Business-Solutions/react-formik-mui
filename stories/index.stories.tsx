@@ -53,7 +53,8 @@ storiesOf("Formik", module).add("TextFields", () => (
         alert(JSON.stringify(values, null, 2));
       });
     }}
-    render={(formikProps: FormikProps<any>) => (
+  >
+    {(formikProps: FormikProps<any>) => (
       <form onSubmit={formikProps.handleSubmit}>
         Default:
         <br />
@@ -134,7 +135,7 @@ storiesOf("Formik", module).add("TextFields", () => (
         </Button>
       </form>
     )}
-  />
+  </Formik>
 ));
 
 storiesOf("Formik", module).add("Datepicker with datefns", () => (
@@ -150,7 +151,8 @@ storiesOf("Formik", module).add("Datepicker with datefns", () => (
           alert(JSON.stringify(values, null, 2));
         });
       }}
-      render={(formikProps: FormikProps<any>) => (
+    >
+      {(formikProps: FormikProps<any>) => (
         <form onSubmit={formikProps.handleSubmit}>
           Default:
           <br />
@@ -172,7 +174,7 @@ storiesOf("Formik", module).add("Datepicker with datefns", () => (
           </Button>
         </form>
       )}
-    />
+    </Formik>
   </MuiPickersUtilsProvider>
 ));
 
@@ -189,7 +191,8 @@ storiesOf("Formik", module).add("Datepicker with moment", () => (
           alert(JSON.stringify(values, null, 2));
         });
       }}
-      render={(formikProps: FormikProps<any>) => (
+    >
+      {(formikProps: FormikProps<any>) => (
         <form onSubmit={formikProps.handleSubmit}>
           Default:
           <br />
@@ -206,7 +209,7 @@ storiesOf("Formik", module).add("Datepicker with moment", () => (
           </Button>
         </form>
       )}
-    />
+    </Formik>
   </MuiPickersUtilsProvider>
 ));
 
@@ -222,7 +225,8 @@ storiesOf("Formik", module).add("Switches", () => (
         alert(JSON.stringify(values, null, 2));
       });
     }}
-    render={(formikProps: FormikProps<any>) => (
+  >
+    {(formikProps: FormikProps<any>) => (
       <form onSubmit={formikProps.handleSubmit}>
         Default:
         <br />
@@ -249,7 +253,7 @@ storiesOf("Formik", module).add("Switches", () => (
         </Button>
       </form>
     )}
-  />
+  </Formik>
 ));
 
 storiesOf("Formik", module).add("Selects", () => (
@@ -264,7 +268,8 @@ storiesOf("Formik", module).add("Selects", () => (
         alert(JSON.stringify(values, null, 2));
       });
     }}
-    render={(formikProps: FormikProps<any>) => (
+  >
+    {(formikProps: FormikProps<any>) => (
       <form onSubmit={formikProps.handleSubmit}>
         Default:
         <br />
@@ -338,7 +343,7 @@ storiesOf("Formik", module).add("Selects", () => (
         </Button>
       </form>
     )}
-  />
+  </Formik>
 ));
 
 storiesOf("Formik", module).add("Searchable Selects", () => (
@@ -352,7 +357,8 @@ storiesOf("Formik", module).add("Searchable Selects", () => (
         alert(JSON.stringify(values, null, 2));
       });
     }}
-    render={(formikProps: FormikProps<any>) => (
+  >
+    {(formikProps: FormikProps<any>) => (
       <form onSubmit={formikProps.handleSubmit}>
         Default:
         <br />
@@ -384,7 +390,7 @@ storiesOf("Formik", module).add("Searchable Selects", () => (
         </Button>
       </form>
     )}
-  />
+  </Formik>
 ));
 
 storiesOf("Formik", module).add("Checkboxes", () => (
@@ -399,7 +405,8 @@ storiesOf("Formik", module).add("Checkboxes", () => (
         alert(JSON.stringify(values, null, 2));
       });
     }}
-    render={(formikProps: FormikProps<any>) => (
+  >
+    {(formikProps: FormikProps<any>) => (
       <form onSubmit={formikProps.handleSubmit}>
         Default:
         <br />
@@ -430,7 +437,7 @@ storiesOf("Formik", module).add("Checkboxes", () => (
         </Button>
       </form>
     )}
-  />
+  </Formik>
 ));
 
 storiesOf("Formik", module).add("Radio Buttons", () => (
@@ -444,7 +451,8 @@ storiesOf("Formik", module).add("Radio Buttons", () => (
         alert(JSON.stringify(values, null, 2));
       });
     }}
-    render={(formikProps: FormikProps<any>) => (
+  >
+    {(formikProps: FormikProps<any>) => (
       <form onSubmit={formikProps.handleSubmit}>
         <FormControl>
           <FormLabel>Gender</FormLabel>
@@ -491,7 +499,7 @@ storiesOf("Formik", module).add("Radio Buttons", () => (
         </Button>
       </form>
     )}
-  />
+  </Formik>
 ));
 
 const films = [
@@ -514,7 +522,8 @@ storiesOf("Formik", module).add("Autocomplete", () => (
         alert(JSON.stringify(values, null, 2));
       });
     }}
-    render={(formikProps: FormikProps<any>) => (
+  >
+    {(formikProps: FormikProps<any>) => (
       <form onSubmit={formikProps.handleSubmit} autoComplete="off">
         <FormikAutocomplete
           name="country"
@@ -535,7 +544,7 @@ storiesOf("Formik", module).add("Autocomplete", () => (
         </Button>
       </form>
     )}
-  />
+  </Formik>
 ));
 
 const server: FileMetadata[] = [];
@@ -615,7 +624,8 @@ storiesOf("Formik", module).add("Slider", () => (
         alert(JSON.stringify(values, null, 2));
       });
     }}
-    render={(formikProps: FormikProps<any>) => (
+  >
+    {(formikProps: FormikProps<any>) => (
       <form onSubmit={formikProps.handleSubmit} autoComplete="off">
         <div style={{ padding: "20px" }}>
           <FormikSlider
@@ -654,7 +664,7 @@ storiesOf("Formik", module).add("Slider", () => (
         </Button>
       </form>
     )}
-  />
+  </Formik>
 ));
 
 storiesOf("Formik", module).add("Custom Components", () => (
@@ -668,7 +678,8 @@ storiesOf("Formik", module).add("Custom Components", () => (
         alert(JSON.stringify(values, null, 2));
       });
     }}
-    render={(formikProps: FormikProps<any>) => (
+  >
+    {(formikProps: FormikProps<any>) => (
       <form onSubmit={formikProps.handleSubmit}>
         Custom Component:
         <br />
@@ -726,7 +737,7 @@ storiesOf("Formik", module).add("Custom Components", () => (
         <a href="https://jaredpalmer.com/formik/docs/api/fastfield">Formik</a>
       </form>
     )}
-  />
+  </Formik>
 ));
 
 // Generate Dummy Inital Values
@@ -755,7 +766,8 @@ storiesOf("Formik", module).add("Playground", () => (
           alert(JSON.stringify(values, null, 2));
         });
       }}
-      render={(formikProps: FormikProps<any>) => (
+    >
+      {(formikProps: FormikProps<any>) => (
         <form onSubmit={formikProps.handleSubmit}>
           <FormikTextField label="First Name" name="firstName" />
           <FormikDatepicker name="date" label="Date" />
@@ -823,7 +835,7 @@ storiesOf("Formik", module).add("Playground", () => (
           </Button>
         </form>
       )}
-    />
+    </Formik>
   </MuiPickersUtilsProvider>
 ));
 
@@ -837,7 +849,8 @@ storiesOf("Formik", module).add("Huge Form", () => (
             alert(JSON.stringify(values, null, 2));
           });
         }}
-        render={(formikProps: FormikProps<any>) => (
+      >
+        {(formikProps: FormikProps<any>) => (
           <form onSubmit={formikProps.handleSubmit}>
             {Object.keys(formikProps.initialValues).map((property, index) => {
               return (
@@ -850,7 +863,7 @@ storiesOf("Formik", module).add("Huge Form", () => (
             <Button onClick={formikProps.handleReset}>Reset</Button>
           </form>
         )}
-      />
+      </Formik>
     )}
   </React.Fragment>
 ));

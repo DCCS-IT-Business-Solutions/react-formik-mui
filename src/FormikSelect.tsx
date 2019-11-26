@@ -27,7 +27,7 @@ const defaultProps = {
   style: { minWidth: "240px" }
 };
 
-const defaultRemoveSelectionText = "Auswahl aufheben...";
+const defaultRemoveSelectionText = "";
 
 export function FormikSelect(props: FormikSelectProps) {
   const {
@@ -59,7 +59,7 @@ export function FormikSelect(props: FormikSelectProps) {
             {...others}
           >
             {hideRemoveSelection !== true && (
-              <MenuItem value="">
+              <MenuItem style={{ minHeight: "30px" }} value="">
                 <em>{removeSelection}</em>
               </MenuItem>
             )}

@@ -39,8 +39,6 @@ All MUI-Components are used inside of the renderfunction of a Formik-FastField.
 - FormikSwitch (Material UI Switch) - Renders a MUI-FormControlLabel with a MUI-Radio and a MUI-FormHelperText
 - FormikDatepicker (Material UI Pickers KeyboardDatepicker) - Renders a MUI-KeyboardDatepicker
 - FormikSlider (Material UI Slider) - Renders a MUI-FormControl with a MUI-Slider and a MUI-FormHelperText
-- FormikAutoComplete ([@DCCS Autocomplete](https://www.npmjs.com/package/@dccs/react-autocomplete-mui)) - Renders a Autocomplete-Component
-- FomikFilePicker ([@DCCS FilePicker](https://github.com/DCCS-IT-Business-Solutions/react-filepicker-mui)) - Renders a FilePicker-Component
 
 ## How it works
 
@@ -181,23 +179,6 @@ FormikDatepicker-Props are almost identical to [https://material-ui-pickers.dev/
 <MuiPickersUtilsProvider utils={DateFnsUtils}>
   <FormikDatepicker name="date" label="Date"></FormikDatepicker>
 </MuiPickersUtilsProvider>
-```
-
-**_FormikFilePicker_**
-
-FormikFilePicker-Props are almost identical to [https://github.com/DCCS-IT-Business-Solutions/react-filepicker-mui](https://github.com/DCCS-IT-Business-Solutions/react-filepicker-mui)
-
-```javascript
-<FormikFilePicker
-  name="files"
-  uploadFile={(file: File) => {
-    // should return an id with wich the file can be found
-  }}
-  getFile={(fileId: string) => {
-    // should return file metadata
-    // needed properties are id and name
-  }}
-/>
 ```
 
 **_Custom Components_**
