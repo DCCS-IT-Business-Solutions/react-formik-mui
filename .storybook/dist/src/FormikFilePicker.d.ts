@@ -7,6 +7,8 @@ interface IBaseProps {
     error?: boolean;
     useField?: boolean;
     formHelperTextProps?: FormHelperTextProps;
+    fieldProps?: {};
+    validate?: any;
 }
 export declare type FormikFormikFilePicker = IBaseProps & Omit<FilePickerProps, "value" | "onChange">;
 export declare function FormikFilePicker(props: FormikFormikFilePicker): JSX.Element;
@@ -53,6 +55,24 @@ export declare namespace FormikFilePicker {
                 };
             };
             "formHelperTextProps": {
+                "defaultValue": null;
+                "description": string;
+                "name": string;
+                "required": boolean;
+                "type": {
+                    "name": string;
+                };
+            };
+            "fieldProps": {
+                "defaultValue": null;
+                "description": string;
+                "name": string;
+                "required": boolean;
+                "type": {
+                    "name": string;
+                };
+            };
+            "validate": {
                 "defaultValue": null;
                 "description": string;
                 "name": string;

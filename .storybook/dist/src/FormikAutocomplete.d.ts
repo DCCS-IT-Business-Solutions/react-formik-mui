@@ -1,13 +1,15 @@
-/// <reference types="react" />
-import { AutocompleteProps } from "@material-ui/lab/Autocomplete";
-import { TextFieldProps } from "@material-ui/core/TextField";
+import * as React from "react";
+import { AutocompleteProps } from "@dccs/react-autocomplete-mui";
 interface IBaseProps {
     name: string;
-    options: any[];
+    error?: boolean;
+    helperText?: React.ReactNode;
+    label?: React.ReactNode;
     useField?: boolean;
-    autocompleteProps?: AutocompleteProps;
+    validate?: any;
+    fieldProps?: {};
 }
-export declare type FormikAutocompleteProps = IBaseProps & Omit<TextFieldProps, "name" | "type">;
+export declare type FormikAutocompleteProps = IBaseProps & AutocompleteProps<any>;
 export declare function FormikAutocomplete(props: FormikAutocompleteProps): JSX.Element;
 export declare namespace FormikAutocomplete {
     var displayName: string;
@@ -24,7 +26,7 @@ export declare namespace FormikAutocomplete {
                     "name": string;
                 };
             };
-            "options": {
+            "error": {
                 "defaultValue": null;
                 "description": string;
                 "name": string;
@@ -33,25 +35,7 @@ export declare namespace FormikAutocomplete {
                     "name": string;
                 };
             };
-            "useField": {
-                "defaultValue": null;
-                "description": string;
-                "name": string;
-                "required": boolean;
-                "type": {
-                    "name": string;
-                };
-            };
-            "autocompleteProps": {
-                "defaultValue": null;
-                "description": string;
-                "name": string;
-                "required": boolean;
-                "type": {
-                    "name": string;
-                };
-            };
-            "ref": {
+            "helperText": {
                 "defaultValue": null;
                 "description": string;
                 "name": string;
@@ -69,7 +53,7 @@ export declare namespace FormikAutocomplete {
                     "name": string;
                 };
             };
-            "select": {
+            "useField": {
                 "defaultValue": null;
                 "description": string;
                 "name": string;
@@ -78,7 +62,7 @@ export declare namespace FormikAutocomplete {
                     "name": string;
                 };
             };
-            "style": {
+            "validate": {
                 "defaultValue": null;
                 "description": string;
                 "name": string;
@@ -87,7 +71,7 @@ export declare namespace FormikAutocomplete {
                     "name": string;
                 };
             };
-            "title": {
+            "fieldProps": {
                 "defaultValue": null;
                 "description": string;
                 "name": string;
@@ -96,7 +80,79 @@ export declare namespace FormikAutocomplete {
                     "name": string;
                 };
             };
-            "className": {
+            "variant": {
+                "defaultValue": null;
+                "description": string;
+                "name": string;
+                "required": boolean;
+                "type": {
+                    "name": string;
+                };
+            };
+            "textProp": {
+                "defaultValue": null;
+                "description": string;
+                "name": string;
+                "required": boolean;
+                "type": {
+                    "name": string;
+                };
+            };
+            "keyProp": {
+                "defaultValue": null;
+                "description": string;
+                "name": string;
+                "required": boolean;
+                "type": {
+                    "name": string;
+                };
+            };
+            "onChange": {
+                "defaultValue": null;
+                "description": string;
+                "name": string;
+                "required": boolean;
+                "type": {
+                    "name": string;
+                };
+            };
+            "textFieldProps": {
+                "defaultValue": null;
+                "description": string;
+                "name": string;
+                "required": boolean;
+                "type": {
+                    "name": string;
+                };
+            };
+            "highlightQuery": {
+                "defaultValue": null;
+                "description": string;
+                "name": string;
+                "required": boolean;
+                "type": {
+                    "name": string;
+                };
+            };
+            "highlightQueryStyle": {
+                "defaultValue": null;
+                "description": string;
+                "name": string;
+                "required": boolean;
+                "type": {
+                    "name": string;
+                };
+            };
+            "loading": {
+                "defaultValue": null;
+                "description": string;
+                "name": string;
+                "required": boolean;
+                "type": {
+                    "name": string;
+                };
+            };
+            "defaultValue": {
                 "defaultValue": null;
                 "description": string;
                 "name": string;
@@ -114,34 +170,7 @@ export declare namespace FormikAutocomplete {
                     "name": string;
                 };
             };
-            "innerRef": {
-                "defaultValue": null;
-                "description": string;
-                "name": string;
-                "required": boolean;
-                "type": {
-                    "name": string;
-                };
-            };
-            "key": {
-                "defaultValue": null;
-                "description": string;
-                "name": string;
-                "required": boolean;
-                "type": {
-                    "name": string;
-                };
-            };
             "defaultChecked": {
-                "defaultValue": null;
-                "description": string;
-                "name": string;
-                "required": boolean;
-                "type": {
-                    "name": string;
-                };
-            };
-            "defaultValue": {
                 "defaultValue": null;
                 "description": string;
                 "name": string;
@@ -169,6 +198,15 @@ export declare namespace FormikAutocomplete {
                 };
             };
             "accessKey": {
+                "defaultValue": null;
+                "description": string;
+                "name": string;
+                "required": boolean;
+                "type": {
+                    "name": string;
+                };
+            };
+            "className": {
                 "defaultValue": null;
                 "description": string;
                 "name": string;
@@ -267,7 +305,25 @@ export declare namespace FormikAutocomplete {
                     "name": string;
                 };
             };
+            "style": {
+                "defaultValue": null;
+                "description": string;
+                "name": string;
+                "required": boolean;
+                "type": {
+                    "name": string;
+                };
+            };
             "tabIndex": {
+                "defaultValue": null;
+                "description": string;
+                "name": string;
+                "required": boolean;
+                "type": {
+                    "name": string;
+                };
+            };
+            "title": {
                 "defaultValue": null;
                 "description": string;
                 "name": string;
@@ -1069,15 +1125,6 @@ export declare namespace FormikAutocomplete {
                 };
             };
             "onBlurCapture": {
-                "defaultValue": null;
-                "description": string;
-                "name": string;
-                "required": boolean;
-                "type": {
-                    "name": string;
-                };
-            };
-            "onChange": {
                 "defaultValue": null;
                 "description": string;
                 "name": string;
@@ -2382,6 +2429,15 @@ export declare namespace FormikAutocomplete {
                     "name": string;
                 };
             };
+            "closeIcon": {
+                "defaultValue": null;
+                "description": string;
+                "name": string;
+                "required": boolean;
+                "type": {
+                    "name": string;
+                };
+            };
             "disabled": {
                 "defaultValue": null;
                 "description": string;
@@ -2391,7 +2447,7 @@ export declare namespace FormikAutocomplete {
                     "name": string;
                 };
             };
-            "error": {
+            "disablePortal": {
                 "defaultValue": null;
                 "description": string;
                 "name": string;
@@ -2400,7 +2456,7 @@ export declare namespace FormikAutocomplete {
                     "name": string;
                 };
             };
-            "fullWidth": {
+            "ListboxComponent": {
                 "defaultValue": null;
                 "description": string;
                 "name": string;
@@ -2409,7 +2465,7 @@ export declare namespace FormikAutocomplete {
                     "name": string;
                 };
             };
-            "hiddenLabel": {
+            "loadingText": {
                 "defaultValue": null;
                 "description": string;
                 "name": string;
@@ -2418,7 +2474,7 @@ export declare namespace FormikAutocomplete {
                     "name": string;
                 };
             };
-            "margin": {
+            "noOptionsText": {
                 "defaultValue": null;
                 "description": string;
                 "name": string;
@@ -2427,7 +2483,7 @@ export declare namespace FormikAutocomplete {
                     "name": string;
                 };
             };
-            "required": {
+            "PaperComponent": {
                 "defaultValue": null;
                 "description": string;
                 "name": string;
@@ -2436,7 +2492,7 @@ export declare namespace FormikAutocomplete {
                     "name": string;
                 };
             };
-            "variant": {
+            "PopperComponent": {
                 "defaultValue": null;
                 "description": string;
                 "name": string;
@@ -2445,7 +2501,7 @@ export declare namespace FormikAutocomplete {
                     "name": string;
                 };
             };
-            "InputProps": {
+            "popupIcon": {
                 "defaultValue": null;
                 "description": string;
                 "name": string;
@@ -2454,7 +2510,25 @@ export declare namespace FormikAutocomplete {
                     "name": string;
                 };
             };
-            "inputProps": {
+            "renderGroup": {
+                "defaultValue": null;
+                "description": string;
+                "name": string;
+                "required": boolean;
+                "type": {
+                    "name": string;
+                };
+            };
+            "renderOption": {
+                "defaultValue": null;
+                "description": string;
+                "name": string;
+                "required": boolean;
+                "type": {
+                    "name": string;
+                };
+            };
+            "renderTags": {
                 "defaultValue": null;
                 "description": string;
                 "name": string;
@@ -2472,7 +2546,7 @@ export declare namespace FormikAutocomplete {
                     "name": string;
                 };
             };
-            "autoFocus": {
+            "autoHighlight": {
                 "defaultValue": null;
                 "description": string;
                 "name": string;
@@ -2481,7 +2555,7 @@ export declare namespace FormikAutocomplete {
                     "name": string;
                 };
             };
-            "FormHelperTextProps": {
+            "autoSelect": {
                 "defaultValue": null;
                 "description": string;
                 "name": string;
@@ -2490,7 +2564,7 @@ export declare namespace FormikAutocomplete {
                     "name": string;
                 };
             };
-            "helperText": {
+            "clearOnEscape": {
                 "defaultValue": null;
                 "description": string;
                 "name": string;
@@ -2499,7 +2573,7 @@ export declare namespace FormikAutocomplete {
                     "name": string;
                 };
             };
-            "InputLabelProps": {
+            "debug": {
                 "defaultValue": null;
                 "description": string;
                 "name": string;
@@ -2508,7 +2582,7 @@ export declare namespace FormikAutocomplete {
                     "name": string;
                 };
             };
-            "inputRef": {
+            "disableClearable": {
                 "defaultValue": null;
                 "description": string;
                 "name": string;
@@ -2517,7 +2591,7 @@ export declare namespace FormikAutocomplete {
                     "name": string;
                 };
             };
-            "multiline": {
+            "disableCloseOnSelect": {
                 "defaultValue": null;
                 "description": string;
                 "name": string;
@@ -2526,7 +2600,7 @@ export declare namespace FormikAutocomplete {
                     "name": string;
                 };
             };
-            "rows": {
+            "disableListWrap": {
                 "defaultValue": null;
                 "description": string;
                 "name": string;
@@ -2535,7 +2609,7 @@ export declare namespace FormikAutocomplete {
                     "name": string;
                 };
             };
-            "rowsMax": {
+            "disableOpenOnFocus": {
                 "defaultValue": null;
                 "description": string;
                 "name": string;
@@ -2544,7 +2618,115 @@ export declare namespace FormikAutocomplete {
                     "name": string;
                 };
             };
-            "SelectProps": {
+            "filterOptions": {
+                "defaultValue": null;
+                "description": string;
+                "name": string;
+                "required": boolean;
+                "type": {
+                    "name": string;
+                };
+            };
+            "filterSelectedOptions": {
+                "defaultValue": null;
+                "description": string;
+                "name": string;
+                "required": boolean;
+                "type": {
+                    "name": string;
+                };
+            };
+            "freeSolo": {
+                "defaultValue": null;
+                "description": string;
+                "name": string;
+                "required": boolean;
+                "type": {
+                    "name": string;
+                };
+            };
+            "getOptionDisabled": {
+                "defaultValue": null;
+                "description": string;
+                "name": string;
+                "required": boolean;
+                "type": {
+                    "name": string;
+                };
+            };
+            "getOptionLabel": {
+                "defaultValue": null;
+                "description": string;
+                "name": string;
+                "required": boolean;
+                "type": {
+                    "name": string;
+                };
+            };
+            "groupBy": {
+                "defaultValue": null;
+                "description": string;
+                "name": string;
+                "required": boolean;
+                "type": {
+                    "name": string;
+                };
+            };
+            "includeInputInList": {
+                "defaultValue": null;
+                "description": string;
+                "name": string;
+                "required": boolean;
+                "type": {
+                    "name": string;
+                };
+            };
+            "inputValue": {
+                "defaultValue": null;
+                "description": string;
+                "name": string;
+                "required": boolean;
+                "type": {
+                    "name": string;
+                };
+            };
+            "multiple": {
+                "defaultValue": null;
+                "description": string;
+                "name": string;
+                "required": boolean;
+                "type": {
+                    "name": string;
+                };
+            };
+            "onClose": {
+                "defaultValue": null;
+                "description": string;
+                "name": string;
+                "required": boolean;
+                "type": {
+                    "name": string;
+                };
+            };
+            "onInputChange": {
+                "defaultValue": null;
+                "description": string;
+                "name": string;
+                "required": boolean;
+                "type": {
+                    "name": string;
+                };
+            };
+            "onOpen": {
+                "defaultValue": null;
+                "description": string;
+                "name": string;
+                "required": boolean;
+                "type": {
+                    "name": string;
+                };
+            };
+            "open": {
                 "defaultValue": null;
                 "description": string;
                 "name": string;
@@ -2554,6 +2736,24 @@ export declare namespace FormikAutocomplete {
                 };
             };
             "value": {
+                "defaultValue": null;
+                "description": string;
+                "name": string;
+                "required": boolean;
+                "type": {
+                    "name": string;
+                };
+            };
+            "innerRef": {
+                "defaultValue": null;
+                "description": string;
+                "name": string;
+                "required": boolean;
+                "type": {
+                    "name": string;
+                };
+            };
+            "ref": {
                 "defaultValue": null;
                 "description": string;
                 "name": string;
