@@ -11,6 +11,8 @@ interface IBaseProps {
   error?: boolean;
   useField?: boolean;
   formHelperTextProps?: FormHelperTextProps;
+  fieldProps?: {};
+  validate?: any;
 }
 
 export type FormikFormikFilePicker = IBaseProps &
@@ -23,6 +25,8 @@ export function FormikFilePicker(props: FormikFormikFilePicker) {
     useField,
     helperText,
     formHelperTextProps,
+    fieldProps,
+    validate,
     ...others
   } = props;
 
@@ -32,7 +36,12 @@ export function FormikFilePicker(props: FormikFormikFilePicker) {
   };
 
   return (
-    <FormikField name={name} useField={useField}>
+    <FormikField
+      name={name}
+      useField={useField}
+      validate={validate}
+      {...fieldProps}
+    >
       {({ field, form }: FastFieldProps<any>) => (
         <React.Fragment>
           <FilePicker

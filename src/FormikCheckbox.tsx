@@ -17,6 +17,8 @@ interface IBaseProps {
   formControlLabelProps?: Omit<FormControlLabelProps, "control" | "label">;
   formHelperTextProps?: FormHelperTextProps;
   formControlProps?: FormControlProps;
+  fieldProps?: {};
+  validate?: any;
 }
 
 export type FormikCheckboxProps = IBaseProps & CheckboxProps;
@@ -31,11 +33,18 @@ export function FormikCheckbox(props: FormikCheckboxProps) {
     formControlLabelProps,
     formHelperTextProps,
     formControlProps,
+    fieldProps,
+    validate,
     ...others
   } = props;
 
   return (
-    <FormikField name={name} useField={useField}>
+    <FormikField
+      name={name}
+      useField={useField}
+      validate={validate}
+      {...fieldProps}
+    >
       {({ field, form }: FastFieldProps<any>) => (
         <FormControl margin="normal" {...formControlProps}>
           <FormControlLabel

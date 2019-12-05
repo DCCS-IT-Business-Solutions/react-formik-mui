@@ -17,6 +17,8 @@ interface IBaseProps {
   formControlLabelProps?: Omit<FormControlLabelProps, "control" | "label">;
   formControlProps?: FormControlProps;
   formHelperTextProps?: FormHelperTextProps;
+  fieldProps?: {};
+  validate?: any;
 }
 
 export type FormikSwitchProps = IBaseProps & SwitchProps;
@@ -31,11 +33,18 @@ export function FormikSwitch(props: FormikSwitchProps) {
     formControlLabelProps,
     formHelperTextProps,
     formControlProps,
+    fieldProps,
+    validate,
     ...others
   } = props;
 
   return (
-    <FormikField name={name} useField={useField}>
+    <FormikField
+      name={name}
+      useField={useField}
+      validate={validate}
+      {...fieldProps}
+    >
       {({ field, form }: FastFieldProps<any>) => (
         <FormControl margin="normal" {...formControlProps}>
           <FormControlLabel

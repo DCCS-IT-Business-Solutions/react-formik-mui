@@ -17,6 +17,8 @@ interface IBaseProps {
   formControlLabelProps?: Omit<FormControlLabelProps, "control" | "label">;
   formHelperTextProps?: FormHelperTextProps;
   formControlProps?: FormControlProps;
+  fieldProps?: {};
+  validate?: any;
 }
 
 export type FormikSliderProps = IBaseProps & SliderProps;
@@ -34,11 +36,18 @@ export function FormikSlider(props: FormikSliderProps) {
     error,
     formHelperTextProps,
     formControlProps,
+    fieldProps,
+    validate,
     ...others
   } = props;
 
   return (
-    <FormikField name={name} useField={useField}>
+    <FormikField
+      name={name}
+      useField={useField}
+      validate={validate}
+      {...fieldProps}
+    >
       {({ field, form }: FastFieldProps<any>) => (
         <FormControl
           margin="normal"

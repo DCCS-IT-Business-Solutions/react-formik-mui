@@ -19,6 +19,8 @@ interface IBaseProps {
   formControlLabelProps?: Omit<FormControlLabelProps, "control" | "label">;
   formHelperTextProps?: FormHelperTextProps;
   formHelperTextWrapperProps?: IFormHelperTextWrapperProps;
+  fieldProps?: {};
+  validate?: any;
 }
 
 export type FormikRadioProps = IBaseProps & RadioProps;
@@ -33,12 +35,19 @@ export function FormikRadio(props: FormikRadioProps) {
     formControlLabelProps,
     formHelperTextProps,
     formHelperTextWrapperProps,
+    fieldProps,
+    validate,
     value,
     ...others
   } = props;
 
   return (
-    <FormikField name={name} useField={useField}>
+    <FormikField
+      name={name}
+      useField={useField}
+      validate={validate}
+      {...fieldProps}
+    >
       {({ field, form }: FastFieldProps<any>) => (
         <React.Fragment>
           <FormControlLabel

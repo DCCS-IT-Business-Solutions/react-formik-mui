@@ -4,14 +4,23 @@ import { FastField, Field } from "formik";
 export interface IFormikFieldProps {
   name: string;
   useField?: boolean;
+  validate?: any;
 }
 
 export const FormikField: React.FunctionComponent<IFormikFieldProps> = props => {
-  const { name, useField, children } = props;
+  const { name, useField, validate, children } = props;
 
   if (useField) {
-    return <Field name={name}>{children}</Field>;
+    return (
+      <Field name={name} validate={validate}>
+        {children}
+      </Field>
+    );
   } else {
-    return <FastField name={name}>{children}</FastField>;
+    return (
+      <FastField name={name} validate={validate}>
+        {children}
+      </FastField>
+    );
   }
 };

@@ -19,6 +19,8 @@ interface IBaseProps {
   helperText?: string;
   formControlProps?: FormControlProps;
   formHelperTextProps?: FormHelperTextProps;
+  fieldProps?: {};
+  validate?: any;
 }
 
 export type FormikSelectProps = IBaseProps & SelectProps;
@@ -41,13 +43,20 @@ export function FormikSelect(props: FormikSelectProps) {
     formHelperTextProps,
     hideRemoveSelection,
     removeSelectionText,
+    fieldProps,
+    validate,
     ...others
   } = props;
 
   const removeSelection = removeSelectionText || defaultRemoveSelectionText;
 
   return (
-    <FormikField name={name} useField={useField}>
+    <FormikField
+      name={name}
+      useField={useField}
+      validate={validate}
+      {...fieldProps}
+    >
       {({ field, form }: FastFieldProps<any>) => (
         <FormControl margin="normal" {...formControlProps}>
           {label && <InputLabel>{label}</InputLabel>}

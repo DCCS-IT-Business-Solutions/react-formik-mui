@@ -8,6 +8,8 @@ interface IBaseProps {
   name: string;
   type?: "text" | "number" | "password";
   useField?: boolean;
+  fieldProps?: {};
+  validate?: any;
 }
 
 export type FormikTextFieldProps = IBaseProps &
@@ -19,10 +21,24 @@ const defaultProps = {
 };
 
 export function FormikTextField(props: FormikTextFieldProps) {
-  const { name, useField, variant, error, helperText, ...others } = props;
+  const {
+    name,
+    useField,
+    variant,
+    error,
+    helperText,
+    fieldProps,
+    validate,
+    ...others
+  } = props;
 
   return (
-    <FormikField name={name} useField={useField}>
+    <FormikField
+      name={name}
+      useField={useField}
+      validate={validate}
+      {...fieldProps}
+    >
       {({ form, field }: FastFieldProps<any>) => (
         <TextField
           variant={variant as any}

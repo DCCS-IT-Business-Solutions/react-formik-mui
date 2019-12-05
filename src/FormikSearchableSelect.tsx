@@ -15,6 +15,8 @@ interface IBaseProps {
   useField?: boolean;
   formControlProps?: FormControlProps;
   formHelperTextProps?: FormHelperTextProps;
+  fieldProps?: {};
+  validate?: any;
 }
 
 export type FormikSearchableSelectProps = IBaseProps & SelectProps;
@@ -29,6 +31,8 @@ export function FormikSearchableSelect(props: FormikSearchableSelectProps) {
     useField,
     formControlProps,
     formHelperTextProps,
+    fieldProps,
+    validate,
     ...others
   } = props;
 
@@ -37,7 +41,12 @@ export function FormikSearchableSelect(props: FormikSearchableSelectProps) {
   };
 
   return (
-    <FormikField name={name} useField={useField}>
+    <FormikField
+      name={name}
+      useField={useField}
+      validate={validate}
+      {...fieldProps}
+    >
       {({ field, form }: FastFieldProps<any>) => (
         <React.Fragment>
           <SearchableSelect

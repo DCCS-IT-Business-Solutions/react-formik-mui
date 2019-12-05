@@ -35,6 +35,15 @@ import { FileMetadata } from "@dccs/react-filepicker-mui";
 import { reject, resolve } from "q";
 import { sleep } from "@dccs/utils";
 
+// Synchronous validation function
+const validate = (value: any) => {
+  let errorMessage;
+  if (!/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/i.test(value)) {
+    errorMessage = "Invalid email address";
+  }
+  return errorMessage;
+};
+
 storiesOf("Formik", module).add("TextFields", () => (
   <Formik
     initialValues={{
@@ -106,6 +115,11 @@ storiesOf("Formik", module).add("TextFields", () => (
         Type="password":
         <br />
         <FormikTextField label="Password" name="password" type="password" />
+        <br />
+        <br />
+        Field level Validation (email)
+        <br />
+        <FormikTextField name="email" validate={validate} />
         <br />
         <br />
         Input Adornments:
@@ -514,7 +528,7 @@ const films = [
 storiesOf("Formik", module).add("Autocomplete", () => (
   <Formik
     initialValues={{
-      country: "",
+      country: undefined,
       countryWithInitial: 1
     }}
     onSubmit={(values, actions) => {
@@ -529,12 +543,16 @@ storiesOf("Formik", module).add("Autocomplete", () => (
           name="country"
           label="No initial value"
           options={films}
+          textProp={(option: any) => option.value}
+          keyProp={(option: any) => option.key}
         />
 
         <FormikAutocomplete
           name="countryWithInitial"
           label="Initial Value 1"
           options={films}
+          textProp={(option: any) => option.value}
+          keyProp={(option: any) => option.key}
         />
 
         <Button type="submit">Save</Button>
@@ -814,6 +832,8 @@ storiesOf("Formik", module).add("Playground", () => (
               { key: 2, value: "Entry 2" },
               { key: 3, value: "Entry 3" }
             ]}
+            textProp={(option: any) => option.value}
+            keyProp={(option: any) => option.key}
           />
           {/* <DummyFilePicker /> */}
           <hr></hr>

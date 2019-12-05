@@ -15,6 +15,8 @@ interface IBaseProps {
   value?: any;
   onChange?: (date: any, value?: string | null) => void;
   formHelperTextProps?: FormHelperTextProps;
+  fieldProps?: {};
+  validate?: any;
 }
 
 export type FormikDatepickerProps = IBaseProps &
@@ -36,6 +38,8 @@ export function FormikDatepicker(props: FormikDatepickerProps) {
     useField,
     helperText,
     formHelperTextProps,
+    fieldProps,
+    validate,
     ...others
   } = props;
 
@@ -52,7 +56,12 @@ export function FormikDatepicker(props: FormikDatepickerProps) {
   }
 
   return (
-    <FormikField name={name} useField={useField}>
+    <FormikField
+      name={name}
+      useField={useField}
+      validate={validate}
+      {...fieldProps}
+    >
       {({ field, form }: FastFieldProps<any>) => (
         <React.Fragment>
           <KeyboardDatePicker
