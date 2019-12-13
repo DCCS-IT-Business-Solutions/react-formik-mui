@@ -143,7 +143,7 @@ export declare namespace FormikAutocomplete {
                     "name": string;
                 };
             };
-            "loading": {
+            "ref": {
                 "defaultValue": null;
                 "description": string;
                 "name": string;
@@ -152,7 +152,25 @@ export declare namespace FormikAutocomplete {
                     "name": string;
                 };
             };
-            "defaultValue": {
+            "style": {
+                "defaultValue": null;
+                "description": string;
+                "name": string;
+                "required": boolean;
+                "type": {
+                    "name": string;
+                };
+            };
+            "title": {
+                "defaultValue": null;
+                "description": string;
+                "name": string;
+                "required": boolean;
+                "type": {
+                    "name": string;
+                };
+            };
+            "className": {
                 "defaultValue": null;
                 "description": string;
                 "name": string;
@@ -170,7 +188,25 @@ export declare namespace FormikAutocomplete {
                     "name": string;
                 };
             };
+            "innerRef": {
+                "defaultValue": null;
+                "description": string;
+                "name": string;
+                "required": boolean;
+                "type": {
+                    "name": string;
+                };
+            };
             "defaultChecked": {
+                "defaultValue": null;
+                "description": string;
+                "name": string;
+                "required": boolean;
+                "type": {
+                    "name": string;
+                };
+            };
+            "defaultValue": {
                 "defaultValue": null;
                 "description": string;
                 "name": string;
@@ -198,15 +234,6 @@ export declare namespace FormikAutocomplete {
                 };
             };
             "accessKey": {
-                "defaultValue": null;
-                "description": string;
-                "name": string;
-                "required": boolean;
-                "type": {
-                    "name": string;
-                };
-            };
-            "className": {
                 "defaultValue": null;
                 "description": string;
                 "name": string;
@@ -305,25 +332,7 @@ export declare namespace FormikAutocomplete {
                     "name": string;
                 };
             };
-            "style": {
-                "defaultValue": null;
-                "description": string;
-                "name": string;
-                "required": boolean;
-                "type": {
-                    "name": string;
-                };
-            };
             "tabIndex": {
-                "defaultValue": null;
-                "description": string;
-                "name": string;
-                "required": boolean;
-                "type": {
-                    "name": string;
-                };
-            };
-            "title": {
                 "defaultValue": null;
                 "description": string;
                 "name": string;
@@ -2429,15 +2438,6 @@ export declare namespace FormikAutocomplete {
                     "name": string;
                 };
             };
-            "closeIcon": {
-                "defaultValue": null;
-                "description": string;
-                "name": string;
-                "required": boolean;
-                "type": {
-                    "name": string;
-                };
-            };
             "disabled": {
                 "defaultValue": null;
                 "description": string;
@@ -2447,7 +2447,97 @@ export declare namespace FormikAutocomplete {
                     "name": string;
                 };
             };
+            "autoComplete": {
+                "defaultValue": null;
+                "description": string;
+                "name": string;
+                "required": boolean;
+                "type": {
+                    "name": string;
+                };
+            };
+            "value": {
+                "defaultValue": null;
+                "description": string;
+                "name": string;
+                "required": boolean;
+                "type": {
+                    "name": string;
+                };
+            };
+            "open": {
+                "defaultValue": null;
+                "description": string;
+                "name": string;
+                "required": boolean;
+                "type": {
+                    "name": string;
+                };
+            };
+            "inputValue": {
+                "defaultValue": null;
+                "description": string;
+                "name": string;
+                "required": boolean;
+                "type": {
+                    "name": string;
+                };
+            };
+            "onOpen": {
+                "defaultValue": null;
+                "description": string;
+                "name": string;
+                "required": boolean;
+                "type": {
+                    "name": string;
+                };
+            };
+            "onClose": {
+                "defaultValue": null;
+                "description": string;
+                "name": string;
+                "required": boolean;
+                "type": {
+                    "name": string;
+                };
+            };
             "disablePortal": {
+                "defaultValue": null;
+                "description": string;
+                "name": string;
+                "required": boolean;
+                "type": {
+                    "name": string;
+                };
+            };
+            "PaperComponent": {
+                "defaultValue": null;
+                "description": string;
+                "name": string;
+                "required": boolean;
+                "type": {
+                    "name": string;
+                };
+            };
+            "multiple": {
+                "defaultValue": null;
+                "description": string;
+                "name": string;
+                "required": boolean;
+                "type": {
+                    "name": string;
+                };
+            };
+            "loading": {
+                "defaultValue": null;
+                "description": string;
+                "name": string;
+                "required": boolean;
+                "type": {
+                    "name": string;
+                };
+            };
+            "closeIcon": {
                 "defaultValue": null;
                 "description": string;
                 "name": string;
@@ -2475,15 +2565,6 @@ export declare namespace FormikAutocomplete {
                 };
             };
             "noOptionsText": {
-                "defaultValue": null;
-                "description": string;
-                "name": string;
-                "required": boolean;
-                "type": {
-                    "name": string;
-                };
-            };
-            "PaperComponent": {
                 "defaultValue": null;
                 "description": string;
                 "name": string;
@@ -2529,15 +2610,6 @@ export declare namespace FormikAutocomplete {
                 };
             };
             "renderTags": {
-                "defaultValue": null;
-                "description": string;
-                "name": string;
-                "required": boolean;
-                "type": {
-                    "name": string;
-                };
-            };
-            "autoComplete": {
                 "defaultValue": null;
                 "description": string;
                 "name": string;
@@ -2681,79 +2753,7 @@ export declare namespace FormikAutocomplete {
                     "name": string;
                 };
             };
-            "inputValue": {
-                "defaultValue": null;
-                "description": string;
-                "name": string;
-                "required": boolean;
-                "type": {
-                    "name": string;
-                };
-            };
-            "multiple": {
-                "defaultValue": null;
-                "description": string;
-                "name": string;
-                "required": boolean;
-                "type": {
-                    "name": string;
-                };
-            };
-            "onClose": {
-                "defaultValue": null;
-                "description": string;
-                "name": string;
-                "required": boolean;
-                "type": {
-                    "name": string;
-                };
-            };
             "onInputChange": {
-                "defaultValue": null;
-                "description": string;
-                "name": string;
-                "required": boolean;
-                "type": {
-                    "name": string;
-                };
-            };
-            "onOpen": {
-                "defaultValue": null;
-                "description": string;
-                "name": string;
-                "required": boolean;
-                "type": {
-                    "name": string;
-                };
-            };
-            "open": {
-                "defaultValue": null;
-                "description": string;
-                "name": string;
-                "required": boolean;
-                "type": {
-                    "name": string;
-                };
-            };
-            "value": {
-                "defaultValue": null;
-                "description": string;
-                "name": string;
-                "required": boolean;
-                "type": {
-                    "name": string;
-                };
-            };
-            "innerRef": {
-                "defaultValue": null;
-                "description": string;
-                "name": string;
-                "required": boolean;
-                "type": {
-                    "name": string;
-                };
-            };
-            "ref": {
                 "defaultValue": null;
                 "description": string;
                 "name": string;

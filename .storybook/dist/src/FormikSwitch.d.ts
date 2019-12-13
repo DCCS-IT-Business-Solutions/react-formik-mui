@@ -149,7 +149,7 @@ export declare namespace FormikSwitch {
                     "name": string;
                 };
             };
-            "onChange": {
+            "type": {
                 "defaultValue": null;
                 "description": string;
                 "name": string;
@@ -158,7 +158,61 @@ export declare namespace FormikSwitch {
                     "name": string;
                 };
             };
-            "defaultValue": {
+            "ref": {
+                "defaultValue": null;
+                "description": string;
+                "name": string;
+                "required": boolean;
+                "type": {
+                    "name": string;
+                };
+            };
+            "form": {
+                "defaultValue": null;
+                "description": string;
+                "name": string;
+                "required": boolean;
+                "type": {
+                    "name": string;
+                };
+            };
+            "style": {
+                "defaultValue": null;
+                "description": string;
+                "name": string;
+                "required": boolean;
+                "type": {
+                    "name": string;
+                };
+            };
+            "title": {
+                "defaultValue": null;
+                "description": string;
+                "name": string;
+                "required": boolean;
+                "type": {
+                    "name": string;
+                };
+            };
+            "className": {
+                "defaultValue": null;
+                "description": string;
+                "name": string;
+                "required": boolean;
+                "type": {
+                    "name": string;
+                };
+            };
+            "innerRef": {
+                "defaultValue": null;
+                "description": string;
+                "name": string;
+                "required": boolean;
+                "type": {
+                    "name": string;
+                };
+            };
+            "key": {
                 "defaultValue": null;
                 "description": string;
                 "name": string;
@@ -168,6 +222,15 @@ export declare namespace FormikSwitch {
                 };
             };
             "defaultChecked": {
+                "defaultValue": null;
+                "description": string;
+                "name": string;
+                "required": boolean;
+                "type": {
+                    "name": string;
+                };
+            };
+            "defaultValue": {
                 "defaultValue": null;
                 "description": string;
                 "name": string;
@@ -195,15 +258,6 @@ export declare namespace FormikSwitch {
                 };
             };
             "accessKey": {
-                "defaultValue": null;
-                "description": string;
-                "name": string;
-                "required": boolean;
-                "type": {
-                    "name": string;
-                };
-            };
-            "className": {
                 "defaultValue": null;
                 "description": string;
                 "name": string;
@@ -302,25 +356,7 @@ export declare namespace FormikSwitch {
                     "name": string;
                 };
             };
-            "style": {
-                "defaultValue": null;
-                "description": string;
-                "name": string;
-                "required": boolean;
-                "type": {
-                    "name": string;
-                };
-            };
             "tabIndex": {
-                "defaultValue": null;
-                "description": string;
-                "name": string;
-                "required": boolean;
-                "type": {
-                    "name": string;
-                };
-            };
-            "title": {
                 "defaultValue": null;
                 "description": string;
                 "name": string;
@@ -1113,6 +1149,15 @@ export declare namespace FormikSwitch {
                 };
             };
             "onBlurCapture": {
+                "defaultValue": null;
+                "description": string;
+                "name": string;
+                "required": boolean;
+                "type": {
+                    "name": string;
+                };
+            };
+            "onChange": {
                 "defaultValue": null;
                 "description": string;
                 "name": string;
@@ -2426,69 +2471,6 @@ export declare namespace FormikSwitch {
                     "name": string;
                 };
             };
-            "value": {
-                "defaultValue": null;
-                "description": string;
-                "name": string;
-                "required": boolean;
-                "type": {
-                    "name": string;
-                };
-            };
-            "innerRef": {
-                "defaultValue": null;
-                "description": string;
-                "name": string;
-                "required": boolean;
-                "type": {
-                    "name": string;
-                };
-            };
-            "ref": {
-                "defaultValue": null;
-                "description": string;
-                "name": string;
-                "required": boolean;
-                "type": {
-                    "name": string;
-                };
-            };
-            "form": {
-                "defaultValue": null;
-                "description": string;
-                "name": string;
-                "required": boolean;
-                "type": {
-                    "name": string;
-                };
-            };
-            "checked": {
-                "defaultValue": null;
-                "description": string;
-                "name": string;
-                "required": boolean;
-                "type": {
-                    "name": string;
-                };
-            };
-            "inputRef": {
-                "defaultValue": null;
-                "description": string;
-                "name": string;
-                "required": boolean;
-                "type": {
-                    "name": string;
-                };
-            };
-            "key": {
-                "defaultValue": null;
-                "description": string;
-                "name": string;
-                "required": boolean;
-                "type": {
-                    "name": string;
-                };
-            };
             "required": {
                 "defaultValue": null;
                 "description": string;
@@ -2516,7 +2498,16 @@ export declare namespace FormikSwitch {
                     "name": string;
                 };
             };
-            "type": {
+            "inputRef": {
+                "defaultValue": null;
+                "description": string;
+                "name": string;
+                "required": boolean;
+                "type": {
+                    "name": string;
+                };
+            };
+            "value": {
                 "defaultValue": null;
                 "description": string;
                 "name": string;
@@ -2571,6 +2562,15 @@ export declare namespace FormikSwitch {
                 };
             };
             "formTarget": {
+                "defaultValue": null;
+                "description": string;
+                "name": string;
+                "required": boolean;
+                "type": {
+                    "name": string;
+                };
+            };
+            "checked": {
                 "defaultValue": null;
                 "description": string;
                 "name": string;
