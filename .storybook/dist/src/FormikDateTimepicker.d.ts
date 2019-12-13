@@ -2597,6 +2597,33 @@ export declare namespace FormikDateTimepicker {
                     "name": string;
                 };
             };
+            "inputValue": {
+                "defaultValue": null;
+                "description": string;
+                "name": string;
+                "required": boolean;
+                "type": {
+                    "name": string;
+                };
+            };
+            "onClose": {
+                "defaultValue": null;
+                "description": string;
+                "name": string;
+                "required": boolean;
+                "type": {
+                    "name": string;
+                };
+            };
+            "onOpen": {
+                "defaultValue": null;
+                "description": string;
+                "name": string;
+                "required": boolean;
+                "type": {
+                    "name": string;
+                };
+            };
             "open": {
                 "defaultValue": null;
                 "description": string;
@@ -2691,15 +2718,6 @@ export declare namespace FormikDateTimepicker {
                 };
             };
             "PopoverProps": {
-                "defaultValue": null;
-                "description": string;
-                "name": string;
-                "required": boolean;
-                "type": {
-                    "name": string;
-                };
-            };
-            "inputValue": {
                 "defaultValue": null;
                 "description": string;
                 "name": string;
@@ -2877,24 +2895,6 @@ export declare namespace FormikDateTimepicker {
                     "name": string;
                 };
             };
-            "onOpen": {
-                "defaultValue": null;
-                "description": string;
-                "name": string;
-                "required": boolean;
-                "type": {
-                    "name": string;
-                };
-            };
-            "onClose": {
-                "defaultValue": null;
-                "description": string;
-                "name": string;
-                "required": boolean;
-                "type": {
-                    "name": string;
-                };
-            };
             "disableToolbar": {
                 "defaultValue": {
                     value: string;
@@ -2937,6 +2937,55 @@ export declare namespace FormikDateTimepicker {
             };
             "openTo": {
                 "defaultValue": null;
+                "description": string;
+                "name": string;
+                "required": boolean;
+                "type": {
+                    "name": string;
+                };
+            };
+            "hideTabs": {
+                "defaultValue": null;
+                "description": string;
+                "name": string;
+                "required": boolean;
+                "type": {
+                    "name": string;
+                };
+            };
+            "dateRangeIcon": {
+                "defaultValue": null;
+                "description": string;
+                "name": string;
+                "required": boolean;
+                "type": {
+                    "name": string;
+                };
+            };
+            "timeIcon": {
+                "defaultValue": null;
+                "description": string;
+                "name": string;
+                "required": boolean;
+                "type": {
+                    "name": string;
+                };
+            };
+            "ampm": {
+                "defaultValue": {
+                    value: string;
+                };
+                "description": string;
+                "name": string;
+                "required": boolean;
+                "type": {
+                    "name": string;
+                };
+            };
+            "minutesStep": {
+                "defaultValue": {
+                    value: string;
+                };
                 "description": string;
                 "name": string;
                 "required": boolean;
@@ -3095,55 +3144,6 @@ export declare namespace FormikDateTimepicker {
             };
             "loadingIndicator": {
                 "defaultValue": null;
-                "description": string;
-                "name": string;
-                "required": boolean;
-                "type": {
-                    "name": string;
-                };
-            };
-            "hideTabs": {
-                "defaultValue": null;
-                "description": string;
-                "name": string;
-                "required": boolean;
-                "type": {
-                    "name": string;
-                };
-            };
-            "dateRangeIcon": {
-                "defaultValue": null;
-                "description": string;
-                "name": string;
-                "required": boolean;
-                "type": {
-                    "name": string;
-                };
-            };
-            "timeIcon": {
-                "defaultValue": null;
-                "description": string;
-                "name": string;
-                "required": boolean;
-                "type": {
-                    "name": string;
-                };
-            };
-            "ampm": {
-                "defaultValue": {
-                    value: string;
-                };
-                "description": string;
-                "name": string;
-                "required": boolean;
-                "type": {
-                    "name": string;
-                };
-            };
-            "minutesStep": {
-                "defaultValue": {
-                    value: string;
-                };
                 "description": string;
                 "name": string;
                 "required": boolean;

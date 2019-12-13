@@ -2465,60 +2465,6 @@ export declare namespace FormikAutocomplete {
                     "name": string;
                 };
             };
-            "open": {
-                "defaultValue": null;
-                "description": string;
-                "name": string;
-                "required": boolean;
-                "type": {
-                    "name": string;
-                };
-            };
-            "inputValue": {
-                "defaultValue": null;
-                "description": string;
-                "name": string;
-                "required": boolean;
-                "type": {
-                    "name": string;
-                };
-            };
-            "onOpen": {
-                "defaultValue": null;
-                "description": string;
-                "name": string;
-                "required": boolean;
-                "type": {
-                    "name": string;
-                };
-            };
-            "onClose": {
-                "defaultValue": null;
-                "description": string;
-                "name": string;
-                "required": boolean;
-                "type": {
-                    "name": string;
-                };
-            };
-            "disablePortal": {
-                "defaultValue": null;
-                "description": string;
-                "name": string;
-                "required": boolean;
-                "type": {
-                    "name": string;
-                };
-            };
-            "PaperComponent": {
-                "defaultValue": null;
-                "description": string;
-                "name": string;
-                "required": boolean;
-                "type": {
-                    "name": string;
-                };
-            };
             "multiple": {
                 "defaultValue": null;
                 "description": string;
@@ -2546,6 +2492,15 @@ export declare namespace FormikAutocomplete {
                     "name": string;
                 };
             };
+            "disablePortal": {
+                "defaultValue": null;
+                "description": string;
+                "name": string;
+                "required": boolean;
+                "type": {
+                    "name": string;
+                };
+            };
             "ListboxComponent": {
                 "defaultValue": null;
                 "description": string;
@@ -2565,6 +2520,15 @@ export declare namespace FormikAutocomplete {
                 };
             };
             "noOptionsText": {
+                "defaultValue": null;
+                "description": string;
+                "name": string;
+                "required": boolean;
+                "type": {
+                    "name": string;
+                };
+            };
+            "PaperComponent": {
                 "defaultValue": null;
                 "description": string;
                 "name": string;
@@ -2753,7 +2717,43 @@ export declare namespace FormikAutocomplete {
                     "name": string;
                 };
             };
+            "inputValue": {
+                "defaultValue": null;
+                "description": string;
+                "name": string;
+                "required": boolean;
+                "type": {
+                    "name": string;
+                };
+            };
+            "onClose": {
+                "defaultValue": null;
+                "description": string;
+                "name": string;
+                "required": boolean;
+                "type": {
+                    "name": string;
+                };
+            };
             "onInputChange": {
+                "defaultValue": null;
+                "description": string;
+                "name": string;
+                "required": boolean;
+                "type": {
+                    "name": string;
+                };
+            };
+            "onOpen": {
+                "defaultValue": null;
+                "description": string;
+                "name": string;
+                "required": boolean;
+                "type": {
+                    "name": string;
+                };
+            };
+            "open": {
                 "defaultValue": null;
                 "description": string;
                 "name": string;

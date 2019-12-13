@@ -2597,6 +2597,33 @@ export declare namespace FormikDatepicker {
                     "name": string;
                 };
             };
+            "inputValue": {
+                "defaultValue": null;
+                "description": string;
+                "name": string;
+                "required": boolean;
+                "type": {
+                    "name": string;
+                };
+            };
+            "onClose": {
+                "defaultValue": null;
+                "description": string;
+                "name": string;
+                "required": boolean;
+                "type": {
+                    "name": string;
+                };
+            };
+            "onOpen": {
+                "defaultValue": null;
+                "description": string;
+                "name": string;
+                "required": boolean;
+                "type": {
+                    "name": string;
+                };
+            };
             "open": {
                 "defaultValue": null;
                 "description": string;
@@ -2691,15 +2718,6 @@ export declare namespace FormikDatepicker {
                 };
             };
             "PopoverProps": {
-                "defaultValue": null;
-                "description": string;
-                "name": string;
-                "required": boolean;
-                "type": {
-                    "name": string;
-                };
-            };
-            "inputValue": {
                 "defaultValue": null;
                 "description": string;
                 "name": string;
@@ -2870,24 +2888,6 @@ export declare namespace FormikDatepicker {
                 "defaultValue": {
                     value: string;
                 };
-                "description": string;
-                "name": string;
-                "required": boolean;
-                "type": {
-                    "name": string;
-                };
-            };
-            "onOpen": {
-                "defaultValue": null;
-                "description": string;
-                "name": string;
-                "required": boolean;
-                "type": {
-                    "name": string;
-                };
-            };
-            "onClose": {
-                "defaultValue": null;
                 "description": string;
                 "name": string;
                 "required": boolean;
