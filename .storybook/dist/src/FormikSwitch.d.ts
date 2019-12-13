@@ -2489,15 +2489,6 @@ export declare namespace FormikSwitch {
                     "name": string;
                 };
             };
-            "type": {
-                "defaultValue": null;
-                "description": string;
-                "name": string;
-                "required": boolean;
-                "type": {
-                    "name": string;
-                };
-            };
             "required": {
                 "defaultValue": null;
                 "description": string;
@@ -2517,6 +2508,15 @@ export declare namespace FormikSwitch {
                 };
             };
             "autoFocus": {
+                "defaultValue": null;
+                "description": string;
+                "name": string;
+                "required": boolean;
+                "type": {
+                    "name": string;
+                };
+            };
+            "type": {
                 "defaultValue": null;
                 "description": string;
                 "name": string;

@@ -2559,15 +2559,6 @@ export declare namespace FormikSearchableSelect {
                     "name": string;
                 };
             };
-            "type": {
-                "defaultValue": null;
-                "description": string;
-                "name": string;
-                "required": boolean;
-                "type": {
-                    "name": string;
-                };
-            };
             "error": {
                 "defaultValue": null;
                 "description": string;
@@ -2641,6 +2632,15 @@ export declare namespace FormikSearchableSelect {
                 };
             };
             "rowsMax": {
+                "defaultValue": null;
+                "description": string;
+                "name": string;
+                "required": boolean;
+                "type": {
+                    "name": string;
+                };
+            };
+            "type": {
                 "defaultValue": null;
                 "description": string;
                 "name": string;

@@ -2579,15 +2579,6 @@ export declare namespace FormikSelect {
                     "name": string;
                 };
             };
-            "type": {
-                "defaultValue": null;
-                "description": string;
-                "name": string;
-                "required": boolean;
-                "type": {
-                    "name": string;
-                };
-            };
             "error": {
                 "defaultValue": null;
                 "description": string;
@@ -2661,6 +2652,15 @@ export declare namespace FormikSelect {
                 };
             };
             "rowsMax": {
+                "defaultValue": null;
+                "description": string;
+                "name": string;
+                "required": boolean;
+                "type": {
+                    "name": string;
+                };
+            };
+            "type": {
                 "defaultValue": null;
                 "description": string;
                 "name": string;

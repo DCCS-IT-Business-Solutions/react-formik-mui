@@ -7,17 +7,17 @@ function getErrors(errors: any, searchName: string): any {
     if (split.length >= 2) {
       const propertyName = split[0];
 
-      if (errors[propertyName] == null || errors[propertyName].length === 0)
+      if (errors[propertyName] == null || errors[propertyName].length === 0) {
         return "";
-
+      }
       let indexOrName;
-      if (parseInt(split[1]) === NaN) {
+      if (isNaN(parseInt(split[1], 10))) {
         indexOrName = split[1];
       } else {
-        indexOrName = parseInt(split[1]);
+        indexOrName = parseInt(split[1], 10);
       }
 
-      let tempErrors = errors[propertyName][indexOrName];
+      const tempErrors = errors[propertyName][indexOrName];
 
       const restSearchName = split.slice(2).join(".");
 
@@ -39,8 +39,8 @@ export function hasError(
   form: FormikProps<any>,
   error: boolean | undefined
 ) {
-  let errorString = getErrors(form.errors, name);
-  let touched = getErrors(form.touched, name);
+  const errorString = getErrors(form.errors, name);
+  const touched = getErrors(form.touched, name);
 
   return (form.errors && touched === true && errorString != null) || error;
 }
@@ -50,8 +50,8 @@ export function getHelperText(
   form: FormikProps<any>,
   helperText: React.ReactNode
 ) {
-  let errorString = getErrors(form.errors, name);
-  let touched = getErrors(form.touched, name);
+  const errorString = getErrors(form.errors, name);
+  const touched = getErrors(form.touched, name);
 
   return (form.errors && touched === true && errorString) || helperText;
 }

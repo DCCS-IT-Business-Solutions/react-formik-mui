@@ -2427,6 +2427,15 @@ export declare namespace FormikTextField {
                     "name": string;
                 };
             };
+            "variant": {
+                "defaultValue": null;
+                "description": string;
+                "name": string;
+                "required": boolean;
+                "type": {
+                    "name": string;
+                };
+            };
             "error": {
                 "defaultValue": null;
                 "description": string;
@@ -2464,15 +2473,6 @@ export declare namespace FormikTextField {
                 };
             };
             "required": {
-                "defaultValue": null;
-                "description": string;
-                "name": string;
-                "required": boolean;
-                "type": {
-                    "name": string;
-                };
-            };
-            "variant": {
                 "defaultValue": null;
                 "description": string;
                 "name": string;
