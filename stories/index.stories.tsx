@@ -121,6 +121,8 @@ storiesOf("Formik", module).add("TextFields", () => (
         <br />
         <FormikTextField name="email" validate={validate} />
         <br />
+        <FormikTextField name="email2" fieldProps={{ validate: validate }} />
+        <br />
         <br />
         Input Adornments:
         <br />
@@ -886,4 +888,54 @@ storiesOf("Formik", module).add("Huge Form", () => (
       </Formik>
     )}
   </React.Fragment>
+));
+
+storiesOf("Formik", module).add("Error Tests", () => (
+  <Formik
+    initialValues={{
+      actions: [{ actionID: "test" }],
+      installations: [
+        {
+          container: {
+            name: "Hi"
+          }
+        }
+      ],
+      object: {
+        collection: []
+      }
+    }}
+    validateOnBlur={false}
+    onSubmit={(values, { setFieldError }) => {
+      setFieldError("actions.0.actionID", "Error1");
+      // setFieldError("installations.0.container.name", "Error2");
+      // setFieldError(
+      //   "object.collection.0.object2.collection2.0.object3.name",
+      //   "Error3"
+      // );
+    }}
+  >
+    {(formikProps: FormikProps<any>) => (
+      <form onSubmit={formikProps.handleSubmit}>
+        Default:
+        <br />
+        <FormikTextField label="ActionID" name="actions.0.actionID" />
+        {/* <FormikTextField
+          label="Test"
+          name="installations.0.container.name"
+        />
+         */}
+        {/* <FormikTextField
+          label="Test"
+          name="object.collection.0.object2.collection2.0.object3.name"
+        /> */}
+        <br />
+        <br />
+        <Button type="submit" disabled={formikProps.isSubmitting}>
+          Save
+        </Button>
+        <Button onClick={formikProps.handleReset}>Reset</Button>
+      </form>
+    )}
+  </Formik>
 ));
