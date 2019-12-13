@@ -894,25 +894,11 @@ storiesOf("Formik", module).add("Error Tests", () => (
   <Formik
     initialValues={{
       actions: [{ actionID: "test" }],
-      installations: [
-        {
-          container: {
-            name: "Hi"
-          }
-        }
-      ],
-      object: {
-        collection: []
-      }
+      modID: undefined
     }}
     validateOnBlur={false}
     onSubmit={(values, { setFieldError }) => {
       setFieldError("actions.0.actionID", "Error1");
-      // setFieldError("installations.0.container.name", "Error2");
-      // setFieldError(
-      //   "object.collection.0.object2.collection2.0.object3.name",
-      //   "Error3"
-      // );
     }}
   >
     {(formikProps: FormikProps<any>) => (
@@ -920,15 +906,7 @@ storiesOf("Formik", module).add("Error Tests", () => (
         Default:
         <br />
         <FormikTextField label="ActionID" name="actions.0.actionID" />
-        {/* <FormikTextField
-          label="Test"
-          name="installations.0.container.name"
-        />
-         */}
-        {/* <FormikTextField
-          label="Test"
-          name="object.collection.0.object2.collection2.0.object3.name"
-        /> */}
+        <FormikTextField label="ModID" name="modId" />
         <br />
         <br />
         <Button type="submit" disabled={formikProps.isSubmitting}>
