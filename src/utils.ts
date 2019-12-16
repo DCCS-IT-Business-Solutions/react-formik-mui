@@ -1,7 +1,7 @@
 import { FormikProps } from "formik";
 
 function getErrors(errors: any, searchName: string): any {
-  if (Object.keys(errors).length > 0) {
+  if (errors && Object.keys(errors).length > 0) {
     const split = searchName.split(".");
 
     if (split.length >= 2) {
