@@ -7,7 +7,6 @@ deploy:
   skip_cleanup: true
   provider: npm
   email: stephan.meissner@dccs.at
-  api_key:
-    secure: $NPM_API_KEY
+  api_key: $NPM_API_KEY
   on:
     repo: DCCS-IT-Business-Solutions/react-formik-mui
