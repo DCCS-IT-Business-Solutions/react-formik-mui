@@ -48,7 +48,13 @@ export function FormikSwitch(props: FormikSwitchProps) {
       {({ field, form }: FastFieldProps<any>) => (
         <FormControl margin="normal" {...formControlProps}>
           <FormControlLabel
-            control={<Switch {...field} {...others} />}
+            control={
+              <Switch
+                {...field}
+                checked={field.value ? field.value : false}
+                {...others}
+              />
+            }
             label={label}
             {...formControlLabelProps}
           />
