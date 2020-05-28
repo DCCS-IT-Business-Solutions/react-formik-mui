@@ -41,7 +41,7 @@
   },
   "homepage": "https://github.com/DCCS-IT-Business-Solutions/react-formik-mui#readme",
   "dependencies": {
-    "@dccs/react-autocomplete-mui": "^0.8.3",
+    "@dccs/react-autocomplete-mui": "^0.10.0",
     "@dccs/react-filepicker-mui": "^0.0.3",
     "@dccs/react-searchable-select-mui": "^0.2.11",
     "react-dropzone": "^10.1.9"
