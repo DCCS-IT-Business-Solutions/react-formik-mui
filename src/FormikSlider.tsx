@@ -1,12 +1,12 @@
 import * as React from "react";
-import { FastFieldProps } from "formik";
-import { FormControl, Slider } from "@material-ui/core";
-import { FormHelperTextProps } from "@material-ui/core/FormHelperText";
 import { FormControlLabelProps } from "@material-ui/core/FormControlLabel";
-import FormHelperTextWrapper from "./FormHelperTextWrapper";
+import { FormHelperTextProps } from "@material-ui/core/FormHelperText";
 import { FormControlProps } from "@material-ui/core/FormControl";
 import { SliderProps } from "@material-ui/core/Slider";
 import { FormikField } from "./FormikField";
+import { FastFieldProps } from "formik";
+import { FormControl, Slider } from "@material-ui/core";
+import FormHelperTextWrapper from "./FormHelperTextWrapper";
 
 interface IBaseProps {
   name: string;
@@ -24,7 +24,7 @@ interface IBaseProps {
 export type FormikSliderProps = IBaseProps & SliderProps;
 
 const defaultFormControlProps = {
-  style: { minWidth: "240px" }
+  style: { minWidth: "240px" },
 };
 
 export function FormikSlider(props: FormikSliderProps) {
