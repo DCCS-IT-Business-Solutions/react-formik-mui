@@ -28,7 +28,12 @@ const defaultProps = {
   placeholder: "tt.mm.jjjj",
   format: "dd.MM.yyyy",
   autoOk: true,
-  variant: "inline" as "inline"
+  variant: "inline" as "inline",
+};
+
+const utils = {
+  moment: "MomentUtils",
+  dateFns: "DateFnsUtils",
 };
 
 export function FormikDatepicker(props: FormikDatepickerProps) {
@@ -44,15 +49,15 @@ export function FormikDatepicker(props: FormikDatepickerProps) {
   } = props;
 
   // Check context for moment/datefns because formats are different
-  const context = React.useContext(MuiPickersContext);
+  const context = React.useContext(MuiPickersContext) || {};
 
-  if (context && context.constructor) {
-    if (context.constructor.name === "MomentUtils") {
-      defaultProps.format = "DD.MM.YYYY";
-    }
-    if (context.constructor.name === "DateFnsUtils") {
-      defaultProps.format = "dd.MM.yyyy";
-    }
+  const { name: utilsName } = context.constructor;
+
+  if (utilsName === utils.moment) {
+    defaultProps.format = "DD.MM.YYYY";
+  }
+  if (utilsName === utils.dateFns) {
+    defaultProps.format = "dd.MM.yyyy";
   }
 
   return (
@@ -68,8 +73,12 @@ export function FormikDatepicker(props: FormikDatepickerProps) {
             {...defaultProps}
             {...field}
             value={field.value || null}
-            onChange={date => {
-              form.setFieldValue(name, date);
+            onChange={(date) => {
+              if ((date as any)._isAMomentObject) {
+                form.setFieldValue(name, (date as any).toDate());
+              } else {
+                form.setFieldValue(name, date);
+              }
             }}
             error={hasError(name, form, error)}
             helperText={getHelperText(name, form, helperText)}

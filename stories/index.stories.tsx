@@ -15,7 +15,7 @@ import {
   FormControl,
   FormLabel,
   RadioGroup,
-  Typography
+  Typography,
 } from "@material-ui/core";
 import { FormikSwitch } from "../src/FormikSwitch";
 import { FormikSelect } from "../src/FormikSelect";
@@ -27,7 +27,7 @@ import {
   MuiPickersUtilsProvider,
   MuiPickersContext,
   KeyboardDateTimePicker,
-  KeyboardDatePicker
+  KeyboardDatePicker,
 } from "@material-ui/pickers";
 import DateFnsUtils from "@date-io/date-fns";
 import MomentUtils from "@date-io/moment";
@@ -55,7 +55,7 @@ storiesOf("Formik", module).add("TextFields", () => (
       outline: "",
       filled: "",
       password: "",
-      adornments: ""
+      adornments: "",
     }}
     onSubmit={(values, actions) => {
       setTimeout(() => {
@@ -134,7 +134,7 @@ storiesOf("Formik", module).add("TextFields", () => (
               <InputAdornment position="start">
                 <AccountCircle />
               </InputAdornment>
-            )
+            ),
           }}
         />
         <br />
@@ -160,7 +160,7 @@ storiesOf("Formik", module).add("Datepicker with datefns", () => (
     <Formik
       initialValues={{
         date: "",
-        dateTime: ""
+        dateTime: "",
       }}
       onSubmit={(values, actions) => {
         setTimeout(() => {
@@ -200,7 +200,7 @@ storiesOf("Formik", module).add("Datepicker with moment", () => (
     <Formik
       initialValues={{
         date: "",
-        dateTime: ""
+        dateTime: "",
       }}
       onSubmit={(values, actions) => {
         setTimeout(() => {
@@ -234,7 +234,7 @@ storiesOf("Formik", module).add("Switches", () => (
     initialValues={{
       switch: "",
       switchBottom: "",
-      switchInitialChecked: true
+      switchInitialChecked: true,
     }}
     onSubmit={(values, actions) => {
       setTimeout(() => {
@@ -277,7 +277,7 @@ storiesOf("Formik", module).add("Selects", () => (
     initialValues={{
       select: "",
       select2: "",
-      select3: 2
+      select3: 2,
     }}
     onSubmit={(values, actions) => {
       setTimeout(() => {
@@ -296,7 +296,7 @@ storiesOf("Formik", module).add("Selects", () => (
             { key: 0, value: "Entry 0" },
             { key: 1, value: "Entry 1" },
             { key: 2, value: "Entry 2" },
-            { key: 3, value: "Entry 3" }
+            { key: 3, value: "Entry 3" },
           ]}
         />
         <br />
@@ -309,7 +309,7 @@ storiesOf("Formik", module).add("Selects", () => (
             { key: 0, value: "Entry 0" },
             { key: 1, value: "Entry 1" },
             { key: 2, value: "Entry 2" },
-            { key: 3, value: "Entry 3" }
+            { key: 3, value: "Entry 3" },
           ]}
         />
         <br />
@@ -323,7 +323,7 @@ storiesOf("Formik", module).add("Selects", () => (
             { key: 0, value: "Entry 0" },
             { key: 1, value: "Entry 1" },
             { key: 2, value: "Entry 2" },
-            { key: 3, value: "Entry 3" }
+            { key: 3, value: "Entry 3" },
           ]}
         />
         <br />
@@ -337,7 +337,7 @@ storiesOf("Formik", module).add("Selects", () => (
             { key: 0, value: "Entry 0" },
             { key: 1, value: "Entry 1" },
             { key: 2, value: "Entry 2" },
-            { key: 3, value: "Entry 3" }
+            { key: 3, value: "Entry 3" },
           ]}
         />
         <br />
@@ -348,7 +348,7 @@ storiesOf("Formik", module).add("Selects", () => (
           options={[
             { key: 1, value: "Entry 1" },
             { key: 2, value: "Entry 2" },
-            { key: 3, value: "Entry 3" }
+            { key: 3, value: "Entry 3" },
           ]}
         />
         <br />
@@ -366,7 +366,7 @@ storiesOf("Formik", module).add("Searchable Selects", () => (
   <Formik
     initialValues={{
       select: "",
-      select2: ""
+      select2: "",
     }}
     onSubmit={(values, actions) => {
       setTimeout(() => {
@@ -384,7 +384,7 @@ storiesOf("Formik", module).add("Searchable Selects", () => (
           options={[
             { key: 1, value: "Entry 1" },
             { key: 2, value: "Entry 2" },
-            { key: 3, value: "Entry 3" }
+            { key: 3, value: "Entry 3" },
           ]}
         />
         <br />
@@ -395,7 +395,7 @@ storiesOf("Formik", module).add("Searchable Selects", () => (
           options={[
             { key: 1, value: "Entry 1" },
             { key: 2, value: "Entry 2" },
-            { key: 3, value: "Entry 3" }
+            { key: 3, value: "Entry 3" },
           ]}
         />
         <br />
@@ -414,7 +414,7 @@ storiesOf("Formik", module).add("Checkboxes", () => (
     initialValues={{
       checkbox: "",
       checkboxBottom: "",
-      checkboxInitialChecked: true
+      checkboxInitialChecked: true,
     }}
     onSubmit={(values, actions) => {
       setTimeout(() => {
@@ -460,7 +460,7 @@ storiesOf("Formik", module).add("Radio Buttons", () => (
   <Formik
     initialValues={{
       radioGroup: "",
-      radioInitalFemale: "female"
+      radioInitalFemale: "female",
     }}
     onSubmit={(values, actions) => {
       setTimeout(() => {
@@ -524,14 +524,14 @@ const films = [
   { value: "The Godfather: Part II", key: 3 },
   { value: "The Dark Knight", key: 4 },
   { value: "12 Angry Men", key: 5 },
-  { value: "Schindler's List", key: 6 }
+  { value: "Schindler's List", key: 6 },
 ];
 
 storiesOf("Formik", module).add("Autocomplete", () => (
   <Formik
     initialValues={{
       country: undefined,
-      countryWithInitial: 1
+      countryWithInitial: 1,
     }}
     onSubmit={(values, actions) => {
       setTimeout(() => {
@@ -585,7 +585,7 @@ function DummyFilePicker() {
     setServer({
       id: newId,
       name: newFile.name,
-      size: newFile.size.toString()
+      size: newFile.size.toString(),
     });
     return resolve<string>(newId);
   }
@@ -593,7 +593,7 @@ function DummyFilePicker() {
   async function getFile(id: string) {
     await sleep(500);
     window.console.log("searching file", id, "server files", server);
-    const file = server.find(e => e.id === id);
+    const file = server.find((e) => e.id === id);
     if (file) {
       return resolve<FileMetadata>(file);
     } else {
@@ -637,7 +637,7 @@ function DummyFilePicker() {
 storiesOf("Formik", module).add("Slider", () => (
   <Formik
     initialValues={{
-      slider: ""
+      slider: "",
     }}
     onSubmit={(values, actions) => {
       setTimeout(() => {
@@ -657,20 +657,20 @@ storiesOf("Formik", module).add("Slider", () => (
             marks={[
               {
                 value: 0,
-                label: "0°C"
+                label: "0°C",
               },
               {
                 value: 20,
-                label: "20°C"
+                label: "20°C",
               },
               {
                 value: 37,
-                label: "37°C"
+                label: "37°C",
               },
               {
                 value: 100,
-                label: "100°C"
-              }
+                label: "100°C",
+              },
             ]}
             valueLabelDisplay="on"
           ></FormikSlider>
@@ -691,7 +691,7 @@ storiesOf("Formik", module).add("Custom Components", () => (
   <Formik
     initialValues={{
       custom: "",
-      custom2: ""
+      custom2: "",
     }}
     onSubmit={(values, actions) => {
       setTimeout(() => {
@@ -779,7 +779,7 @@ storiesOf("Formik", module).add("Playground", () => (
         radioGroup: "female",
         checkbox: "",
         country: "",
-        files: ""
+        files: "",
       }}
       onSubmit={(values, actions) => {
         setTimeout(() => {
@@ -799,7 +799,7 @@ storiesOf("Formik", module).add("Playground", () => (
             options={[
               { key: 1, value: "Entry 1" },
               { key: 2, value: "Entry 2" },
-              { key: 3, value: "Entry 3" }
+              { key: 3, value: "Entry 3" },
             ]}
           />
           <FormikSearchableSelect
@@ -808,7 +808,7 @@ storiesOf("Formik", module).add("Playground", () => (
             options={[
               { key: 1, value: "Entry 1" },
               { key: 2, value: "Entry 2" },
-              { key: 3, value: "Entry 3" }
+              { key: 3, value: "Entry 3" },
             ]}
           />
           <FormControl>
@@ -832,7 +832,7 @@ storiesOf("Formik", module).add("Playground", () => (
             options={[
               { key: 1, value: "Entry 1" },
               { key: 2, value: "Entry 2" },
-              { key: 3, value: "Entry 3" }
+              { key: 3, value: "Entry 3" },
             ]}
             textProp={(option: any) => option.value}
             keyProp={(option: any) => option.key}
@@ -894,7 +894,7 @@ storiesOf("Formik", module).add("Error Tests", () => (
   <Formik
     initialValues={{
       actions: [{ actionID: "test" }],
-      modID: undefined
+      modID: undefined,
     }}
     validateOnBlur={false}
     onSubmit={(values, { setFieldError }) => {
