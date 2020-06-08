@@ -74,7 +74,7 @@ export function FormikDatepicker(props: FormikDatepickerProps) {
             {...field}
             value={field.value || null}
             onChange={(date) => {
-              if ((date as any)._isAMomentObject) {
+              if (date && (date as any)._isAMomentObject) {
                 form.setFieldValue(name, (date as any).toDate());
               } else {
                 form.setFieldValue(name, date);
