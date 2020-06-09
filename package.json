@@ -5,7 +5,7 @@
   "main": "lib/index.js",
   "scripts": {
     "watch": "tsc --watch",
-    "build": "npm-run-all -s lint transpile build-storybook",
+    "build": "npm-run-all -s lint transpile",
     "transpile": "tsc",
     "lint": "tslint ./src/**/*.ts*",
     "test": "jest --runInBand --coverage --passWithNoTests",

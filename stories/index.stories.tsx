@@ -561,7 +561,6 @@ storiesOf("Formik", module).add("Autocomplete", () => (
           keyToOption={async (key) => {
             // await setTimeout(() => {}, 1500);
             const result = films.find((f) => f.key === key);
-            console.log(result, key);
             return result;
           }}
         />
