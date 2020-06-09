@@ -16,7 +16,6 @@ export default function FormHelperTextWrapper(
   props: IFormHelperTextWrapperProps
 ) {
   const { name, helperText, error, form, formHelperTextProps } = props;
-
   if (
     form &&
     form.errors &&

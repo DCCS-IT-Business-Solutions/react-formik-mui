@@ -223,8 +223,8 @@ storiesOf("Formik", module).add("Datepicker with moment", () => (
 storiesOf("Formik", module).add("Switches", () => (
   <Formik
     initialValues={{
-      switch: "",
-      switchBottom: "",
+      switch: false,
+      switchBottom: false,
       switchInitialChecked: true,
     }}
     onSubmit={(values) => {
@@ -403,8 +403,8 @@ storiesOf("Formik", module).add("Searchable Selects", () => (
 storiesOf("Formik", module).add("Checkboxes", () => (
   <Formik
     initialValues={{
-      checkbox: "",
-      checkboxBottom: "",
+      checkbox: false,
+      checkboxBottom: false,
       checkboxInitialChecked: true,
     }}
     onSubmit={(values) => {
@@ -741,10 +741,10 @@ storiesOf("Formik", module).add("Playground", () => (
       initialValues={{
         firstName: "",
         date: "",
-        switch: "",
+        switch: false,
         select: "",
         radioGroup: "female",
-        checkbox: "",
+        checkbox: false,
         country: "",
         files: "",
       }}

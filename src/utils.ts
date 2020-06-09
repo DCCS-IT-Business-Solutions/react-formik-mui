@@ -41,8 +41,13 @@ export function hasError(
 ) {
   const errorString = getErrors(form.errors, name);
   const touched = getErrors(form.touched, name);
-
-  return (form.errors && touched === true && errorString) || error;
+  return (
+    (form.errors &&
+      touched === true &&
+      errorString &&
+      errorString.length > 0) ||
+    error
+  );
 }
 
 export function getHelperText(

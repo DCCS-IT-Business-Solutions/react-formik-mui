@@ -47,6 +47,7 @@ export function FormikCheckbox(props: FormikCheckboxProps) {
     >
       {({ field, form }: FastFieldProps<any>) => (
         <FormControl margin="normal" {...formControlProps}>
+          {console.log("Field.value", field.value)}
           <FormControlLabel
             control={
               <Checkbox
