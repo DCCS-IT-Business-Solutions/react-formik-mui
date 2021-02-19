@@ -5,6 +5,8 @@ import { KeyboardDatePickerProps } from "@material-ui/pickers/DatePicker/DatePic
 import { FormHelperTextProps } from "@material-ui/core/FormHelperText";
 import { FormikField } from "./FormikField";
 import { hasError, getHelperText } from "./utils";
+import makeStyles from "@material-ui/core/styles/makeStyles";
+
 
 interface IBaseProps {
   name: string;
@@ -17,6 +19,7 @@ interface IBaseProps {
   formHelperTextProps?: FormHelperTextProps;
   fieldProps?: {};
   validate?: any;
+  removeButton?: true;
 }
 
 export type FormikDatepickerProps = IBaseProps &
@@ -36,6 +39,17 @@ const utils = {
   dateFns: "DateFnsUtils",
 };
 
+const useStyles = makeStyles({
+  datePickerStyles: (props:IBaseProps) => ({
+      "& p": {
+        color: "red" // it was grey when not empty so had to override for consistency
+      },
+      "& button": {
+        display: props.removeButton ? "none" : undefined
+      }
+    }),
+})
+
 export function FormikDatepicker(props: FormikDatepickerProps) {
   const {
     name,
@@ -47,6 +61,8 @@ export function FormikDatepicker(props: FormikDatepickerProps) {
     validate,
     ...others
   } = props;
+
+  const classes = useStyles(props);
 
   // Check context for moment/datefns because formats are different
   const context = React.useContext(MuiPickersContext) || {};
@@ -72,6 +88,7 @@ export function FormikDatepicker(props: FormikDatepickerProps) {
           <KeyboardDatePicker
             {...defaultProps}
             {...field}
+            className={classes.datePickerStyles}
             value={field.value || null}
             onChange={(date) => {
               form.setFieldValue(
