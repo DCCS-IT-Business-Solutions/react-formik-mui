@@ -76,7 +76,7 @@ export function FormikDatepicker(props: FormikDatepickerProps) {
             onChange={(date) => {
               form.setFieldValue(
                 name,
-                date != null ? date.toISOString() : date
+                date
               );
             }}
             error={hasError(name, form, error)}
