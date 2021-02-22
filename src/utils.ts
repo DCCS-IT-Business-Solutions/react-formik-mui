@@ -58,5 +58,5 @@ export function getHelperText(
   const errorString = getErrors(form.errors, name);
   const touched = getErrors(form.touched, name);
 
-  return (form.errors && touched === true && errorString) || helperText;
+  return (form.errors && touched && errorString) || helperText;
 }
