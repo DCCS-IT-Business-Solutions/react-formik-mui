@@ -11,7 +11,7 @@ import { hasError, getHelperText } from "./utils";
 
 interface IBaseProps {
   name: string;
-  label?: string;
+  label?: React.ReactNode;
   helperText?: string;
   error?: boolean;
   useField?: boolean;
