@@ -12,7 +12,7 @@ import { FormikField } from "./FormikField";
 interface IBaseProps {
   name: string;
   value: any;
-  label?: string;
+  label?: React.ReactNode;
   helperText?: string;
   error?: boolean;
   useField?: boolean;

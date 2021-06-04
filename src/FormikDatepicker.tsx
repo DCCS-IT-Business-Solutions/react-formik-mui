@@ -10,7 +10,7 @@ import makeStyles from "@material-ui/core/styles/makeStyles";
 
 interface IBaseProps {
   name: string;
-  label?: string;
+  label?: React.ReactNode;
   helperText?: string;
   error?: boolean;
   useField?: boolean;
